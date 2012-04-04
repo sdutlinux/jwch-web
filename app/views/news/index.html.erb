@@ -1,0 +1,22 @@
+<h1>Newss</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Created at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @news.each do |news| %>
+      <tr>
+        <td><%= news.id %></td>
+        <td><%= link_to news.title, show_news_path(news) %></td>
+        <td><%= news.created_at %></td>
+        <td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,26 @@
+<h1>/News</h1>
+
+<p>
+  <b>Title</b><br>
+  <%= @news.title %>
+</p>
+
+<p>
+  <b>Content</b><br>
+  <%= @news.content %>
+</p>
+
+<p>
+  <b>Author</b><br>
+  <%= @news.author %>
+</p>
+
+<p>
+  <b>Department</b><br>
+  <%= @news.department %>
+</p>
+
+
+<div class="form-actions">
+  <%= link_to 'Back', news_path, :class => 'btn'  %>
+</div>

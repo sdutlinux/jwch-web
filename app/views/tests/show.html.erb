@@ -1,0 +1,12 @@
+<h1>/Test</h1>
+
+<p>
+  <b>Title</b><br>
+  <%= @test.title %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', tests_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_test_path(@test), :class => 'btn' %>
+  <%= link_to 'Delete', test_path(@test), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>
