@@ -16,7 +16,7 @@
         <td><%= news.created_at %></td>
         <td>
           <%= link_to 'Edit', edit_admin_news_path(news), :class => 'btn btn-mini' %>
-          <%= link_to 'Destroy', news_path(news), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to 'Destroy', admin_news_path(news), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>

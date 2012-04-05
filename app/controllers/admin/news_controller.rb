@@ -45,7 +45,7 @@ class Admin::NewsController < ApplicationController
 
     respond_to do |format|
       if @news.save
-        format.html { redirect_to @news, notice: 'News was successfully created.' }
+        format.html { redirect_to [:admin,@news], notice: 'News was successfully created.' }
         format.json { render json: @news, status: :created, location: @news }
       else
         format.html { render action: "new" }
@@ -77,7 +77,7 @@ class Admin::NewsController < ApplicationController
     @news.destroy
 
     respond_to do |format|
-      format.html { redirect_to news_index_url }
+      format.html { redirect_to admin_news_index_url }
       format.json { head :no_content }
     end
   end
