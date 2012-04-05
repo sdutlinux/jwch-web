@@ -9,7 +9,9 @@ JwchWeb::Application.routes.draw do
   namespace :admin do
     get '/', :to => 'dashboard#show', :as => :dashboard 
     resources :news
+    resources :users, :only => [:new,:create]
     get 'file', :to => 'file#index', :as => :file 
+
   end
 
   # The priority is based upon order of creation:
