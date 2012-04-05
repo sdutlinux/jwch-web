@@ -1,4 +1,16 @@
+
 <%= form_for [:admin,@news], :html => { :class => 'form-horizontal' } do |f| %>
+  <% if @news.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @news.errors.count %>错误，不能保存：</h2>
+
+      <ul>
+      <% @news.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> /News</legend>
 

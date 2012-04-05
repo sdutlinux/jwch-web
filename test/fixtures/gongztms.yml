@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  gonzcap_id: 1
+  title: MyString
+  img_url: MyString
+
+two:
+  gonzcap_id: 1
+  title: MyString
+  img_url: MyString

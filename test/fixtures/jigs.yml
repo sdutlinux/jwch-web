@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  jignr: MyText
+  author: MyString
+  show: false
+  capid: 1
+
+two:
+  title: MyString
+  jignr: MyText
+  author: MyString
+  show: false
+  capid: 1

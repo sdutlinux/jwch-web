@@ -7,7 +7,9 @@ JwchWeb::Application.routes.draw do
   resources :tests
 
   namespace :admin do
+    get '/', :to => 'dashboard#show', :as => :dashboard 
     resources :news
+    get 'file', :to => 'file#index', :as => :file 
   end
 
   # The priority is based upon order of creation:

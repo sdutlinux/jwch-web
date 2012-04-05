@@ -1,0 +1,2 @@
+module Admin::FileHelper
+end
