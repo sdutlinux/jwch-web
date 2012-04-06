@@ -9,7 +9,7 @@ JwchWeb::Application.routes.draw do
   namespace :admin do
     get '/', :to => 'dashboard#show', :as => :dashboard 
     resources :news
-    resources :users, :only => [:new,:create]
+    resources :users#, :only => [:index,:show,:new,:create]
     get 'file', :to => 'file#index', :as => :file 
 
   end
