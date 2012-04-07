@@ -17,6 +17,18 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def create
+    @user = User.new(params[:user]) 
+
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to admin_user_path(@user), notice: 'User was successfully created.' }
+      else
+        format.html { render action: "new" }
+      end
+    end
+  end
+
   def show
     @user = User.find(params[:id])
 
@@ -26,6 +38,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -36,18 +49,6 @@ class Admin::UsersController < ApplicationController
         format.html { redirect_to admin_user_path, notice: 'News was successfully updated.' }
       else
         format.html { render action: "edit" }
-      end
-    end
-  end
-
-  def create
-    @user = User.new(params[:user]) 
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to admin_index_path, notice: 'User was successfully created.' }
-      else
-        format.html { render action: "new" }
       end
     end
   end

@@ -3,14 +3,16 @@ JwchWeb::Application.routes.draw do
 
   get "news" => "news#index", :as => :news
   get "news/:id" => "news#show", :as => :show_news
+  get "login" => "session#new", :as => :login
+  post "login" => "session#create" 
 
   resources :tests
 
   namespace :admin do
     get '/', :to => 'dashboard#show', :as => :dashboard 
     resources :news
-    resources :users#, :only => [:index,:show,:new,:create]
-    get 'file', :to => 'file#index', :as => :file 
+    resources :users
+    get 'file', :to => "file#index", :as => :file 
 
   end
 
