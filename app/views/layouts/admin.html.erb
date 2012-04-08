@@ -33,9 +33,8 @@
           <a class="brand" href="/admin">管理后台</a>
           <div class="container nav-collapse">
             <ul class="nav">
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
+                <li><%= link_to "logout", logout_path, :method => "delete"  %></li>
+                <li><a href="#"><%=  current_user.name %></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

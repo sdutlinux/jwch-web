@@ -5,6 +5,7 @@ JwchWeb::Application.routes.draw do
   get "news/:id" => "news#show", :as => :show_news
   get "login" => "session#new", :as => :login
   post "login" => "session#create" 
+  delete "logout" => "session#destroy", :as => :logout
 
   resources :tests
 
