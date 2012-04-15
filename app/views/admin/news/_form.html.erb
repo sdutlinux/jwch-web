@@ -24,22 +24,16 @@
     <div class="control-group">
       <%= f.label :content, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :content, :class => 'text_field' %>
+        <%= f.text_area :content, :cols => 40, :rows => 20, :class => 'text_field' %>
       </div>
     </div>
 
     <div class="control-group">
-      <%= f.label :author, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :author, :class => 'text_field' %>
-      </div>
+        <%= f.hidden_field :author, :value => "#{current_user.name}", :class => 'text_field' %>
     </div>
 
     <div class="control-group">
-      <%= f.label :department, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :department, :class => 'text_field' %>
-      </div>
+        <%= f.hidden_field :department, :value => "#{current_user.department}", :class => 'text_field' %>
     </div>
 
     <div class="control-group">

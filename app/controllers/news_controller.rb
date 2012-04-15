@@ -14,4 +14,5 @@ class NewsController < ApplicationController
       format.html 
     end
   end
+  
 end

@@ -4,16 +4,21 @@ JwchWeb::Application.routes.draw do
   get "news" => "news#index", :as => :news
   get "news/:id" => "news#show", :as => :show_news
   get "login" => "session#new", :as => :login
-  post "login" => "session#create" 
+  post "login" => "session#create"
   delete "logout" => "session#destroy", :as => :logout
 
   resources :tests
 
   namespace :admin do
-    get '/', :to => 'dashboard#show', :as => :dashboard 
+    get '/', :to => "dashboard#show", :as => :dashboard
+    get 'file', :to => "documents#index", :as => :file
+    get 'file/new', :to => "documents#new", :as => :new_file
+    get 'file/download/:id',:to => "documents#download",:as => :download_file
+    post 'file/upload', :to => "documents#upload",:as => :upload_file
+    delete 'file/destroy/:id', :to => "documents#destroy", :as => :delete_file
+
     resources :news
     resources :users
-    get 'file', :to => "file#index", :as => :file 
 
   end
 

@@ -1,3 +1,4 @@
+# coding: UTF-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
@@ -6,21 +7,25 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def admin?
+  def require_admin
     if session[:user_id]
-      return true if current_user.admin 
+      unless current_user.admin
+        flash[:notice] = "需要管理员权限"
+        redirect_to admin_dashboard_path
+      end
     end
   end
 
-  def logined?
-    return true if session[:user_id]
-  end
-  
-  def require_login
+  def require_logined
     unless logined?
       redirect_to login_url
     end
   end
+
+  def logined?
+    session[:user_id]
+  end
+
 
   def logout
     session.delete(:user_id)

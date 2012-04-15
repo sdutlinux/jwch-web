@@ -3,7 +3,7 @@ class TestsController < ApplicationController
   # GET /tests.json
   def index
     @tests = Test.all
-
+    @test1= "helloworld"
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tests }

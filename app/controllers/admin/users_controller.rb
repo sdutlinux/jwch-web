@@ -1,11 +1,12 @@
 class Admin::UsersController < ApplicationController
   layout "admin"
+  before_filter :require_admin
 
   def index
     @users = User.all
 
     respond_to  do |format|
-     format.html  
+     format.html
     end
   end
 
@@ -18,11 +19,12 @@ class Admin::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user]) 
+    @user = User.new(params[:user])
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to admin_user_path(@user), notice: 'User was successfully created.' }
+        format.html { redirect_to admin_user_path(@user),
+          notice: 'User was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -46,7 +48,8 @@ class Admin::UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to admin_user_path, notice: 'News was successfully updated.' }
+        format.html { redirect_to admin_user_path,
+                      notice: 'News was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
@@ -54,10 +57,9 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id]) 
+    @user = User.find(params[:id])
     @user.destroy
     redirect_to :action => :index
   end
 
 end
-

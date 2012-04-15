@@ -5,6 +5,7 @@
       <th>ID</th>
       <th>Title</th>
       <th>Created at</th>
+      <th>author</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
         <td><%= news.id %></td>
         <td><%= link_to news.title, admin_news_path(news) %></td>
         <td><%= news.created_at %></td>
+        <td><%= news.author %></td>
         <td>
           <%= link_to 'Edit', edit_admin_news_path(news), :class => 'btn btn-mini' %>
           <%= link_to 'Destroy', admin_news_path(news), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
