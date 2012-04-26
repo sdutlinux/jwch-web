@@ -7,8 +7,6 @@ JwchWeb::Application.routes.draw do
   post "login" => "session#create"
   delete "logout" => "session#destroy", :as => :logout
 
-  resources :tests
-
   namespace :admin do
     get '/', :to => "dashboard#show", :as => :dashboard
     get 'file', :to => "documents#index", :as => :file
