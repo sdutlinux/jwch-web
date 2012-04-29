@@ -28,7 +28,11 @@ class Admin::DocumentsController < ApplicationController
     @file = Document.find(params[:id])
     path = @file.path
     content_type = @file.content_type
-    send_file path,:type => content_type
+    if File.exists?(path)
+      send_file path,:type => content_type
+    else
+      render "public/404.html"
+    end
   end
 
 

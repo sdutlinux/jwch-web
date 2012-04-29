@@ -17,6 +17,7 @@ JwchWeb::Application.routes.draw do
 
     resources :news
     resources :users
+    resources :channels
 
   end
 

@@ -25,15 +25,12 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
           <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
           <a class="brand" href="/admin">管理后台</a>
           <div class="container nav-collapse">
             <ul class="nav pull-left">
                 <li><%= link_to "网站首页", root_path  %></li>
+                <li><%= link_to "添加栏目", new_admin_channel_path %></li>
+                <li><%= link_to "所有栏目", admin_channels_path %></li>
             </ul>
 
             <ul class="nav pull-right">

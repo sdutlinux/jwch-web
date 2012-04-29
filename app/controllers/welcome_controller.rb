@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
+  layout "application"
   def index
-    render  :layout => 'fluid'
   end
 end

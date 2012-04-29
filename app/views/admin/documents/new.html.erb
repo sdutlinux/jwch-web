@@ -1,8 +1,0 @@
-<%= form_for :document, :url => {:action => "upload"},
-  :html => {:multipart => true} do |f|%>
-    <%= f.hidden_field :author, :value => "#{current_user.name}"%>
-  category:<%= f.text_field  :category%> <br>
-  <%= f.file_field :upload_file %><br>
-  <%= f.submit "上传", :class => "btn btn-primary"%>
-
-<% end %>
