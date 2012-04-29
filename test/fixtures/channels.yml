@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  channelname: MyString
+  url: MyString
+  sort: 
+
+two:
+  channelname: MyString
+  url: MyString
+  sort: 

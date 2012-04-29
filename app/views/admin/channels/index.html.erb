@@ -1,0 +1,24 @@
+<h1>所有栏目</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>栏目id</th>
+      <th>栏目名称</th>
+      <th>栏目排序</th>
+      <th>动作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @channels.each do |channel| %>
+      <tr>
+        <td><%= channel.id %></td>
+        <td><%= link_to channel.channelname, show_news_path(channel) %></td>
+        <td><%= channel.sort%></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_channel_path(channel), :class => 'btn btn-mini' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
