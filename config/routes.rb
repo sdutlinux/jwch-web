@@ -9,12 +9,8 @@ JwchWeb::Application.routes.draw do
 
   namespace :admin do
     get '/', :to => "dashboard#show", :as => :dashboard
-    get 'file', :to => "documents#index", :as => :file
-    get 'file/new', :to => "documents#new", :as => :new_file
-    get 'file/download/:id',:to => "documents#download",:as => :download_file
-    post 'file/upload', :to => "documents#upload",:as => :upload_file
-    delete 'file/destroy/:id', :to => "documents#destroy", :as => :delete_file
 
+    resources :documents 
     resources :news
     resources :users
     resources :channels

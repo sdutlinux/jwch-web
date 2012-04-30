@@ -9,7 +9,7 @@ tmp/**/*
 public/assets/
 config/database.yml
 config/config.yml
-public/uploads/**/*
+public/uploads/
 public/topics
 public/topics/**/*
 .redcar

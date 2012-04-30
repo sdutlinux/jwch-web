@@ -10,10 +10,8 @@ class Admin::DocumentsController < ApplicationController
     end
   end
 
-  def new
-  end
 
-  def upload
+  def create
     @file = Document.new(params[:document])
     respond_to do |format|
       if @file.save
@@ -24,7 +22,7 @@ class Admin::DocumentsController < ApplicationController
     end
   end
 
-  def download
+  def show
     @file = Document.find(params[:id])
     path = @file.path
     content_type = @file.content_type
