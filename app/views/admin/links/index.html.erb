@@ -4,6 +4,8 @@
     <tr>
       <th>序号</th>
       <th>链接</th>
+      <th>链接地址</th>
+      <th>权重</th>
       <th>动作</th>
     </tr>
   </thead>
@@ -12,9 +14,11 @@
       <tr>
         <td><%= link.id %></td>
         <td><%= link_to link.name, admin_link_path(link) %></td>
+        <td><%= link.url %></td>
+        <td><%= link.sort %></td>
         <td>
           <%= link_to '编辑', edit_admin_link_path(link), :class => 'btn btn-mini' %>
-          <%= link_to '删除', admin_link_path(link), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to '删除', admin_link_path(link), :method => :delete, :confirm => '确定?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>

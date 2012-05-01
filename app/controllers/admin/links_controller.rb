@@ -1,3 +1,4 @@
+#coding=utf-8
 class Admin::LinksController < ApplicationController
    layout "admin"
    before_filter :require_logined
@@ -35,7 +36,7 @@ class Admin::LinksController < ApplicationController
 
     respond_to do |format|
       if @link.save
-        format.html { redirect_to [:admin,@link], notice: 'Link was successfully created.' }
+        format.html { redirect_to [:admin,@link], notice: ' 链接创建成功' }
       else
         format.html { render action: "new" }
       end
@@ -47,7 +48,7 @@ class Admin::LinksController < ApplicationController
 
     respond_to do |format|
       if @link.update_attributes(params[:link])
-        format.html { redirect_to admin_link_path, notice: 'Link was successfully updated.' }
+        format.html { redirect_to admin_link_path, notice: ' 链接更新成功' }
       else
         format.html { render action: "edit" }
       end
