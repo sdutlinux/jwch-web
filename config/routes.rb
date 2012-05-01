@@ -1,4 +1,14 @@
 JwchWeb::Application.routes.draw do
+  get "links/index"
+
+  get "links/new"
+
+  get "links/create"
+
+  get "links/update"
+
+  get "links/destroy"
+
   root :to => 'welcome#index'
 
   get "news" => "news#index", :as => :news
@@ -10,9 +20,10 @@ JwchWeb::Application.routes.draw do
   namespace :admin do
     get '/', :to => "dashboard#show", :as => :dashboard
 
-    resources :documents 
+    resources :documents
     resources :news
     resources :users
+    resources :links
     resources :channels
 
   end

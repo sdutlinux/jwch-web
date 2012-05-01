@@ -1,5 +1,6 @@
 class Admin::NewsController < ApplicationController
   layout "admin"
+  before_filter :require_logined
   def index
     @news = News.all
 
