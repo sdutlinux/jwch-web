@@ -19,7 +19,8 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def new
-    @competition = Competition.new
+    @category = Category.find(params[:id])
+    @competition = @category.competitions.new
 
     respond_to do |format|
       format.html
@@ -31,7 +32,8 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def create
-    @competition = Competition.new(params[:competition])
+    @category = Category.find(params[:id])
+    @competition = @category.competitions.new(params[:competition])
 
     respond_to do |format|
       if @competition.save

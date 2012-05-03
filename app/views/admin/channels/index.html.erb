@@ -12,7 +12,7 @@
     <% @channels.each do |channel| %>
       <tr>
         <td><%= channel.id %></td>
-        <td><%= link_to channel.channelname, show_news_path(channel) %></td>
+        <td><%= channel.channelname %></td>
         <td><%= channel.sort%></td>
         <td>
           <%= link_to 'Edit', edit_admin_channel_path(channel), :class => 'btn btn-mini' %>

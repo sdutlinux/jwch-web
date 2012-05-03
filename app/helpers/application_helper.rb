@@ -2,7 +2,9 @@
 module ApplicationHelper
   def nav_menus
     [
-      ['网站首页',root_path]
+      ['网站首页',root_path],
+      ['添加栏目',new_admin_channel_path],
+      ['所有栏目',admin_channels_path]
     ]
   end
 
@@ -15,6 +17,7 @@ module ApplicationHelper
           ['添加链接', 'links', admin_links_path],
           ['用户管理', 'users', admin_users_path],
           ['创新竞赛', 'competition', admin_competitions_path],
+         # ['创新竞赛', 'competition', new_admin_category_competition_path],
           ['下载专区', 'document', admin_documents_path]
         ]
       }
