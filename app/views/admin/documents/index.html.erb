@@ -7,12 +7,12 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>user</th>
-      <th>category</th>
-      <th>time</th>
-       <th>Actions</th>
+      <th>序号</th>
+      <th>文件名</th>
+      <th>上传者</th>
+      <th>分类</th>
+      <th>上传时间</th>
+       <th>动作</th>
     </tr>
   </thead>
   <tbody>
@@ -24,7 +24,7 @@
         <td><%= document.category %></td>
         <td><%= document.created_at %></td>
          <td>
-          <%= link_to 'Destroy', admin_document_path(document), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to '删除', admin_document_path(document), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
