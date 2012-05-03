@@ -28,24 +28,6 @@ ActiveRecord::Schema.define(:version => 20120430134621) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "chuangxes", :force => true do |t|
-    t.string   "title"
-    t.string   "grade"
-    t.string   "time"
-    t.string   "teacher"
-    t.string   "member"
-    t.string   "remark"
-    t.integer  "chuangxtype_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  create_table "chuangxtypes", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "documents", :force => true do |t|
     t.string   "name"
     t.string   "path"
@@ -54,53 +36,6 @@ ActiveRecord::Schema.define(:version => 20120430134621) do
     t.string   "content_type"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-  end
-
-  create_table "downloads", :force => true do |t|
-    t.string   "filename"
-    t.string   "url"
-    t.string   "username"
-    t.string   "category"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "gongzcaps", :force => true do |t|
-    t.string   "category"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "gongztms", :force => true do |t|
-    t.integer  "gonzcap_id"
-    t.string   "title"
-    t.string   "img_url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "guizcaps", :force => true do |t|
-    t.string   "category"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "guiztms", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.integer  "guizcap_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "jigs", :force => true do |t|
-    t.string   "title"
-    t.text     "jignr"
-    t.string   "author"
-    t.boolean  "show"
-    t.integer  "capid"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "links", :force => true do |t|
@@ -117,12 +52,6 @@ ActiveRecord::Schema.define(:version => 20120430134621) do
     t.string   "author"
     t.string   "department"
     t.boolean  "show"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "tests", :force => true do |t|
-    t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
