@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  rank: MyString
+  time: 2012-05-03
+  teacher: MyString
+  member: MyString
+  remark: MyString
+  category_id: 1
+
+two:
+  title: MyString
+  rank: MyString
+  time: 2012-05-03
+  teacher: MyString
+  member: MyString
+  remark: MyString
+  category_id: 1
