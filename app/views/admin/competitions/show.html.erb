@@ -1,0 +1,42 @@
+<h1>详细信息</h1>
+
+<p>
+  <b>标题</b><br>
+  <%= @competition.title %>
+</p>
+
+<p>
+  <b>奖项等级</b><br>
+  <%= @competition.rank %>
+</p>
+
+<p>
+  <b>日期 </b><br>
+  <%= @competition.time %>
+</p>
+
+<p>
+  <b> 指导老师</b><br>
+  <%= @competition.teacher %>
+</p>
+
+<p>
+  <b> 团队成员</b><br>
+  <%= @competition.member %>
+</p>
+
+<p>
+  <b>备注 </b><br>
+  <%= @competition.remark %>
+</p>
+
+<p>
+  <b> 分类 </b><br>
+  <%= @competition.category_id %>
+</p>
+
+<div class="form-actions">
+  <%= link_to '返回', admin_competitions_path, :class => 'btn'  %>
+  <%= link_to '编辑 ', edit_admin_competition_path(@competition), :class => 'btn' %>
+  <%= link_to '删除', admin_competition_path(@competition), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

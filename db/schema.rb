@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120430134621) do
+ActiveRecord::Schema.define(:version => 20120503074545) do
 
   create_table "categories", :force => true do |t|
     t.integer  "channel_id"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(:version => 20120430134621) do
     t.string   "channelname"
     t.string   "url"
     t.integer  "sort"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "competitions", :force => true do |t|
+    t.string   "title"
+    t.string   "rank"
+    t.date     "time"
+    t.string   "teacher"
+    t.string   "member"
+    t.string   "remark"
+    t.integer  "category_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

@@ -1,0 +1,27 @@
+<h1>创新竞赛</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>标题</th>
+      <th>发布于</th>
+      <th>动作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @competitions.each do |competition| %>
+      <tr>
+        <td><%= competition.id %></td>
+        <td><%= link_to competition.title, admin_competition_path(competition) %></td>
+        <td><%= competition.created_at %></td>
+        <td>
+          <%= link_to '编辑', edit_admin_competition_path(competition), :class => 'btn btn-mini' %>
+          <%= link_to '删除', admin_competition_path(competition), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to '新条目', new_admin_competition_path, :class => 'btn btn-primary' %>
+<%= link_to '添加新分类', new_admin_competition_path, :class => 'btn btn-primary' %>

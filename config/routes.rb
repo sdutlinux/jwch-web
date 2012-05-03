@@ -1,14 +1,4 @@
 JwchWeb::Application.routes.draw do
-  get "links/index"
-
-  get "links/new"
-
-  get "links/create"
-
-  get "links/update"
-
-  get "links/destroy"
-
   root :to => 'welcome#index'
 
   get "news" => "news#index", :as => :news
@@ -25,6 +15,7 @@ JwchWeb::Application.routes.draw do
     resources :users
     resources :links
     resources :channels
+    resources :competitions
 
   end
 
