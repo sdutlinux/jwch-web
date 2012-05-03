@@ -1,6 +1,6 @@
 #coding=utf-8
 module Admin::DocumentsHelper
-
+=begin
   def  category
     [
            ['学业学籍','学业学籍'],['教学研究',' 教学研究'],['实践教学','实践教学'],
@@ -9,5 +9,5 @@ module Admin::DocumentsHelper
            ['其他','其他'],['教学评估','教学评估']
     ]
   end
-
+=end
 end
