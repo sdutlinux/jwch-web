@@ -32,11 +32,11 @@
 
 <p>
   <b> 分类 </b><br>
-  <%= @competition.category_id %>
+  <%= @competition.competition_type_id  %>
 </p>
 
 <div class="form-actions">
-  <%= link_to '返回', admin_competitions_path, :class => 'btn'  %>
-  <%= link_to '编辑 ', edit_admin_competition_path(@competition), :class => 'btn' %>
-  <%= link_to '删除', admin_competition_path(@competition), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+  <%= link_to '返回', admin_competition_type_competitions_path, :class => 'btn'  %>
+  <%= link_to '编辑 ', edit_admin_competition_type_competition_path(@competition), :class => 'btn' %>
+  <%= link_to '删除', admin_competition_type_competition_path(@competition), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
 </div>

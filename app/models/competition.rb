@@ -1,8 +1,8 @@
 #coding: utf-8
 class Competition < ActiveRecord::Base
-  attr_accessible :category_id, :member, :rank, :remark, :teacher, :time, :title
-  belongs_to :category
-  #validates :category_id,:member,:rank,:teacher,:time ,:title, :presence => true
+  attr_accessible :competition_type_id, :member, :rank, :remark, :teacher, :time, :title
+  belongs_to :competition_type
+#  validates :member,:rank,:teacher,:time ,:title, :presence => true
 end
 
 
@@ -10,7 +10,7 @@ end
 =begin
 创新竞赛表
 id            :integer primary_key
-category_id   :integer 分类
+competition_type_id    :integer 分类
 title         :string 标题
 rank          :string 奖项等级
 remark        :string 备注

@@ -14,8 +14,10 @@ JwchWeb::Application.routes.draw do
     resources :news
     resources :users
     resources :links
-    resources :channels
-    resources :competitions
+
+    resources :competition_types do
+      resources :competitions
+    end
 
   end
 

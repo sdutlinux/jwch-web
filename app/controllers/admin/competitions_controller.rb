@@ -1,9 +1,10 @@
 class Admin::CompetitionsController < ApplicationController
   layout "admin"
   before_filter :require_logined
+  before_filter :find_competition_type
 
   def index
-    @competitions = Competition.all
+    @competitions = @competition_type.competitions.all
 
     respond_to do |format|
       format.html
@@ -11,7 +12,7 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def show
-    @competition = Competition.find(params[:id])
+    @competition = @competition_type.competitions.find(params[:id])
 
     respond_to do |format|
       format.html
@@ -19,7 +20,8 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def new
-    @competition = Competition.new
+    @competition_type = CompetitionType.find(params[:competition_type_id])
+    @competition = @competition_type.competitions.build
 
     respond_to do |format|
       format.html
@@ -61,6 +63,12 @@ class Admin::CompetitionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_competitions_path }
     end
+  end
+
+  private
+
+  def find_competition_type
+    @competition_type = CompetitionType.find(params[:competition_type_id])
   end
 
 end
