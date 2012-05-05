@@ -20,7 +20,6 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def new
-    @competition_type = CompetitionType.find(params[:competition_type_id])
     @competition = @competition_type.competitions.build
 
     respond_to do |format|
@@ -29,15 +28,15 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def edit
-    @competition = Competition.find(params[:id])
+    @competition = @competition_type.competitions.find(params[:id])
   end
 
   def create
-    @competition = Competition.new(params[:competition])
+    @competition = @competition_type.competitions.new(params[:competition])
 
     respond_to do |format|
       if @competition.save
-        format.html { redirect_to [:admin,@competition], notice: 'Competition was successfully created.' }
+        format.html { redirect_to [:admin, @competition_type,@competition], notice: 'Competition was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -45,11 +44,11 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def update
-    @competition = Competition.find(params[:id])
+    @competition = @competition_type.competitions.find(params[:id])
 
     respond_to do |format|
       if @competition.update_attributes(params[:competition])
-        format.html { redirect_to admin_competition_path, notice: 'Competition was successfully updated.' }
+        format.html { redirect_to admin_competition_type_competition_path, notice: 'Competition was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
@@ -57,11 +56,11 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def destroy
-    @competition = Competition.find(params[:id])
+    @competition = @competition_type.competitions.find(params[:id])
     @competition.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_competitions_path }
+      format.html { redirect_to admin_competition_type_competitions_path }
     end
   end
 

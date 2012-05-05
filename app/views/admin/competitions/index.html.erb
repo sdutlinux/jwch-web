@@ -12,11 +12,11 @@
     <% @competitions.each do |competition| %>
       <tr>
         <td><%= competition.id %></td>
-        <td><%= link_to competition.title, admin_competition_type_competition_path(competition) %></td>
+        <td><%= link_to competition.title, admin_competition_type_competition_path(@competition_type,competition) %></td>
         <td><%= competition.created_at %></td>
         <td>
-          <%= link_to '编辑', edit_admin_competition_type_competition_path(competition), :class => 'btn btn-mini' %>
-          <%= link_to '删除', admin_competition_type_competition_path(competition), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to '编辑', edit_admin_competition_type_competition_path(@competition_type,competition), :class => 'btn btn-mini' %>
+          <%= link_to '删除', admin_competition_type_competition_path(@competition_type,competition), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
