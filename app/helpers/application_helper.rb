@@ -2,9 +2,7 @@
 module ApplicationHelper
   def nav_menus
     [
-      ['网站首页',root_path],
-      ['添加栏目',new_admin_channel_path],
-      ['所有栏目',admin_channels_path]
+      ['网站首页',root_path]
     ]
   end
 
