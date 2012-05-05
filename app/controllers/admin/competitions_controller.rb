@@ -20,12 +20,7 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def new
-<<<<<<< HEAD
-    @category = Category.find(params[:id])
-    @competition = @category.competitions.new
-=======
     @competition = @competition_type.competitions.build
->>>>>>> chuangx
 
     respond_to do |format|
       format.html
@@ -37,12 +32,7 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def create
-<<<<<<< HEAD
-    @category = Category.find(params[:id])
-    @competition = @category.competitions.new(params[:competition])
-=======
     @competition = @competition_type.competitions.new(params[:competition])
->>>>>>> chuangx
 
     respond_to do |format|
       if @competition.save

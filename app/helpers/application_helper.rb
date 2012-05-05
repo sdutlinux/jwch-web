@@ -11,21 +11,15 @@ module ApplicationHelper
   def dashboard_menu
     [
       {
-        :name => '管理菜单',
-        :items => [
+      :name => '管理菜单',
+      :items => [
           ['教务通知', 'news', admin_news_index_path],
           ['添加链接', 'links', admin_links_path],
           ['用户管理', 'users', admin_users_path],
-<<<<<<< HEAD
-          ['创新竞赛', 'competition', admin_competitions_path],
-         # ['创新竞赛', 'competition', new_admin_category_competition_path],
-          ['下载专区', 'document', admin_documents_path]
-=======
           ['下载专区', 'document', admin_documents_path],
           ['创新竞赛', 'competition', admin_competition_types_path]
->>>>>>> chuangx
         ]
-      }
+    }
     ]
   end
 

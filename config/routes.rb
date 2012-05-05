@@ -15,15 +15,7 @@ JwchWeb::Application.routes.draw do
     resources :users
     resources :links
 
-<<<<<<< HEAD
-    resources :channels do
-      resources :categorys
-    end
-
-    resources :categorys  do
-=======
     resources :competition_types do
->>>>>>> chuangx
       resources :competitions
     end
 
