@@ -2,7 +2,8 @@ class Admin::NewsController < ApplicationController
   layout "admin"
   before_filter :require_logined
   def index
-    @news = News.all
+    @news = News.paginate :page=>params[:page], :order => 'created_at desc',
+      :per_page => 3
 
     respond_to do |format|
       format.html # index.html.erb
@@ -53,8 +54,6 @@ class Admin::NewsController < ApplicationController
     end
   end
 
-  # DELETE /news/1
-  # DELETE /news/1.json
   def destroy
     @news = News.find(params[:id])
     @news.destroy
