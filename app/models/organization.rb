@@ -6,7 +6,7 @@ end
   id integer
   author string
   category_id integer
-  responsibility string
+  responsibility text
   show bool
   created_at
   updated_at
