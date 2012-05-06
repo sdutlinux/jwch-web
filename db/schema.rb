@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120504133018) do
+ActiveRecord::Schema.define(:version => 20120506065738) do
 
   create_table "categories", :force => true do |t|
     t.integer  "channel_id"
@@ -72,6 +72,17 @@ ActiveRecord::Schema.define(:version => 20120504133018) do
     t.boolean  "show"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "organizations", :force => true do |t|
+    t.string   "name"
+    t.string   "responsibility"
+    t.string   "author"
+    t.boolean  "show"
+    t.integer  "category_id"
+    t.string   "category_name"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|
