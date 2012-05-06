@@ -6,6 +6,8 @@ class Admin::OrganizationsController < ApplicationController
   def index
     @people = Organization.where(:category_id => 1)
     @organizations = Organization.where(:category_id => 2)
+#    @people = Organization.all
+ #   @organizations = Organization.all
 
     respond_to do |format|
       format.html
@@ -13,7 +15,7 @@ class Admin::OrganizationsController < ApplicationController
   end
 
   def new
-    @organization = params[:category_id]
+    @organization = Organization.new
 
     respond_to do |format|
       format.html
@@ -50,7 +52,7 @@ class Admin::OrganizationsController < ApplicationController
     @organization = Organization.find(params[:id])
 
     respond_to do |format|
-      if @link.update_attributes(params[:organization])
+      if @organization.update_attributes(params[:organization])
         format.html { redirect_to admin_organizations_path, notice: ' 链接更新成功' }
       else
         format.html { render action: "edit" }

@@ -1,0 +1,31 @@
+<p>
+  <b>标题</b>
+  <%= @organization.name %>
+</p>
+
+<p>
+  <b>内容</b>
+  <%= @organization.responsibility  %>
+</p>
+
+<p>
+  <b>作者</b>
+  <%= @organization.author %>
+</p>
+
+<p>
+  <b>分类</b>
+  <%= @organization.category_id  %>
+</p>
+
+
+<p>
+  <b>是否发布</b>
+  <%= @organization.show %>
+</p>
+
+<div class="form-actions">
+  <%= link_to '返回', admin_organizations_path, :class => 'btn'  %>
+  <%= link_to '编辑', edit_admin_organization_path(@organization), :class => 'btn' %>
+  <%= link_to '删除', admin_organization_path(@organization), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

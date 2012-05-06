@@ -4,9 +4,12 @@ class News < ActiveRecord::Base
 end
 
 =begin
+      integer :id     primary_key
       string :title
       string :content
       string :author
       string :department
       boolean :show
+      date    :created_at
+      date    :updated_at
 =end

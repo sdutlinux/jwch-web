@@ -42,3 +42,16 @@ private
   end
 
 end
+
+
+=begin
+  integer :id     primary_key
+  string  :name
+  string  :hashed_password
+  string  :salt
+  string  :department
+  boolean :admin
+  string :power
+  date   :created_at
+  date   :updated_at
+=end
