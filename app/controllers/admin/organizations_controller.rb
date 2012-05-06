@@ -12,8 +12,8 @@ class Admin::OrganizationsController < ApplicationController
     end
   end
 
-  def people_new
-    @organization = Organization.new
+  def new
+    @organization = params[:category_id]
 
     respond_to do |format|
       format.html

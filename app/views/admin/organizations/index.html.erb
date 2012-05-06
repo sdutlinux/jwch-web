@@ -26,7 +26,7 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to "添加", new_admin_organization_path, :category_id => 1, :class => 'btn'%>
+<%= link_to "添加", new_admin_organization_path(:category_id => 1),  :class => 'btn'%>
 <br>
 <br>
 
@@ -57,4 +57,4 @@
 
   </tbody>
 </table>
-<%= link_to "添加", new_admin_organization_path, :class => 'btn'%>
+<%= link_to "添加", new_admin_organization_path(:category_id => 2), :class => 'btn'%>
