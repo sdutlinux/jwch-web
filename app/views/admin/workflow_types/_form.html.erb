@@ -1,0 +1,31 @@
+<%= form_for [:admin,@workflow_type],:url => admin_workflow_types_path, :html => { :class => 'form-horizontal' } do |workflow_type| %>
+  <% if @workflow_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @workflow_type.errors.count %>错误，不能保存：</h2>
+      <ul>
+      <% @workflow_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <legend>分类</legend>
+
+    <div class="control-group">
+      <%= workflow_type.label "标题", :class => 'control-label' %>
+      <div class="controls">
+        <%= workflow_type.text_field :name, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= workflow_type.hidden_field :channel_name, :value => "#{params[:channel_name]}" %>
+    </div>
+
+    <div class="form-actions">
+      <%= workflow_type.submit '发布', :class => 'btn btn-primary' %>
+      <%= link_to '取消', admin_workflow_types_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
