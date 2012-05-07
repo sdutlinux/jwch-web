@@ -9,12 +9,14 @@ end
 
 =begin
 创新竞赛表
-id            :integer primary_key
-competition_type_id    :integer 分类
-title         :string 标题
-rank          :string 奖项等级
-remark        :string 备注
-member        :string  成员
-time          :date 时间
-teacher       :string 指导老师
+:id            integer primary_key
+:competition_type_id    integer 分类
+:title         string 标题
+:rank          string 奖项等级
+:remark        string 备注
+:member        string  成员
+:time          date 时间
+:teacher       string 指导老师
+:created_at    date
+:updated_at    date
 =end

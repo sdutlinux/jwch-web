@@ -26,3 +26,14 @@ class Document < ActiveRecord::Base
   end
 
 end
+
+=begin rdoc
+
+下载文档表
+  :author string
+  :category string
+  :content_type string
+  :name   string
+  :path   string
+
+=end

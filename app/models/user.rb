@@ -1,3 +1,4 @@
+#coding: utf-8
 class User < ActiveRecord::Base
 
   #attr_accessor :password_confirmation
@@ -45,6 +46,7 @@ end
 
 
 =begin
+用户表
   integer :id     primary_key
   string  :name
   string  :hashed_password

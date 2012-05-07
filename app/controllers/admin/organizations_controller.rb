@@ -6,8 +6,6 @@ class Admin::OrganizationsController < ApplicationController
   def index
     @people = Organization.where(:category_id => 1)
     @organizations = Organization.where(:category_id => 2)
-#    @people = Organization.all
- #   @organizations = Organization.all
 
     respond_to do |format|
       format.html

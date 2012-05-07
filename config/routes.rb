@@ -20,6 +20,10 @@ JwchWeb::Application.routes.draw do
       resources :competitions
     end
 
+    resources :workflow_types do
+      resources :workflows
+    end
+
   end
 
   # The priority is based upon order of creation:
