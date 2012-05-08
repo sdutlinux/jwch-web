@@ -1,9 +1,10 @@
-<%= form_for [:admin,@workflow_type], :html => { :class => 'form-horizontal' } do |type| %>
-  <% if @workflow_type.errors.any? %>
+<%= params[:channel_name]%>
+<%= form_for [:admin,@category], :html => { :class => 'form-horizontal' } do |type| %>
+  <% if @category.errors.any? %>
     <div id="error_explanation">
-      <h2><%= @workflow_type.errors.count %>错误，不能保存：</h2>
+      <h2><%= @category.errors.count %>错误，不能保存：</h2>
       <ul>
-      <% @workflow_type.errors.full_messages.each do |msg| %>
+      <% @category.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

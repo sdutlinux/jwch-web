@@ -1,1 +1,59 @@
-<%= render :partial => 'form' %>
+<%= form_for [@competition_type,@competition], :url => admin_competition_type_competition_path, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %>创新竞赛</legend>
+
+    <div class="control-group">
+      <%= f.label '标题', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label '奖项等级', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :rank, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label '日期 ', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.date_select :time, :class => 'date_select' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label '指导老师', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :teacher, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label '团队成员', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :member, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label  '备注', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :remark, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label '分类', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :competition_type_id, :class => 'number_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit '提交', :class => 'btn btn-primary' %>
+      <%= link_to '取消', admin_competition_type_competitions_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

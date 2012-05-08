@@ -4,8 +4,7 @@ class Admin::WorkflowTypesController < ApplicationController
   before_filter :require_logined
 
   def index
-    #@workflow_types = Category.where(:channel_name => "workflow")
-    @workflow_types = Category.all
+    @categories = Category.where(:channel_name => "workflow")
 
     respond_to do |format|
       format.html
@@ -13,7 +12,7 @@ class Admin::WorkflowTypesController < ApplicationController
   end
 
   def new
-    @workflow_type = Category.new
+    @category  = Category.new
 
     respond_to do |format|
       format.html
@@ -21,10 +20,10 @@ class Admin::WorkflowTypesController < ApplicationController
   end
 
   def create
-    @workflow_type = Category.new(params[:workflow_type])
+    @category  = Category.new(params[:category])
 
     respond_to do |format|
-      if @workflow_type.save
+      if @category.save
         format.html { redirect_to admin_workflow_types_path, notice: '创建成功' }
       else
         format.html { render action: "new" }
@@ -33,14 +32,14 @@ class Admin::WorkflowTypesController < ApplicationController
   end
 
   def edit
-    @workflow_type = Category.find(params[:id])
+    @category = Category.find(params[:id])
   end
 
   def update
-    @workflow_type = Category.find(params[:id])
+    @category = Category.find(params[:id])
 
     respond_to do |format|
-      if @workflow_type.update_attributes(params[:workflow_type])
+      if @category.update_attributes(params[:category])
         format.html { redirect_to admin_workflow_types_path, notice: '更新成功' }
       else
         format.html { render action: "edit" }
@@ -56,7 +55,5 @@ class Admin::WorkflowTypesController < ApplicationController
       format.html { redirect_to admin_workflow_types_path }
     end
   end
-
-
 
 end

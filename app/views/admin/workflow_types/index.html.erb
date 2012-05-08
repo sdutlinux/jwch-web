@@ -10,19 +10,19 @@
     </tr>
   </thead>
   <tbody>
-    <% @workflow_types.each do |workflow_type| %>
+    <% @categories.each do |workflow_type| %>
       <tr>
         <td><%= workflow_type.id %></td>
         <td><%= link_to workflow_type.name, admin_workflow_type_workflows_path(workflow_type) %></td>
         <td><%= workflow_type.channel_name %></td>
         <td><%= workflow_type.created_at %></td>
         <td>
-          <%= link_to '编辑', edit_admin_workflow_type_path(workflow_type), :class => 'btn btn-mini' %>
-          <%= link_to '删除', admin_workflow_type_path(workflow_type), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to '编辑', edit_admin_category_path(workflow_type,:channel_name => "workflow"), :class => 'btn btn-mini' %>
+          <%= link_to '删除', admin_category_path(workflow_type), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to '添加新分类', new_admin_workflow_type_path(:channel_name => "workflow"), :class => 'btn btn-primary' %>
+<%= link_to '添加新分类', new_admin_category_path(:channel_name => "workflow"), :class => 'btn btn-primary' %>

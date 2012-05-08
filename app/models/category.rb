@@ -2,6 +2,7 @@
 class Category < ActiveRecord::Base
   attr_accessible :channel_id, :name, :channel_name
   has_many :workflows
+  validates :name, :channel_name, :presence => true
 end
 
 
