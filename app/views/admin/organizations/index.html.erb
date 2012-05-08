@@ -16,12 +16,12 @@
     <% @people.each do |people| %>
       <tr>
         <td><%= people.id %></td>
-        <td><%= link_to people.name, admin_organization_path(people) %></td>
+        <td><%= link_to people.name, admin_organization_path(people,:category_id => 1) %></td>
         <td><%= people.created_at %></td>
         <td><%= people.category_id %></td>
         <td><%= people.author %></td>
         <td>
-          <%= link_to '编辑', edit_admin_organization_path(people), :class => 'btn btn-mini' %>
+          <%= link_to '编辑', edit_admin_organization_path(people,:category_id => 1), :class => 'btn btn-mini' %>
           <%= link_to '删除', admin_organization_path(people), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
@@ -47,12 +47,12 @@
     <% @organizations.each do |organization| %>
       <tr>
         <td><%= organization.id %></td>
-        <td><%= link_to organization.name, admin_organization_path(organization) %></td>
+        <td><%= link_to organization.name, admin_organization_path(organization,:category_id => 2) %></td>
         <td><%= organization.created_at %></td>
         <td><%= organization.category_id %></td>
         <td><%= organization.author %></td>
         <td>
-          <%= link_to '编辑', edit_admin_organization_path(organization), :class => 'btn btn-mini' %>
+          <%= link_to '编辑', edit_admin_organization_path(organization,:category_id => 2), :class => 'btn btn-mini' %>
           <%= link_to '删除', admin_organization_path(organization), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>

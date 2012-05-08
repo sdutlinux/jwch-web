@@ -1,4 +1,4 @@
-<%= form_for [:admin,@law], :html => { :class => 'form-horizontal' } do |organization| %>
+<%= form_for [:admin,@law], :html => { :class => 'form-horizontal' } do |law| %>
   <% if @law.errors.any? %>
     <div id="error_explanation">
       <h2><%= @law.errors.count %>错误，不能保存：</h2>

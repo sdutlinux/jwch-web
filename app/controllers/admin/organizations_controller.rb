@@ -51,7 +51,7 @@ class Admin::OrganizationsController < ApplicationController
 
     respond_to do |format|
       if @organization.update_attributes(params[:organization])
-        format.html { redirect_to admin_organizations_path, notice: ' 链接更新成功' }
+        format.html { redirect_to admin_organizations_path, notice: '更新成功' }
       else
         format.html { render action: "edit" }
       end

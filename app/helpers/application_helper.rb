@@ -18,9 +18,9 @@ module ApplicationHelper
           ['机构设置', 'organizations', admin_organizations_path],
           ['创新竞赛', 'competition', admin_competition_types_path],
           ['工作流程', 'workflow', admin_workflow_types_path],
-          ['政策法规', 'workflow', admin_workflow_types_path],
-          ['规章制度', 'workflow', admin_laws_path],
+          ['政策法规', 'workflow', admin_laws_path],
           ['人才培养', 'workflow', admin_workflow_types_path],
+          ['规章制度', 'workflow', admin_laws_path],
           ['教学研究', 'workflow', admin_workflow_types_path],
           ['教学简讯', 'workflow', admin_workflow_types_path]
         ]

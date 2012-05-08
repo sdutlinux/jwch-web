@@ -22,7 +22,7 @@ class Admin::LawsController < ApplicationController
   end
 
   def create
-    @law = Law.new(params[:organization])
+    @law = Law.new(params[:law])
 
     respond_to do |format|
       if @law.save
@@ -50,8 +50,8 @@ class Admin::LawsController < ApplicationController
     @law = Law.find(params[:id])
 
     respond_to do |format|
-      if @law.update_attributes(params[:organization])
-        format.html { redirect_to admin_laws_path, notice: ' 链接更新成功' }
+      if @law.update_attributes(params[:law])
+        format.html { redirect_to admin_laws_path, notice: '更新成功' }
       else
         format.html { render action: "edit" }
       end

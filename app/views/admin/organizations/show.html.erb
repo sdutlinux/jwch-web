@@ -26,6 +26,6 @@
 
 <div class="form-actions">
   <%= link_to '返回', admin_organizations_path, :class => 'btn'  %>
-  <%= link_to '编辑', edit_admin_organization_path(@organization), :class => 'btn' %>
+  <%= link_to '编辑', edit_admin_organization_path(@organization,:category_id => params[:category_id]), :class => 'btn' %>
   <%= link_to '删除', admin_organization_path(@organization), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
 </div>
