@@ -68,7 +68,7 @@ class Admin::WorkflowsController < ApplicationController
   private
 
   def find_workflow_type
-    @workflow_type = Category.find(params[:workflow_type_id])
+    @workflow_type = WorkflowType.find(params[:workflow_type_id])
   end
 
 end

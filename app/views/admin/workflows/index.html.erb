@@ -5,7 +5,6 @@
       <th>序号</th>
       <th>标题</th>
       <th>发布于</th>
-      <th>分类id</th>
       <th>动作</th>
     </tr>
   </thead>
@@ -15,7 +14,6 @@
         <td><%= workflow.id %></td>
         <td><%= link_to workflow.title, admin_workflow_type_workflow_path(@workflow_type,workflow) %></td>
         <td><%= workflow.created_at %></td>
-        <td><%= workflow.category_id %></td>
         <td>
           <%= link_to '编辑', edit_admin_workflow_type_workflow_path(@workflow_type,workflow), :class => 'btn btn-mini' %>
           <%= link_to '删除', admin_workflow_type_workflow_path(@workflow_type,workflow), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>

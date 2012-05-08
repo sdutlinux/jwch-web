@@ -7,6 +7,7 @@ gem 'rails', '3.2.3'
 
 gem 'mysql2'
 gem 'will_paginate', '~> 3.0'
+gem 'rails_kindeditor', '~> 0.3.0'
 
 
 # Gems used only for assets and not required

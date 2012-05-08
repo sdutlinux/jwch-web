@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120507114751) do
+ActiveRecord::Schema.define(:version => 20120508093419) do
 
   create_table "categories", :force => true do |t|
     t.integer  "channel_id"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20120507114751) do
 
   create_table "news", :force => true do |t|
     t.string   "title"
-    t.string   "content"
+    t.text     "content"
     t.string   "author"
     t.string   "department"
     t.boolean  "show"
@@ -97,12 +97,18 @@ ActiveRecord::Schema.define(:version => 20120507114751) do
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "workflow_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "workflows", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "workflow_type_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end

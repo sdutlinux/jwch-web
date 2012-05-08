@@ -1,7 +1,7 @@
 #coding: utf-8
 class Workflow < ActiveRecord::Base
   attr_accessible :category_id, :content, :title
-  belongs_to :category
+  belongs_to :workflow_type
 end
 
 =begin

@@ -4,7 +4,7 @@ class Admin::WorkflowTypesController < ApplicationController
   before_filter :require_logined
 
   def index
-    @categories = Category.where(:channel_name => "workflow")
+    @workflow_types = WorkflowType.all
 
     respond_to do |format|
       format.html
@@ -12,7 +12,7 @@ class Admin::WorkflowTypesController < ApplicationController
   end
 
   def new
-    @category  = Category.new
+    @workflow_type  = WorkflowType.new
 
     respond_to do |format|
       format.html
@@ -20,10 +20,10 @@ class Admin::WorkflowTypesController < ApplicationController
   end
 
   def create
-    @category  = Category.new(params[:category])
+    @workflow_type  = WorkflowType.new(params[:workflow_type])
 
     respond_to do |format|
-      if @category.save
+      if @workflow_type.save
         format.html { redirect_to admin_workflow_types_path, notice: '创建成功' }
       else
         format.html { render action: "new" }
@@ -32,14 +32,14 @@ class Admin::WorkflowTypesController < ApplicationController
   end
 
   def edit
-    @category = Category.find(params[:id])
+    @workflow_type = WorkflowType.find(params[:id])
   end
 
   def update
-    @category = Category.find(params[:id])
+    @workflow_type = WorkflowType.find(params[:id])
 
     respond_to do |format|
-      if @category.update_attributes(params[:category])
+      if @workflow_type.update_attributes(params[:workflow_type])
         format.html { redirect_to admin_workflow_types_path, notice: '更新成功' }
       else
         format.html { render action: "edit" }
@@ -48,7 +48,7 @@ class Admin::WorkflowTypesController < ApplicationController
   end
 
   def destroy
-    @workflow_type = Category.find(params[:id])
+    @workflow_type = WorkflowType.find(params[:id])
     @workflow_type.destroy
 
     respond_to do |format|

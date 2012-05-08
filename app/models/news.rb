@@ -9,7 +9,7 @@ end
 教务通知表
       integer :id     primary_key
       string :title
-      string :content
+      text :content
       string :author
       string :department
       boolean :show

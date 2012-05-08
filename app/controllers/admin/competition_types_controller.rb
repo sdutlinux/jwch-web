@@ -56,5 +56,4 @@ class Admin::CompetitionTypesController < ApplicationController
     end
   end
 
-
 end
