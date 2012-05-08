@@ -1,3 +1,4 @@
+#coding: utf-8
 class Admin::WorkflowsController < ApplicationController
   layout "admin"
   before_filter :require_logined
