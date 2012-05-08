@@ -17,7 +17,7 @@ module ApplicationHelper
           ['下载专区', 'document', admin_documents_path],
           ['组织机构', 'organizations', admin_organizations_path],
           ['创新竞赛', 'competition', admin_competition_types_path],
-          ['工作流程', 'workflow', admin_workflow_types_path]
+          ['工作流程', 'workflow', admin_categories_path(:channel_name => "workflow")]
         ]
     }
     ]

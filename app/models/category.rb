@@ -1,6 +1,6 @@
 #coding: utf-8
 class Category < ActiveRecord::Base
-  attr_accessible :channel_id, :name
+  attr_accessible :channel_id, :name, :channel_name
   has_many :workflows
 end
 
