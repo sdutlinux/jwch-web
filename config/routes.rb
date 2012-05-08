@@ -15,6 +15,7 @@ JwchWeb::Application.routes.draw do
     resources :users
     resources :links
     resources :organizations
+    resources :laws
 
     resources :competition_types do
       resources :competitions
