@@ -1,0 +1,18 @@
+<h1>详细信息</h1>
+
+<p>
+  <b>标题</b><br>
+  <%= @rule.title %>
+</p>
+
+<p>
+  <b>内容</b><br>
+  <%= @rule.content %>
+</p>
+
+
+<div class="form-actions">
+  <%= link_to '返回', admin_rule_type_rules_path, :class => 'btn'  %>
+  <%= link_to '编辑 ', edit_admin_rule_type_rule_path(@rule_type,@rule), :class => 'btn' %>
+  <%= link_to '删除', admin_rule_type_rule_path(@rule_type,@rule), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

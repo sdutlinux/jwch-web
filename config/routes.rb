@@ -21,9 +21,12 @@ JwchWeb::Application.routes.draw do
       resources :competitions
     end
 
-
     resources :workflow_types do
       resources :workflows
+    end
+
+    resources :rule_types do
+      resources :rules
     end
 
   end

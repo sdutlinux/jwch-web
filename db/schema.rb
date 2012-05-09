@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120508105601) do
+ActiveRecord::Schema.define(:version => 20120509074256) do
 
   create_table "categories", :force => true do |t|
     t.integer  "channel_id"
@@ -84,6 +84,20 @@ ActiveRecord::Schema.define(:version => 20120508105601) do
     t.string   "category_name"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "rule_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "rules", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "rule_type_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|
