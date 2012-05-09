@@ -1,13 +1,13 @@
 #coding: utf-8
 class Workflow < ActiveRecord::Base
-  attr_accessible :category_id, :content, :title
+  attr_accessible :workflow_type_id, :content, :title
   belongs_to :workflow_type
 end
 
 =begin
 工作流程表
   integer   :id
-  integer   :category_id
+  integer   :workflow_type_id
   string    :title
   text      :content
   date      :created_at
