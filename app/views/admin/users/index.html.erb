@@ -4,6 +4,7 @@
     <tr>
       <th> 序号</th>
       <th> 姓名 </th>
+      <th> 部门</th>
       <th> 创建于</th>
       <th> 动作</th>
     </tr>
@@ -13,6 +14,7 @@
       <tr>
         <td><%= user.id %></td>
         <td><%= user.name %></td>
+        <td><%= user.department %></td>
         <td><%= user.created_at %></td>
         <td>
           <%= link_to '编辑', edit_admin_user_path(user), :class => 'btn btn-mini' %>
