@@ -53,6 +53,7 @@ class Admin::WorkflowTypesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to admin_workflow_types_path }
+      format.js
     end
   end
 
