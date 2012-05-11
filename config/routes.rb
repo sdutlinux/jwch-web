@@ -1,4 +1,5 @@
 JwchWeb::Application.routes.draw do
+
   root :to => 'welcome#index'
 
   get "news" => "news#index", :as => :news
@@ -28,6 +29,11 @@ JwchWeb::Application.routes.draw do
     resources :rule_types do
       resources :rules
     end
+
+    resources :course_types do
+      resources :courses
+    end
+
 
   end
 

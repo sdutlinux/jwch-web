@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  number: 1
+  point: 1
+  pre_course: MyString
+  college_type_id: 1
+  book: MyString
+  introduction: MyText
+  references: MyString
+  major: 
+  level: MyString
+
+two:
+  name: MyString
+  number: 1
+  point: 1
+  pre_course: MyString
+  college_type_id: 1
+  book: MyString
+  introduction: MyText
+  references: MyString
+  major: 
+  level: MyString

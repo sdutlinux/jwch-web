@@ -1,0 +1,26 @@
+<h1>课程介绍</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>标题</th>
+      <th>发布于</th>
+      <th>动作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @course_types.each do |course_type| %>
+      <tr>
+        <td><%= course_type.id %></td>
+        <td><%= link_to course_type.college, admin_course_type_courses_path(course_type) %></td>
+        <td><%= course_type.created_at %></td>
+        <td>
+          <%= link_to '编辑', edit_admin_course_type_path(course_type,), :class => 'btn btn-mini' %>
+          <%= link_to '删除', admin_course_type_path(course_type), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to '添加新分类', new_admin_course_type_path(), :class => 'btn btn-primary' %>

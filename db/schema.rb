@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120509074256) do
+ActiveRecord::Schema.define(:version => 20120511135904) do
 
   create_table "categories", :force => true do |t|
     t.integer  "channel_id"
@@ -37,6 +37,27 @@ ActiveRecord::Schema.define(:version => 20120509074256) do
     t.integer  "competition_type_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+  end
+
+  create_table "course_types", :force => true do |t|
+    t.string   "college"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "courses", :force => true do |t|
+    t.string   "name"
+    t.integer  "number"
+    t.integer  "point"
+    t.string   "pre_course"
+    t.integer  "course_type_id"
+    t.string   "book"
+    t.text     "introduction"
+    t.string   "references"
+    t.string   "major"
+    t.string   "level"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "documents", :force => true do |t|
