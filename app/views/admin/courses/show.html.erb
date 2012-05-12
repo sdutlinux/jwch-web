@@ -1,0 +1,57 @@
+<h1>详细信息</h1>
+
+<p>
+  <b>标题</b><br>
+  <%= @course.name %>
+</p>
+
+<p>
+  <b>编号</b><br>
+  <%= @course.number %>
+</p>
+
+<p>
+  <b> 学分</b><br>
+  <%= @course.point %>
+</p>
+
+<p>
+  <b> 先修课</b><br>
+  <%= @course.pre_course %>
+</p>
+
+<p>
+  <b> book</b><br>
+  <%= @course.book %>
+</p>
+
+<p>
+  <b>major </b><br>
+  <%= @course.major %>
+</p>
+
+<p>
+  <b> references </b><br>
+  <%= @course.references %>
+</p>
+
+<p>
+  <b> introduction </b><br>
+  <%= @course.introduction %>
+</p>
+
+<p>
+  <b> level </b><br>
+  <%= @course.level %>
+</p>
+
+<p>
+  <b> 分类 </b><br>
+  <%= @course.course_type_id  %>
+</p>
+
+<div class="form-actions">
+  <%= link_to '返回', admin_course_type_courses_path, :class => 'btn'  %>
+  <%= link_to '编辑 ', edit_admin_course_type_course_path(@course_type,@course), :class => 'btn' %>
+  <%= link_to '删除', admin_course_type_course_path(@course_type,@course), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>
