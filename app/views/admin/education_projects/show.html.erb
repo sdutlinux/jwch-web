@@ -1,2 +1,32 @@
-<h1>Admin::EducationProjects#show</h1>
-<p>Find me in app/views/admin/education_projects/show.html.erb</p>
+<h1>/Education Project</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @education_project.name %>
+</p>
+
+<p>
+  <b>Year</b><br>
+  <%= @education_project.year %>
+</p>
+
+<p>
+  <b>Department</b><br>
+  <%= @education_project.department %>
+</p>
+
+<p>
+  <b>Team</b><br>
+  <%= @education_project.team %>
+</p>
+
+<p>
+  <b>Rank</b><br>
+  <%= @education_project.rank %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', admin_education_projects_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_admin_education_project_path(@education_project), :class => 'btn' %>
+  <%= link_to 'Delete', admin_education_project_path(@education_project), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

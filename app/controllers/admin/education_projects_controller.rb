@@ -32,7 +32,7 @@ class Admin::EducationProjectsController < ApplicationController
   end
 
   def create
-    @education_project = EducationProject.new(params[:news])
+    @education_project = EducationProject.new(params[:education_project])
 
     respond_to do |format|
       if @education_project.save
@@ -60,8 +60,7 @@ class Admin::EducationProjectsController < ApplicationController
     @education_project.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_education_project_index_url }
-      format.json { head :no_content }
+      format.html { redirect_to admin_education_projects_path }
     end
   end
 
