@@ -11,8 +11,8 @@ class NewsController < ApplicationController
     @news = News.find(params[:id])
 
     respond_to do |format|
-      format.html 
+      format.html
     end
   end
-  
+
 end

@@ -7,6 +7,7 @@ class CompetitionType < ActiveRecord::Base
 end
 
 =begin rdoc
+
   创新竞赛类型表
   :id   integer primary_key
   :name string
