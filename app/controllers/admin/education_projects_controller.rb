@@ -47,7 +47,7 @@ class Admin::EducationProjectsController < ApplicationController
     @education_project = EducationProject.find(params[:id])
 
     respond_to do |format|
-      if @education_project.update_attributes(params[:news])
+      if @education_project.update_attributes(params[:education_project])
         format.html { redirect_to admin_education_project_path, notice: 'EducationProject was successfully updated.' }
       else
         format.html { render action: "edit" }

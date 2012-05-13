@@ -1,2 +1,26 @@
-<h1>Admin::TeachingAchievements#index</h1>
-<p>Find me in app/views/admin/teaching_achievements/index.html.erb</p>
+<h1>Teaching Achievements</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teaching_achievements.each do |teaching_achievement| %>
+      <tr>
+        <td><%= teaching_achievement.id %></td>
+        <td><%= link_to teaching_achievement.name, admin_teaching_achievement_path(teaching_achievement) %></td>
+        <td><%= teaching_achievement.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_teaching_achievement_path(teaching_achievement), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', admin_teaching_achievement_path(teaching_achievement), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_admin_teaching_achievement_path, :class => 'btn btn-primary' %>

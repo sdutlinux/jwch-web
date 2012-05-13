@@ -2,8 +2,9 @@
 class Admin::TeachingAchievementsController < ApplicationController
   layout "admin"
   before_filter :require_logined
+
   def index
-    @teaching_archievements = TeachingAchievement.paginate :page=>params[:page], :order => 'created_at desc',
+    @teaching_achievements = TeachingAchievement.paginate :page=>params[:page], :order => 'created_at desc',
       :per_page => 10
 
     respond_to do |format|
@@ -12,7 +13,7 @@ class Admin::TeachingAchievementsController < ApplicationController
   end
 
   def show
-    @teaching_archievement = TeachingAchievement.find(params[:id])
+    @teaching_achievement = TeachingAchievement.find(params[:id])
 
     respond_to do |format|
       format.html
@@ -20,7 +21,7 @@ class Admin::TeachingAchievementsController < ApplicationController
   end
 
   def new
-    @teaching_archievement = TeachingAchievement.new
+    @teaching_achievement = TeachingAchievement.new
 
     respond_to do |format|
       format.html
@@ -28,15 +29,15 @@ class Admin::TeachingAchievementsController < ApplicationController
   end
 
   def edit
-    @teaching_archievement = TeachingAchievement.find(params[:id])
+    @teaching_achievement = TeachingAchievement.find(params[:id])
   end
 
   def create
-    @teaching_archievement = TeachingAchievement.new(params[:news])
+    @teaching_achievement = TeachingAchievement.new(params[:teaching_achievement])
 
     respond_to do |format|
-      if @teaching_archievement.save
-        format.html { redirect_to [:admin,@teaching_archievement], notice: 'TeachingAchievement was successfully created.' }
+      if @teaching_achievement.save
+        format.html { redirect_to [:admin,@teaching_achievement], notice: 'TeachingAchievement was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -44,11 +45,11 @@ class Admin::TeachingAchievementsController < ApplicationController
   end
 
   def update
-    @teaching_archievement = TeachingAchievement.find(params[:id])
+    @teaching_achievement = TeachingAchievement.find(params[:id])
 
     respond_to do |format|
-      if @teaching_archievement.update_attributes(params[:news])
-        format.html { redirect_to admin_teaching_archievement_path, notice: 'TeachingAchievement was successfully updated.' }
+      if @teaching_achievement.update_attributes(params[:teaching_achievement])
+        format.html { redirect_to admin_teaching_achievement_path, notice: 'TeachingAchievement was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
@@ -56,11 +57,11 @@ class Admin::TeachingAchievementsController < ApplicationController
   end
 
   def destroy
-    @teaching_archievement = TeachingAchievement.find(params[:id])
-    @teaching_archievement.destroy
+    @teaching_achievement = TeachingAchievement.find(params[:id])
+    @teaching_achievement.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_teaching_archievement_index_url }
+      format.html { redirect_to admin_teaching_achievements_path}
       format.json { head :no_content }
     end
   end
