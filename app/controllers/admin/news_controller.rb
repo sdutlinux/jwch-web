@@ -1,3 +1,4 @@
+#coding=utf-8
 class Admin::NewsController < ApplicationController
   layout "admin"
   before_filter :require_logined
@@ -6,7 +7,7 @@ class Admin::NewsController < ApplicationController
       :per_page => 3
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
     end
   end
 
@@ -14,7 +15,7 @@ class Admin::NewsController < ApplicationController
     @news = News.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
     end
   end
 
@@ -22,7 +23,7 @@ class Admin::NewsController < ApplicationController
     @news = News.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
     end
   end
 

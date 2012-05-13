@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120511135904) do
+ActiveRecord::Schema.define(:version => 20120513140118) do
 
   create_table "categories", :force => true do |t|
     t.integer  "channel_id"
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(:version => 20120511135904) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "education_projects", :force => true do |t|
+    t.string   "name"
+    t.date     "year"
+    t.string   "department"
+    t.string   "team"
+    t.string   "rank"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "laws", :force => true do |t|
     t.string   "title"
     t.text     "content"
@@ -119,6 +129,16 @@ ActiveRecord::Schema.define(:version => 20120511135904) do
     t.integer  "rule_type_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "teaching_achievements", :force => true do |t|
+    t.string   "name"
+    t.date     "year"
+    t.string   "department", :default => "山东理工大学"
+    t.string   "team"
+    t.string   "rank"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "users", :force => true do |t|
