@@ -4,7 +4,7 @@
     <tr>
       <th>序号</th>
       <th>标题</th>
-      <th>创建于</th>
+      <th>年份</th>
       <th>动作</th>
     </tr>
   </thead>
@@ -13,10 +13,10 @@
       <tr>
         <td><%= teaching_achievement.id %></td>
         <td><%= link_to teaching_achievement.name, admin_teaching_achievement_path(teaching_achievement) %></td>
-        <td><%= teaching_achievement.created_at %></td>
+        <td><%= teaching_achievement.year %></td>
         <td>
-          <%= link_to 'Edit', edit_admin_teaching_achievement_path(teaching_achievement), :class => 'btn btn-mini' %>
-          <%= link_to 'Destroy', admin_teaching_achievement_path(teaching_achievement), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to '编辑', edit_admin_teaching_achievement_path(teaching_achievement), :class => 'btn btn-mini' %>
+          <%= link_to '删除', admin_teaching_achievement_path(teaching_achievement), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>

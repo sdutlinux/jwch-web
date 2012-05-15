@@ -1,32 +1,32 @@
-<h1>/Teaching Achievement</h1>
+<h1>教学成果</h1>
 
 <p>
-  <b>Name</b><br>
+  <b>标题</b><br>
   <%= @teaching_achievement.name %>
 </p>
 
 <p>
-  <b>Year</b><br>
+  <b>年份</b><br>
   <%= @teaching_achievement.year %>
 </p>
 
 <p>
-  <b>Department</b><br>
+  <b>部门</b><br>
   <%= @teaching_achievement.department %>
 </p>
 
 <p>
-  <b>Team</b><br>
+  <b>负责人</b><br>
   <%= @teaching_achievement.team %>
 </p>
 
 <p>
-  <b>Rank</b><br>
+  <b>等级</b><br>
   <%= @teaching_achievement.rank %>
 </p>
 
 <div class="form-actions">
-  <%= link_to 'Back', admin_teaching_achievements_path, :class => 'btn'  %>
-  <%= link_to 'Edit', edit_admin_teaching_achievement_path(@teaching_achievement), :class => 'btn' %>
-  <%= link_to 'Delete', admin_teaching_achievement_path(@teaching_achievement), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+  <%= link_to '返回', admin_teaching_achievements_path, :class => 'btn'  %>
+  <%= link_to '编辑', edit_admin_teaching_achievement_path(@teaching_achievement), :class => 'btn' %>
+  <%= link_to '删除', admin_teaching_achievement_path(@teaching_achievement), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
 </div>

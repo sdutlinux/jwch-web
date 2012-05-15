@@ -8,7 +8,6 @@
       <th>年份</th>
       <th>负责人</th>
       <th>等级</th>
-      <th>创建于</th>
       <th>动作</th>
     </tr>
   </thead>
@@ -21,7 +20,6 @@
         <td><%= education_project.year  %></td>
         <td><%= education_project.team  %></td>
         <td><%= education_project.rank  %></td>
-        <td><%= education_project.created_at %></td>
         <td>
           <%= link_to '编辑', edit_admin_education_project_path(education_project), :class => 'btn btn-mini' %>
           <%= link_to '删除', admin_education_project_path(education_project), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
