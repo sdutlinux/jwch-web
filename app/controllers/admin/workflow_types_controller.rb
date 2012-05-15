@@ -4,7 +4,9 @@ class Admin::WorkflowTypesController < ApplicationController
   before_filter :require_logined
 
   def index
-    @workflow_types = WorkflowType.all
+    @workflow_types = WorkflowType.paginate :page => params[:page], :order => 'created_at desc',
+      :per_page => 10
+
 
     respond_to do |format|
       format.html

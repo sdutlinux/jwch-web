@@ -5,7 +5,9 @@ class Admin::WorkflowsController < ApplicationController
   before_filter :find_workflow_type
 
   def index
-    @workflows = @workflow_type.workflows.all
+    @workflows = @workflow_type.workflows.paginate :page => params[:page], :order => 'created_at desc',
+      :per_page => 10
+
 
     respond_to do |format|
       format.html

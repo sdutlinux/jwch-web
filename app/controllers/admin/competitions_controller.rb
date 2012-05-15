@@ -4,7 +4,8 @@ class Admin::CompetitionsController < ApplicationController
   before_filter :find_competition_type
 
   def index
-    @competitions = @competition_type.competitions.all
+    @competitions = @competition_type.competitions.paginate :page => params[:page], :order => 'created_at desc',
+      :per_page => 10
 
     respond_to do |format|
       format.html

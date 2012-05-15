@@ -5,6 +5,7 @@ class Admin::LinksController < ApplicationController
 
   def index
     @links = Link.all
+    @link = Link.new
 
     respond_to do |format|
       format.html

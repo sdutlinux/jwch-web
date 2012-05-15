@@ -1,9 +1,6 @@
 <%= form_for [:admin,@link], :html => { :class => 'form-horizontal' } do |f| %>
-  <fieldset>
-    <legend><%= controller.action_name.capitalize %> 链接</legend>
-
     <div class="control-group">
-      <%= f.label "链接", :class => 'control-label' %>
+      <%= f.label "链接名", :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :name, :class => 'text_field' %>
       </div>
@@ -17,7 +14,7 @@
     </div>
 
     <div class="control-group">
-      <%= f.label "链接", :class => 'control-label' %>
+      <%= f.label "链接地址", :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :url, :class => 'text_field' %>
       </div>
@@ -27,5 +24,4 @@
       <%= f.submit '提交', :class => 'btn btn-primary' %>
       <%= link_to '取消', admin_links_path, :class => 'btn' %>
     </div>
-  </fieldset>
 <% end %>

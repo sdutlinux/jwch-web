@@ -4,7 +4,7 @@ class Admin::NewsController < ApplicationController
   before_filter :require_logined
   def index
     @news = News.paginate :page=>params[:page], :order => 'created_at desc',
-      :per_page => 3
+      :per_page => 10
 
     respond_to do |format|
       format.html
