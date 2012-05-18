@@ -1,5 +1,5 @@
+#coding=utf-8
 JwchWeb::Application.routes.draw do
-
   root :to => 'welcome#index'
 
   get "news" => "news#index", :as => :news
@@ -7,6 +7,7 @@ JwchWeb::Application.routes.draw do
   get "login" => "session#new", :as => :login
   post "login" => "session#create"
   delete "logout" => "session#destroy", :as => :logout
+
 
   namespace :admin do
     get '/', :to => "dashboard#show", :as => :dashboard
@@ -20,22 +21,30 @@ JwchWeb::Application.routes.draw do
     resources :education_projects
     resources :teaching_achievements
 
+# 创新竞赛
     resources :competition_types do
       resources :competitions
     end
 
+# 工作流程
     resources :workflow_types do
       resources :workflows
     end
 
+# 规章制度
     resources :rule_types do
       resources :rules
     end
 
+# 课程介绍
     resources :course_types do
       resources :courses
     end
 
+# 教学简讯
+    resources :message_channels
+    resources :message_types
+    resources :messages
 
   end
 

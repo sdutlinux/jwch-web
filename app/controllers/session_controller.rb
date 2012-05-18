@@ -7,7 +7,7 @@ class SessionController < ApplicationController
     @user = User.authenticate(params[:name],params[:password])
     if @user
       session[:user_id] = @user.id
-      flash[:notice] = "welcome #{@user.name}"
+      flash[:notice] = "欢迎 #{@user.name}"
       redirect_to admin_dashboard_path
     else
       flash[:notice] = "登陆失败，请检查用户名和密码"

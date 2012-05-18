@@ -23,7 +23,7 @@ module ApplicationHelper
           ['课程介绍', 'courses', admin_course_types_path],
           ['教改立项', 'projects', admin_education_projects_path],
           ['教学成果', 'achievements', admin_teaching_achievements_path],
-          ['教学简讯', 'workflow', admin_workflow_types_path]
+          ['教学简讯', 'workflow', admin_message_channels_path]
         ]
     }
     ]
