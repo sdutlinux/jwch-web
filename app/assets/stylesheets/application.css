@@ -29,3 +29,7 @@
 	border: 1px solid #DDD;
 	border-left-width: 0;
 }
+
+#notice {
+  color:red;
+}
