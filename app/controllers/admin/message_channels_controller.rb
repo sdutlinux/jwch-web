@@ -1,4 +1,4 @@
-#coding=utf-8
+#coding: utf-8
 class Admin::MessageChannelsController < ApplicationController
   layout "admin"
   before_filter :require_logined

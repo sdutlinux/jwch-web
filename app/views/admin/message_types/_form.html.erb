@@ -1,0 +1,7 @@
+<%= form_for [:admin,@message_type], :html => { :class => 'form-horizontal' } do |f| %>
+    <div class="control-group">
+     期号: <%= f.text_field :name, :class => 'number_field' %>
+     <%= f.hidden_field :message_channel_id, :value => "#{params[:channel_id]}"%>
+     <%= f.submit '提交', :class => 'btn btn-primary' %>
+     </div>
+<%end%>

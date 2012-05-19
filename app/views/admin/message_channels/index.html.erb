@@ -13,7 +13,7 @@
         <td><%= link_to channel.number, admin_messages_path(:channel_id => channel.number) %></td>
         <td><%= channel.created_at %></td>
         <td>
-          <%= link_to '添加栏目',new_admin_message_type_path(:channel_id => channel.number), :class => 'btn btn-mini' %>
+          <%= link_to '添加栏目',admin_message_types_path(:channel_id => channel.number), :class => 'btn btn-mini' %>
           <%= link_to '删除', admin_message_channel_path(channel), :method => :delete, :confirm => 'Are you sure?', :remote => true, :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
@@ -22,6 +22,17 @@
 </table>
 
 <%= form_for [:admin,@message_channel], :html => { :class => 'form-horizontal' } do |f| %>
+  <% if @message_channel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @message_channel.errors.count %>错误，不能保存：</h2>
+      <ul>
+      <% @message_channel.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
     <div class="control-group">
      期号: <%= f.number_field :number, :class => 'number_field' %>
       <%= f.submit '提交', :class => 'btn btn-primary' %>
