@@ -1,2 +1,0 @@
-module Admin::RuleTypesHelper
-end
