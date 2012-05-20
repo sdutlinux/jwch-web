@@ -4,7 +4,6 @@
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= @user.errors.count %>错误，不能保存：</h2>
-
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
