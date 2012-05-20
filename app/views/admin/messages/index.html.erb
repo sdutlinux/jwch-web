@@ -7,19 +7,21 @@
     </tr>
   </thead>
   <tbody>
-    <% @messages.each do |message| %>
-      <tr id="<%= dom_id message %>">
-        <td> <i class="icon-tags"></i> <%= mesage_type_name(message.message_type_id) %></td>
+    <% @message_types.each do |msg_t|%>
+      <tr>
+        <td> <i class="icon-tags"></i> <%= msg_t.name%></td>
         <td>
-          <%= link_to ' 添加文章',new_admin_message_path(:channel_id => "#{params[:channel_id]}",:message_type_id =>message.message_type_id), :class => 'btn btn-mini' %>
+          <%= link_to ' 添加文章',new_admin_message_path(:channel_id => "#{params[:channel_id]}",:message_type_id =>msg_t.id), :class => 'btn btn-mini' %>
         </td>
       </tr>
+      <% message_by_type(msg_t.id).each do |message|%>
       <tr>
         <td>&nbsp; &nbsp; <i class="icon-book"></i><%=link_to message.title, edit_admin_message_path(message) %></td>
         <td>
           <%= link_to '删除', admin_message_path(message), :method => :delete, :confirm => '确定删除?', :class => 'btn btn-mini btn-danger' %>
         <td/>
       </tr>
-    <% end %>
+      <%end%>
+    <%end%>
   </tbody>
 </table>

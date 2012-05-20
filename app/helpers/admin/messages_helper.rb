@@ -1,7 +1,5 @@
 module Admin::MessagesHelper
-
-  def mesage_type_name(mesage_type_id)
-    MessageType.find(mesage_type_id).name
+  def message_by_type(message_type_id)
+    @message = Message.where(:message_type_id => message_type_id)
   end
-
 end

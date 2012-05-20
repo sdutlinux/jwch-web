@@ -4,7 +4,8 @@ class Admin::MessagesController < ApplicationController
   before_filter :require_logined
 
   def index
-    @messages = Message.where(:message_channel_id => params[:channel_id])
+#    @messages = Message.where(:message_channel_id => params[:channel_id])
+    @message_types = MessageType.where(:message_channel_id => params[:channel_id])
 
     respond_to do |format|
       format.html

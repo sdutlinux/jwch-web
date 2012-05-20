@@ -28,11 +28,11 @@
     </div>
 
     <div class="control-group">
-        <%= f.number_field :message_channel_id, :value => @message.message_channel_id, :class => 'text_field' %>
+        <%= f.hidden_field :message_channel_id, :value => @message.message_channel_id, :class => 'text_field' %>
     </div>
 
     <div class="control-group">
-       <%= f.number_field :message_type_id, :value => @message.message_type_id, :class => 'text_field' %>
+       <%= f.hidden_field :message_type_id, :value => @message.message_type_id, :class => 'text_field' %>
     </div>
 
     <div class="form-actions">
