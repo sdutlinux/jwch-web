@@ -1,6 +1,7 @@
 #coding: utf-8
 class Organization < ActiveRecord::Base
   attr_accessible :author, :category_id, :name, :responsibility, :show
+  validates :author, :category_id, :name, :responsibility, :presence => true
 end
 
 =begin

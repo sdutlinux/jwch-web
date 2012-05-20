@@ -1,7 +1,6 @@
 #coding: utf-8
 class User < ActiveRecord::Base
 
-  #attr_accessor :password_confirmation
   attr_accessible :password_confirmation, :name, :password, :admin, :department
 
   validates :name,:presence => true,:uniqueness => true
@@ -35,7 +34,7 @@ class User < ActiveRecord::Base
 
 private
   def password_must_be_present
-    errors.add(:password, "missing password") unless hashed_password.present?
+    errors.add(:password, "密码不能为空") unless hashed_password.present?
   end
 
   def generate_salt

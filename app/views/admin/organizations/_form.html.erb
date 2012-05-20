@@ -1,17 +1,7 @@
 <%= form_for [:admin,@organization], :html => { :class => 'form-horizontal' } do |organization| %>
-  <% if @organization.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @organization.errors.count %>错误，不能保存：</h2>
-      <ul>
-      <% @organization.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <fieldset>
-    <legend><%= controller.action_name.capitalize %>组织机构</legend>
+    <legend>组织机构</legend>
 
     <div class="control-group">
       <%= organization.label "标题", :class => 'control-label' %>

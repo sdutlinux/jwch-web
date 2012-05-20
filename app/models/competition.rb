@@ -2,7 +2,7 @@
 class Competition < ActiveRecord::Base
   attr_accessible :competition_type_id, :member, :rank, :remark, :teacher, :time, :title
   belongs_to :competition_type
-#  validates :member,:rank,:teacher,:time ,:title, :presence => true
+  validates :member,:rank,:teacher,:time ,:title, :presence => true
 end
 
 

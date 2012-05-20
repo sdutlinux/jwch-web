@@ -1,3 +1,4 @@
+#coding: utf-8
 class Admin::DocumentsController < ApplicationController
   layout "admin"
   before_filter :require_logined
@@ -15,9 +16,11 @@ class Admin::DocumentsController < ApplicationController
     @file = Document.new(params[:document])
     respond_to do |format|
       if @file.save
-        format.html {redirect_to(:action => :index,:notice => "upload success")}
+        flash[:notice] = "上传成功"
+        format.html {redirect_to(:action => :index)}
       else
-        format.html {redirect_to(:action => :index,:notice => "upload faild")}
+        flash[:notice] = "上传失败"
+        format.html {redirect_to(:action => :index)}
       end
     end
   end

@@ -2,6 +2,8 @@
 class Workflow < ActiveRecord::Base
   attr_accessible :workflow_type_id, :content, :title
   belongs_to :workflow_type
+
+  validates :content, :title, :presence => true
 end
 
 =begin
