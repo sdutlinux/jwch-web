@@ -2,24 +2,22 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>序号</th>
       <th>标题</th>
+      <th>级别</th>
+      <th>年度</th>
       <th>部门</th>
-      <th>年份</th>
       <th>负责人</th>
-      <th>等级</th>
       <th>动作</th>
     </tr>
   </thead>
   <tbody>
     <% @education_projects.each do |education_project| %>
       <tr>
-        <td><%= education_project.id %></td>
         <td><%= link_to education_project.name, admin_education_project_path(education_project) %></td>
-        <td><%= education_project.department  %></td>
-        <td><%= education_project.year  %></td>
-        <td><%= education_project.team  %></td>
         <td><%= education_project.rank  %></td>
+        <td><%= education_project.year  %></td>
+        <td><%= education_project.department  %></td>
+        <td><%= education_project.team  %></td>
         <td>
           <%= link_to '编辑', edit_admin_education_project_path(education_project), :class => 'btn btn-mini' %>
           <%= link_to '删除', admin_education_project_path(education_project), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>

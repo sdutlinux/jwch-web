@@ -1,38 +1,39 @@
 <%= form_for [:admin,@course_type,@course], :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
-    <legend><%= controller.action_name.capitalize %> 课程介绍</legend>
+    <legend>课程介绍</legend>
 
     <div class="control-group">
-      <%= f.label '标题', :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :name, :class => 'text_field' %>
+        课程名称:<%= f.text_field :name, :class => 'text_field' %>
+        学分：<%= f.number_field :point, :class => 'number_field'%>
       </div>
     </div>
 
     <div class="control-group">
-      <%= f.label '介绍', :class => 'control-label' %>
+      <div class="controls">
+      课程编码:  <%= f.text_field :number, :class => 'text_field' %> 选用教材:<%= f.text_field :book, :class => 'text_field' %>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <div class="controls">
+      适用专业: <%= f.text_field :major, :class => 'text_field' %> 适用层次:<%= f.text_field :level, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+      先修课程:  <%= f.text_field :pre_course, :class => 'text_field' %>   </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label '内容介绍', :class => 'control-label' %>
       <div class="controls">
         <%= f.kindeditor  :introduction, :width => 700,:height => 200, :class => 'number_field' %>
       </div>
     </div>
 
-    <div class="control-group">
-      <div class="controls">
-      number:  <%= f.text_field :number, :class => 'text_field' %> book:<%= f.text_field :book, :class => 'text_field' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <div class="controls">
-      pre_course:  <%= f.text_field :pre_course, :class => 'text_field' %> references:<%= f.text_field :references, :class => 'text_field' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <div class="controls">
-      major:  <%= f.text_field :major, :class => 'text_field' %> level:<%= f.text_field :level, :class => 'text_field' %>
-      </div>
-    </div>
 
     <div class="form-actions">
       <%= f.submit '提交', :class => 'btn btn-primary' %>

@@ -5,7 +5,8 @@ class Admin::CoursesController < ApplicationController
   before_filter :find_course_type
 
   def index
-    @courses = @course_type.courses.all
+    @courses = @course_type.courses.paginate :page => params[:page], :order => 'created_at desc',
+      :per_page => 10
 
     respond_to do |format|
       format.html

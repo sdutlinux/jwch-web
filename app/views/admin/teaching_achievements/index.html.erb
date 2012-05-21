@@ -2,18 +2,22 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>序号</th>
-      <th>标题</th>
-      <th>年份</th>
+      <th>名称</th>
+      <th>级别</th>
+      <th>年度</th>
+      <th>部门</th>
+      <th>负责人</th>
       <th>动作</th>
     </tr>
   </thead>
   <tbody>
     <% @teaching_achievements.each do |teaching_achievement| %>
       <tr>
-        <td><%= teaching_achievement.id %></td>
         <td><%= link_to teaching_achievement.name, admin_teaching_achievement_path(teaching_achievement) %></td>
+        <td><%= teaching_achievement.rank %></td>
         <td><%= teaching_achievement.year %></td>
+        <td><%= teaching_achievement.department %></td>
+        <td><%= teaching_achievement.team  %></td>
         <td>
           <%= link_to '编辑', edit_admin_teaching_achievement_path(teaching_achievement), :class => 'btn btn-mini' %>
           <%= link_to '删除', admin_teaching_achievement_path(teaching_achievement), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
