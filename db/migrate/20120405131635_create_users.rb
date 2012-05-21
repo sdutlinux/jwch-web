@@ -1,4 +1,5 @@
 class CreateUsers < ActiveRecord::Migration
+
   def change
     create_table :users do |t|
       t.string :name
@@ -16,6 +17,5 @@ class CreateUsers < ActiveRecord::Migration
                 :admin      => true
 
   end
-
 
 end

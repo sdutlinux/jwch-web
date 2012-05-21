@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120518155717) do
 
-  create_table "categories", :force => true do |t|
-    t.integer  "channel_id"
-    t.string   "name"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.string   "channel_name"
-  end
-
   create_table "competition_types", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
