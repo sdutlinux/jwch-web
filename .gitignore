@@ -16,5 +16,4 @@ public/topics/**/*
 .DS_Store
 *.swp
 *.swo
-.rvmrc
 bin/
