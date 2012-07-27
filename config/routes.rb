@@ -1,6 +1,20 @@
 #coding=utf-8
 JwchWeb::Application.routes.draw do
   root :to => 'welcome#index'
+  get "main" => 'welcome#main'
+  get "dep" => 'welcome#dep'
+  get "guizcap" => 'welcome#guizcap'
+  get "zy" => 'welcome#zy'
+  get "kctype" => 'welcome#kctype'
+  get "gongzcap" => 'welcome#gongzcap'
+  get "caption" => 'welcome#caption'
+  get "mail" => 'welcome#mail'
+  get "down" => 'welcome#down'
+  get "jiaoxue" => 'welcome#jiaoxue'
+  get "chuangxcap" => 'welcome#chuangxcap'
+  get "space" => 'welcome#space'
+  get "jx" => 'welcome#jx'
+  get "show" => 'welcome#show'
 
   get "news" => "news#index", :as => :news
   get "news/:id" => "news#show", :as => :show_news

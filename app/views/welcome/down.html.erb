@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="assets/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table>
+  <tr>
+    <td align="left"><table cellspacing="0" cellpadding="0" width="580" align="left" border="0">
+      <tbody>
+        <tr>
+          <td width="358" height="4"></td>
+          <td width="2"><img height="1" src="assets/spacer.gif" width="1" /></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><img height="122" src="assets/1.jpg" width="358" /></td>
+          <td><img height="1" src="assets/spacer.gif" width="1" /></td>
+          <td valign="bottom" background="assets/bg_02.gif"><table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tbody>
+              <tr>
+                <td><img height="41" hspace="25" src="assets/down.jpg" 
+                  width="81" vspace="10" /></td>
+              </tr>
+              <tr>
+                <td background="assets/bg_03.gif" 
+              height="20">　</td>
+              </tr>
+            </tbody>
+          </table></td>
+        </tr>
+        <tr>
+          <td height="4"></td>
+          <td><img height="1" src="assets/spacer.gif" width="1" /></td>
+          <td></td>
+        </tr>
+      </tbody>         
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" align="center">
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tbody>
+          <tr>
+            <td width="16"><img height="22" 
+                        src="assets/bit_03.gif" width="16" /></td>
+            <td width="15" bgcolor="#f4f4f4">　</td>
+            <td align="left" 
+                    bgcolor="#f4f4f4" class="nr01"><strong>当前位置&gt;&gt;下载专区</strong></td>
+          </tr>
+        </tbody>
+      </table>
+	<table cellspacing="0" cellpadding="0" width="100%" border="0">
+      <tbody>
+        <tr>
+          <td width="1" bgcolor="#f4f4f4"></td><td width="580" align="left" 
+                    bgcolor="#f4f4f4" class="nr01">
+		  	dim page,siz,pages,i,no,j
+page=cint(request.QueryString("page"))+0
+if page=0 then page=1
+i=0
+j=0
+siz=25
+pages=0
+dim types,Arr,II,rs,typ
+typ=trim(left(request.QueryString("typ"),12))&""
+if typ="" then typ="学业学籍"
+II=0
+set rs=server.CreateObject("adodb.recordset")
+	rs.open "Select * From [Frist] where [SmallcapName]='下载专区'",conn,1,3
+	rs.movefirst
+	types=rs("other")
+	rs.close
+	set rs=nothing
+	Arr = split(types,"|")
+	For II = Lbound(Arr) to Ubound(Arr)	|<a href="down.asp?typ=Response.Write(Arr(II))"> if Arr(II)=typ then Response.Write("<font color='red'>")
+		   Response.Write(Arr(II))
+		    if Arr(II)=typ then Response.Write("</font>")</a>
+					Next
+	</td>
+        </tr>
+      </tbody>
+    </table>
+	<table cellspacing="0" cellpadding="0" width="550" align="center" 
+                  border="0">
+          <tbody>
+		  <tr><td height="400" valign="top" class="titlenor"><table width="100%" align="left">
+		  <tr><th align="center" class="box02">日期</th>
+		  <th align="center" class="box02">名称(<font color="#FF0000">点击下载</font>)</th>
+		  <th align="center" class="box02">上传</th>
+		  </tr>
+		  
+		  	set rs=server.CreateObject("adodb.recordset")
+			rs.open "select * from [download] where [dep]='"&typ&"' order by [xiazid] desc",conn,1,1
+			rs.pagesize=siz
+				pages=rs.pagecount
+				if page>pages then page=pages
+				no=(page-1)*siz
+				rs.move no
+				do while not (rs.eof or j=siz)
+				j=j+1
+		  
+		  <tr>
+				  <td width="75" height="20" align="center" class="box01">if cap<>"guiz" then Response.Write(formatDateTime(rs("time"),2))</td>
+				  <td align="left" class="box01"><a href="admin/getfile.asp?id==rs("xiazid")" title="=rs("xiaztitle")"><font 
+							color="#092d70"> lim 35,rs("xiaztitle")</font></a></td>
+				  <td width="80" align="center" class="box01"><rs("username")</td>
+		  </tr>
+		  
+		  	rs.movenext
+			loop
+		  
+		  </table></td></tr>
+			<tr><td colspan="2" align="center"><div style="display:">
+			共=pages页:<a href="down.asp?typ==typ">第一页</a>
+		dim st,en
+		st=page-4
+		if page <4 then st=0
+		if page >(pages-3) then st=pages-7
+		en=st+7
+		if st <0 then st=0
+		do while (st<pages and st<en)
+				<a href="down.asp?typ==typ&page==st+1">if page=st+1 then Response.Write("<font color='red'>")[=st+1]if page=st+1 then Response.Write("</font>")</a>
+		t=st+1
+			loop
+<a href="down.asp?typ==typ&page==pages">尾页</a></div>
+			</td>
+			</tr>
+          </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
