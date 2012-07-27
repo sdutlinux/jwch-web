@@ -1,7 +1,6 @@
 class NewsController < ApplicationController
   def index
     @news = News.all
-
     respond_to do |format|
       format.html
     end

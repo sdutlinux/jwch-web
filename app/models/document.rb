@@ -2,7 +2,7 @@
 class Document < ActiveRecord::Base
   CATEGORY = ['学业学籍','教学研究','实践教学','选课中心','教材','考务','实验教学','教学简讯','通知附件','质量管理','教学评估','其它']
 
-  @@path = "public/uploads"
+  @@path = "uploads"
   after_create :write_file
   attr_accessible :author, :category, :content_type, :name, :path,:upload_file
 

@@ -1,0 +1,106 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #ffffff;
+	SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+	SCROLLBAR-SHADOW-COLOR: #ffffff;
+	SCROLLBAR-3DLIGHT-COLOR: #cccccc;
+	SCROLLBAR-ARROW-COLOR: #000000;
+	SCROLLBAR-TRACK-COLOR: #ffffff;
+	SCROLLBAR-DARKSHADOW-COLOR: #cccccc;
+	margin-left: 2px;
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #333333; TEXT-DECORATION: none
+}
+.box01 {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid
+}
+.box02 {
+	BORDER-RIGHT: #abbeeb 1px solid; BORDER-TOP: #abbeeb 1px solid; BORDER-LEFT: #abbeeb 1px solid; BORDER-BOTTOM: #abbeeb 1px solid
+}
+.bg01 {
+	BACKGROUND-POSITION: left top; BACKGROUND-IMAGE: url(../images/sy_bg.jpg); BACKGROUND-REPEAT: no-repeat
+}
+A:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #666666; TEXT-DECORATION: underline
+}
+.bt01 {
+	PADDING-LEFT: 5px; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 30px
+}
+.nr01 {
+	COLOR: #092d70; LINE-HEIGHT: 170%; TEXT-DECORATION: none
+}
+.link01 {
+	TEXT-DECORATION: underline
+}
+A.link01:link {
+	TEXT-DECORATION: underline
+}
+A.link01:visited {
+	TEXT-DECORATION: underline
+}
+A.link01:hover {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+.nr02 {
+	WIDTH: 560px; LINE-HEIGHT: 170%
+}
+.bt02 {
+	BACKGROUND-POSITION: 50% bottom; PADDING-LEFT: 5px; BACKGROUND-IMAGE: url(../images/bit_04.gif); BACKGROUND-REPEAT: repeat-x; HEIGHT: 30px
+}
+.nr03 {
+	PADDING-BOTTOM: 3px; PADDING-TOP: 3px
+}
+.nr04 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #092d70; TEXT-DECORATION: none
+}
+.box03 {
+	BORDER-RIGHT: #ededed 1px solid; BORDER-TOP: #ededed 1px solid; BORDER-LEFT: #ededed 1px solid; BORDER-BOTTOM: #ededed 1px solid
+}
+.nr05 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ffffff
+}
+.line {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid
+}
+.bt03 {
+	BACKGROUND-POSITION: center bottom; PADDING-LEFT: 28px; BACKGROUND-IMAGE: url(../images/jg_bt.gif); PADDING-BOTTOM: 3px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 25px
+}
+.caps {
+	FONT-WEIGHT: bold; COLOR: #990000
+}
+.lin {
+	COLOR: #003399; TEXT-DECORATION: underline
+}
+.titlenor A:hover {
+	TEXT-DECORATION: underline
+}
+.titlenor A:link {
+	COLOR: #21536a
+}
+.titlenor A:visited {
+	COLOR: #21536a
+}
+.titlenor TABLE {
+	BORDER-TOP: #ffffff 1px solid; LEFT: 12px; BORDER-LEFT: #ffffff 1px solid; BORDER-COLLAPSE: collapse
+}
+.titlenor TD {
+	BORDER-RIGHT: #ffffff 1px solid; COLOR: #003366; TEXT-INDENT: 6px; BORDER-BOTTOM: #ffffff 1px solid; HEIGHT: 15px; BACKGROUND-COLOR: #efefef
+}
+.titlenor TH {
+	BORDER-RIGHT: #ffffff 1px solid; COLOR: #ffffff; TEXT-INDENT: 6px; BORDER-BOTTOM: #ffffff 1px solid; HEIGHT: 20px; BACKGROUND-COLOR: #aaaaaa
+}
+.titlenor TH A:hover {
+	FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: underline
+}
+FORM {
+	PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.white {
+	color: #FFF;
+}
