@@ -2,7 +2,8 @@
 class Document < ActiveRecord::Base
   CATEGORY = ['学业学籍','教学研究','实践教学','选课中心','教材','考务','实验教学','教学简讯','通知附件','质量管理','教学评估','其它']
 
-  @@path = "public/uploads"
+  UPLOAD_PATH = "#{Rails.root.to_s}/public/uploads"
+
   after_create :write_file
   attr_accessible :author, :category, :content_type, :name, :path,:upload_file
 
@@ -12,12 +13,12 @@ class Document < ActiveRecord::Base
     @file_contents = file
     self.content_type = file.content_type
     self.name = file.original_filename
-    self.path = File.join(@@path,self.object_id.to_s + file.original_filename)
+    self.path = File.join(UPLOAD_PATH,self.object_id.to_s + file.original_filename)
   end
 
   def write_file(file = nil)
     contents = file || @file_contents.read
-    Dir.mkdir(@@path) unless File.exists?(@@path)
+    Dir.mkdir(UPLOAD_PATH) unless File.exists?(UPLOAD_PATH)
     if contents
       File.open(self.path,'wb') do |file|
         file.write(contents)
