@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title></title>
+    <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+
+
+
+    <table border="0" cellspacing="0">
+      <TR>
+        <TD align="left"><TABLE cellSpacing=0 cellPadding=0 width=566 align=left border=0>
+            <TBODY>
+              <TR>
+                <TD width=358 height=4></TD>
+                <TD width=2><IMG height=1 src="/assets/spacer.gif" width=1></TD>
+                <TD></TD></TR>
+              <TR>
+                <TD><img height=122 src="/assets/guiz.jpg" width=358 /></TD>
+                <TD><IMG height=1 src="/assets/spacer.gif" width=1></TD>
+                <TD vAlign=bottom background=/assets/bg_02.gif>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                      <TR>
+                        <TD align="left"><IMG height=41 hspace=35 src="/assets/kec.jpg" 
+                          width=81 vspace=10></TD>
+                      </TR>
+                      <TR>
+                        <TD background=/assets/bg_03.gif 
+                          height=20>&nbsp;
+                        </TD>
+                      </TR>
+                    </TBODY>
+                  </TABLE>
+                </TD>
+              </TR>
+              <TR>
+                <TD height=4></TD>
+                <TD><IMG height=1 src="/assets/spacer.gif" width=1></TD>
+                <TD>
+                </TD>
+              </TR>
+            </TBODY>
+          </TABLE>
+        </TD>
+      </TR>
+      <tr>
+        <td valign="top" align="left"><table cellspacing="0" cellpadding="0" width="565" border="0">
+            <tbody>
+              <tr>
+                <td width="16"><img height="22" 
+                  src="/assets/bit_03.gif" width="16" /></td>
+                <td width="15" bgcolor="#f4f4f4">&nbsp;</td>
+                <td align="left" bgcolor="#f4f4f4" class="nr01">
+                  <strong>当前位置&gt;&gt;课程介绍&gt;&gt;
+                    <%= @course_type.college %>
+                </strong></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+          <table cellspacing="0" cellpadding="0" width="100%" align="center" 
+            border="0">
+            <tbody>
+              <tr><td height="400" valign="top" class="titlenor"><table width="100%" align="left">
+                    <tr>
+                      <th align="center" class="box01">课程编号</th>
+                      <th width="" align="center" class="box01">课程名称(点击查看)</th>
+                      <th align="center" class="box01">学分</th>
+                      <% if @course_type.id != 1 then%>
+                        <th align="center" class="box01">所在学院</th>
+                      <% end %>
+                    </tr>
+                    <% @courses.each do |course| %>
+                      <tr>
+                        <td width="80" align="center" class="box03">&nbsp;
+                          <%= course.number %>
+                        </td>
+                        <td align="left" class="box03">&nbsp;
+                          <%= link_to course.name, course_type_course_path(@course_type,course) %>
+                        </td>
+                        <td align="center" class="box03">&nbsp;
+                          <%= course.point %> 
+                        </td>
+                        <% if @course_type.id != 1 then%>
+                          <td align="center" class="box03">&nbsp;
+                            <%= @course_type.college %> 
+                          </td>
+                        <% end %>
+                      </tr>
+                    <% end %>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" align="center">
+                </td>
+              </tr>
+            </tbody>
+          </table>   
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

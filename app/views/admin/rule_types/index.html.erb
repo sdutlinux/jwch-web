@@ -12,6 +12,7 @@
     <% @rule_types.each do |rule_type| %>
       <tr>
         <td><%= rule_type.id %></td>
+
         <td><%= link_to rule_type.name, admin_rule_type_rules_path(rule_type) %></td>
         <td><%= rule_type.created_at %></td>
         <td>

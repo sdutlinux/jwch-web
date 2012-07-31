@@ -5,7 +5,7 @@ class Workflow < ActiveRecord::Base
 
   validates :content, :title, :presence => true
 end
-
+  
 =begin
 工作流程表
   integer   :id

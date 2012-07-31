@@ -1,26 +1,94 @@
-<h1>/News</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="/assets/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+</style></head>
 
-<p>
-  <b>Title</b><br>
-  <%= @news.title %>
-</p>
-
-<p>
-  <b>Content</b><br>
-  <%= @news.content %>
-</p>
-
-<p>
-  <b>Author</b><br>
-  <%= @news.author %>
-</p>
-
-<p>
-  <b>Department</b><br>
-  <%= @news.department %>
-</p>
+<body>
 
 
-<div class="form-actions">
-  <%= link_to 'Back', news_path, :class => 'btn'  %>
-</div>
+
+<table>
+<TR>
+          <TD align="right"><TABLE cellSpacing=0 cellPadding=0 width=566 align=center border=0>
+        <TBODY>
+        <TR>
+          <TD width=358 height=4></TD>
+          <TD width=2><IMG height=1 src="/assets/spacer.gif" width=1></TD>
+          <TD></TD></TR>
+        <TR>
+          <TD><img height=122 src="/assets/jiaow.jpg" width=358 /></TD>
+          <TD><IMG height=1 src="/assets/spacer.gif" width=1></TD>
+          <TD vAlign=bottom background=/assets/bg_02.gif>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD align="left"><IMG src="/assets/jiaowtz.jpg" 
+                  width=81 height=41 hspace=25 vspace=10></TD>
+              </TR>
+              <TR>
+              <TD background=/assets/bg_03.gif 
+              height=20>&nbsp;</TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD height=4></TD>
+          <TD><IMG height=1 src="/assets/spacer.gif" width=1></TD>
+          <TD></TD></TR></TBODY></TABLE></TD>
+  </TR>
+  <tr>
+    <td valign="top" align="center">
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tbody>
+          <tr>
+            <td width="16"><img height="22" 
+              src="/assets/bit_03.gif" width="16" /></td>
+            <td width="15" bgcolor="#f4f4f4">&nbsp;</td>
+            <td align="left" bgcolor="#f4f4f4" class="nr01"><strong>当前位置&gt;&gt;
+            
+              教务通知     
+              </strong>
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="box01">
+        <table width="550" height="400" 
+          border="0" align="center" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td height="350" valign="top">
+
+                <table>
+                      <tr>
+                        <td valign="top" width="75" height="20" align="left">
+                          <%= @new.content.html_safe %>
+                        </td>
+                      </tr>
+                  </table>
+              </td>
+            </tr>
+            <tr>
+              <td height="50" colspan="2" align="right" valign="top">
+                作者：<%=@new.author %><br/>
+                 日期:<%= @new.created_at.strftime("%Y-%m-%d") %>
+              </td>
+            </tr>
+          </tbody>
+        </table>  
+</div>  
+</td>
+  </tr>
+</table>
+</body>
+</html>
+
+<tr>
+	<td height=100></td>
+</tr>

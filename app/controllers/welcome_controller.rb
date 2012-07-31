@@ -1,15 +1,7 @@
 class WelcomeController < ApplicationController
+  layout "application"
   def index
-    @news = News.all
-    respond_to do |format|
-      format.html
-    end
-  end
-
-  def dep
-    @people = Organization.where("category_id=1")
-    @organization = Organization.where("category_id=2")
-
+    @news = News.limit(10).all
     respond_to do |format|
       format.html
     end

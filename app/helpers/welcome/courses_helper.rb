@@ -1,0 +1,2 @@
+module Welcome::CoursesHelper
+end

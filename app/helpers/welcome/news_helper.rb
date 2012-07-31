@@ -1,0 +1,2 @@
+module Welcome::NewsHelper
+end

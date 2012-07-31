@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <TBODY>
+      <TR>
+        <TD vAlign=top align=left width=570><table width="566" border="0" cellspacing="0">
+            <tr>
+              <td><table width="568" border="0" cellspacing="0">
+                  <TR>
+                    <TD width="48%"><img height=122 src="/assets/1.jpg" width=358 /><IMG height=1 src="/assets/spacer.gif" width=1></TD>
+                    <TD width="52%" vAlign=bottom background=/assets/bg_02.gif>
+                      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                        <TBODY>
+                          <TR>
+                            <TD><IMG height=41 hspace=25 src="/assets/jig.jpg" 
+                              width=81 vspace=10></TD>
+                          </TR>
+                          <TR>
+                            <TD background=/assets/bg_03.gif 
+                              height=20>&nbsp;
+                            </TD>
+                          </TR>
+                        </TBODY>
+                      </TABLE>
+                    </TD>
+                  </TR>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><TBODY>
+                  <TR>
+                    <TD vAlign=top align=left width=570>
+                      <TABLE cellSpacing=0 cellPadding=0 width=570 border=0>
+                        <TBODY>
+                          <TR>
+                            <TD colspan="2" align=left vAlign=top>
+                              <TABLE cellSpacing=0 cellPadding=0 width=575 border=0>
+                                <TBODY>
+                                  <TR>
+                                    <TD class=nr01 bgColor=#f4f4f4 width=575>当前位置&nbsp;:&nbsp;
+                                      <%= @oranization.name %>
+                                    </TD>
+                                  </TR>
+                                  <TR>
+                                    <TD>&nbsp;</TD>
+                                    <TD>&nbsp;</TD>
+                                    <TD>&nbsp;</TD>
+                                  </TR>
+                                </TBODY>
+                              </TABLE>
+                              <TABLE cellSpacing=0 cellPadding=0 width=560 align=center border=0>
+                                <TBODY>
+                                  <tr>
+                                    <td  colspan=2>
+                                      <%= @oranization.responsibility.html_safe %>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                  	<td width=420 height=200>&nbsp;</td>
+                                    <td>
+                                      作者：<%= @oranization.author %><br/>
+                                      时间：<%= @oranization.created_at.strftime("%Y-%m-%d") %>
+                                    </td>
+                                  </tr>
+                                </TBODY>
+                              </TABLE>
+                            </TD>
+                          </TR>
+                          <TR>
+                            <TD>&nbsp;</TD>
+                            <TD width="190">&nbsp;
+                            </TD>
+                        </TBODY>
+                      </TABLE>
+                    </td>
+                  </tr>
+                </table>
+                <p>&nbsp;</p>
+              </td>
+              <td width="25"><img src="/assets/spacer.gif" width="1" height="1"></td>
+            </tr>
+
+          </body>
+        </html>

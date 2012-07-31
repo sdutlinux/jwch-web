@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link href="assets/style.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/style.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -13,16 +13,16 @@
             <tr>
               <td><table width="568" border="0" cellspacing="0">
                   <TR>
-                    <TD width="48%"><img height=122 src="assets/1.jpg" width=358 /><IMG height=1 src="images/spacer.gif" width=1></TD>
-                    <TD width="52%" vAlign=bottom background=assets/bg_02.gif>
+                    <TD width="48%"><img height=122 src="/assets/1.jpg" width=358 /><IMG height=1 src="/assets/spacer.gif" width=1></TD>
+                    <TD width="52%" vAlign=bottom background=/assets/bg_02.gif>
                       <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
                         <TBODY>
                           <TR>
-                            <TD><IMG height=41 hspace=25 src="assets/jig.jpg" 
+                            <TD><IMG height=41 hspace=25 src="/assets/jig.jpg" 
                               width=81 vspace=10></TD>
                           </TR>
                           <TR>
-                            <TD background=assets/bg_03.gif 
+                            <TD background=/assets/bg_03.gif 
                               height=20>&nbsp;
                             </TD>
                           </TR>
@@ -45,7 +45,7 @@
                                 <TBODY>
                                   <TR>
                                     <TD width=16><IMG height=22 
-                                      src="assets/bit_03.gif" width=16></TD>
+                                      src="/assets/bit_03.gif" width=16></TD>
                                     <TD width=15 bgColor=#f4f4f4>&nbsp;</TD>
                                     <TD class=nr01 
                                       bgColor=#f4f4f4><STRONG>成员简介</STRONG></TD>
@@ -62,7 +62,7 @@
                                   <% @people.each do |p| %>
                                     <tr>
                                       <td><%= p.created_at.strftime("%Y-%m-%d") %></td>
-                                      <td><%= link_to p.name,show_path(p),:style =>"color:#092D70" %></td>
+                                      <td><%= link_to p.name,organization_path(p),:style =>"color:#092D70" %></td>
                                     </tr>
                                   <% end %>
                                 </TBODY>
@@ -79,7 +79,7 @@
                                 <TBODY>
                                   <TR>
                                     <TD width=16><IMG height=22 
-                                      src="assets/bit_03.gif" width=16></TD>
+                                      src="/assets/bit_03.gif" width=16></TD>
                                     <TD width=15 bgColor=#f4f4f4>&nbsp;</TD>
                                     <TD class=nr01 
                                       bgColor=#f4f4f4><STRONG>工作职责</STRONG></TD>
@@ -96,7 +96,7 @@
                                   <% @organization.each do |o| %>
                                     <tr>
                                       <td width=101><%= o.created_at.strftime("%Y-%m-%d") %></td>
-                                      <td><%= link_to o.name,show_path(o),:style =>"color:#092D70" %></td>
+                                      <td><%= link_to o.name,organization_path(o),:style =>"color:#092D70" %></td>
                                     </tr>
                                   <% end %>
                                 </TBODY>

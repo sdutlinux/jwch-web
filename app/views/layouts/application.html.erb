@@ -3,8 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>山东理工大学教务处</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 <style type="text/css">
 <!--
@@ -63,14 +61,14 @@ if (la.style.display=="none"){
   <TBODY>
   <TR>
     <TD vAlign=bottom align=right width=94><IMG height=60 hspace=10 
-      src="assets/a71.gif" width=60></TD>
-    <TD vAlign=bottom width=350><img src="assets/top.gif" width="257" height="60" /><BR></TD>
+      src="/assets/a71.gif" width=60></TD>
+    <TD vAlign=bottom width=350><img src="/assets/top.gif" width="257" height="60" /><BR></TD>
     <TD vAlign=bottom align=right>
       <TABLE cellSpacing=0 cellPadding=0 width=100 border=0>
         <TBODY>
         <TR>
           <TD align=right><a href="main3.html" target="mainFrame"><IMG 
-            src="assets/en.jpg" width=42 height=12 hspace=6 
+            src="/assets/en.jpg" width=42 height=12 hspace=6 
 vspace=20 border="0"></a></TD>
         </TR></TBODY></TABLE>
       <TABLE cellSpacing=0 cellPadding=0 width=300 border=0>
@@ -85,10 +83,10 @@ vspace=20 border="0"></a></TD>
  </TR>
   <TR>
     <TD bgColor=#990000 height=5><IMG height=1 
-      src="assets/spacer.gif" width=1></TD>
-    <TD bgColor=#990000><IMG height=1 src="assets/spacer.gif" 
+      src="/assets/spacer.gif" width=1></TD>
+    <TD bgColor=#990000><IMG height=1 src="/assets/spacer.gif" 
       width=1></TD>
-    <TD bgColor=#990000><IMG height=1 src="assets/spacer.gif" 
+    <TD bgColor=#990000><IMG height=1 src="/assets/spacer.gif" 
       width=1></TD></TR>
   <TR>
     <TD height=5></TD>
@@ -102,28 +100,42 @@ vspace=20 border="0"></a></TD>
     <td align="center"><TABLE width=170 border=0 align="center" cellPadding=0 cellSpacing=6 class=box01>
         <TBODY>
         <TR>
-          <TD class=box01 align=center height=20><A 
-            href="main" target="mainFrame">首 页</A></TD>
+          <TD class=box01 align=center height=20> 
+            <%= link_to '首 页', root_path %>
+        </TD>
         </TR>
         <TR>
-          <TD class=box01 align=center height=20><A 
-            href="dep" target="mainFrame">机构设置</A></TD>
+          <TD class=box01 align=center height=20> 
+            <%= link_to '机构设置', organizations_path %>
+          </TD>
         </TR>
         <TR>
           <TD height=20 align=center class=box01 style="cursor:hand" onclick="show('la1')">政策法规
 			
         		</TD>
         </TR>
-		<tr><td height="0px"><div id="la1" type="div" style="display:none; height:auto">
-		<table id="t1" width="100%">
-		  <tr>
-			<td class="box03" height="20"><a href="Lawst.asp?name=" target="mainFrame"><font color="#990000"></font></a></td>
-		  </tr>
-		</table>
-		</div>	</td></tr>
+        <tr>
+          <td height="0px">
+            <div id="la1" type="div" style="display:none; height:auto">
+              <table id="t1" width="100%">
+                <tr>
+                  <td class="box03" height="20">
+                    <%= link_to "山东省教育教学文件",{:controller=>"laws" ,:action => "index", :category_id => 1},
+                      :style => "color:#990000" %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="box03" height="20">
+                      <%= link_to '国家教育教学政策法规',{:controller=>"laws",:action=>"index", :category_id=>2},
+                        :style => "color:#990000" %>
+                  </td>
+                </tr>
+              </table>
+            </div>
+    </td></tr>
         <TR>
-          <TD class=box01 align=center height=20><A 
-            href="guizcap" target="mainFrame">规章制度</A></TD>
+          <TD class=box01 align=center height=20> 
+            <%= link_to '规章制度', rule_types_path %></TD>
         </TR>
         <TR>
           <TD class=box01 align=center height=20 style="cursor:hand" onclick="show('la2')">人才培养
@@ -134,19 +146,26 @@ vspace=20 border="0"></a></TD>
 		<table width="100%">
 			<tr><td class="box03"><a href="zy" target="mainFrame"><font color="#990000">专业介绍</font></a>			</td>
 			</tr>
-			<tr><td class="box03"><a href="kctype" target="mainFrame"><font color="#990000">课程介绍</font></a>			</td>
+            <tr>
+              <td class="box03">
+                <%= link_to '课程介绍',course_types_path, :style => "color:#990000" %>
+                  </td>
 			</tr>
 		</table>
 		</div></td></tr>
         <TR>
-          <TD class=box01 align=center height=20><A 
-            href="gongzcap" target="mainFrame">工作流程</A></TD>
+          <TD class=box01 align=center height=20>
+            <%= link_to '工作流程', workflow_types_path %>
+          </TD>
         </TR>
         <TR>
-          <TD class=box01 align=center height=20><a href="caption" target="mainFrame">教务通知</a></TD>
+          <TD class=box01 align=center height=20>
+            <%= link_to '教务通知',news_index_path %></TD>
         </TR>
         <TR>
-          <TD class=box01 align=center height=20><a href="mail" target="mainFrame">处长信箱</a></TD>
+          <TD class=box01 align=center height=20>
+            <%= link_to '处长信箱',mail_path %>
+          </TD>
         </TR>
         <TR>
           <TD class=box01 align=center height=20><a href="down" target="mainFrame">下载专区</a></TD>
@@ -189,7 +208,7 @@ vspace=20 border="0"></a></TD>
         <TBODY>
         <TR>
           <TD align=middle width=40 bgColor=#990000><IMG height=14 
-            src="assets/bit_02.gif" width=4 vspace=3></TD>
+            src="/assets/bit_02.gif" width=4 vspace=3></TD>
           <TD align=left bgColor=#990000><STRONG><FONT 
             color=#ffffff>相关链接</FONT></STRONG></TD></TR>
         
@@ -317,6 +336,5 @@ vspace=20 border="0"></a></TD>
 <div style="float:left; width:800px;margin-top:3px;">
 <p style="margin-left:200px;">Copyright &copy;  2011 <a href="http://www.sdut.edu.cn" style="text-decoration:none;">山东理工大学</a>. All right reserved.  |  <a href="http://jwch.sdut.edu.cn/blog">技术支持:教育技术中心</a></p>
 </div>
-<script src="/assets/tan.js"></script>
 </body>
 </html>
