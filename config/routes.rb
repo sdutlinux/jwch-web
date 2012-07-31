@@ -17,8 +17,6 @@ JwchWeb::Application.routes.draw do
   get "mail" => 'mail#index'
 
 
-
-
   get "login" => "session#new", :as => :login
   post "login" => "session#create"
   delete "logout" => "session#destroy", :as => :logout
