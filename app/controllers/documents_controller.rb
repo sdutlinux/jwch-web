@@ -1,9 +1,8 @@
 class DocumentsController < ApplicationController
   layout "application"
   def index
-    @documents = Document.all
-    #.where(:category => params[:category]).paginate :page => params[:page],
-     # :order => 'created_at desc', :per_page => 24
+    @documents = Document.where(:category => params[:category]).paginate :page => params[:page],
+      :order => 'created_at desc', :per_page => 24
 
     respond_to do |format|
       format.html

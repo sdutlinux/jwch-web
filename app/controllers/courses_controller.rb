@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   layout "application"
-  before_filter :find_course_type 
+  before_filter :find_course_type
 
   def index
     @courses = @course_type.courses.paginate :page => params[:page], :order=> 'created_at desc',
@@ -10,7 +10,7 @@ class CoursesController < ApplicationController
       format.html
     end
   end
-  
+
   def show
     @course = @course_type.courses.find(params[:id])
 

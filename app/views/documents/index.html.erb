@@ -22,11 +22,11 @@
           <td valign="bottom" background="/assets/bg_02.gif"><table cellspacing="0" cellpadding="0" width="100%" border="0">
             <tbody>
               <tr>
-                <td><img height="41" hspace="25" src="/assets/small/down.jpg" 
+                <td><img height="41" hspace="25" src="/assets/down.jpg"
                   width="81" vspace="10" /></td>
               </tr>
               <tr>
-                <td background="/assets/bg_03.gif" 
+                <td background="/assets/bg_03.gif"
               height="20">　</td>
               </tr>
             </tbody>
@@ -37,7 +37,7 @@
           <td><img height="1" src="/assets/spacer.gif" width="1" /></td>
           <td></td>
         </tr>
-      </tbody>         
+      </tbody>
     </table></td>
   </tr>
   <tr>
@@ -45,20 +45,24 @@
       <table cellspacing="0" cellpadding="0" width="100%" border="0">
         <tbody>
           <tr>
-            <td width="16"><img height="22" 
+            <td width="16"><img height="22"
                         src="/assets/bit_03.gif" width="16" /></td>
             <td width="15" bgcolor="#f4f4f4">　</td>
-            <td align="left" 
+            <td align="left"
                     bgcolor="#f4f4f4" class="nr01"><strong>当前位置&gt;&gt;下载专区</strong></td>
           </tr>
         </tbody>
       </table>
-	<table cellspacing="0" cellpadding="0" width="100%" border="0">
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
       <tbody>
         <tr>
             <% Document::CATEGORY.each do |category| %>
-                <td width="" align="left"  bgcolor="#f4f4f4" class="nr01">
-                <%= link_to category, documents_path, :category => category %>
+              <td width="" align="left"  bgcolor="#f4f4f4" class="nr01">
+                <% if @category_id == category %>
+                  <%= link_to category, documents_path, :category => category ,:style => "color:red"%>
+                <% else %>
+                  <%= link_to category, documents_path, :category => category %>
+                <% end %>
                 </td>
             <% end %>
         </tr>
@@ -79,6 +83,7 @@
              <% @documents.each do |document| %>
               <tr>
                 <td width="75" height="20" align="center" class="box01">
+                  <%= document.created_at.strftime("%Y-%m-%d") %>
                 </td>
                 <td align="left" class="box01">
                   <font  color="#092d70"></font>
