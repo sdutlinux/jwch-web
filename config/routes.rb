@@ -13,6 +13,7 @@ JwchWeb::Application.routes.draw do
     resources :workflows
   end
   resources :news
+  resources :documents
 
   get "mail" => 'mail#index'
 

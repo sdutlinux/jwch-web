@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title></title>
+<link href="/assets/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table>
+  <tr>
+    <td align="left"><table cellspacing="0" cellpadding="0" width="580" align="left" border="0">
+      <tbody>
+        <tr>
+          <td width="358" height="4"></td>
+          <td width="2"><img height="1" src="/assets/spacer.gif" width="1" /></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><img height="122" src="/assets/1.jpg" width="358" /></td>
+          <td><img height="1" src="/assets/spacer.gif" width="1" /></td>
+          <td valign="bottom" background="/assets/bg_02.gif"><table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tbody>
+              <tr>
+                <td><img height="41" hspace="25" src="/assets/small/down.jpg" 
+                  width="81" vspace="10" /></td>
+              </tr>
+              <tr>
+                <td background="/assets/bg_03.gif" 
+              height="20">　</td>
+              </tr>
+            </tbody>
+          </table></td>
+        </tr>
+        <tr>
+          <td height="4"></td>
+          <td><img height="1" src="/assets/spacer.gif" width="1" /></td>
+          <td></td>
+        </tr>
+      </tbody>         
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top" align="center">
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+        <tbody>
+          <tr>
+            <td width="16"><img height="22" 
+                        src="/assets/bit_03.gif" width="16" /></td>
+            <td width="15" bgcolor="#f4f4f4">　</td>
+            <td align="left" 
+                    bgcolor="#f4f4f4" class="nr01"><strong>当前位置&gt;&gt;下载专区</strong></td>
+          </tr>
+        </tbody>
+      </table>
+	<table cellspacing="0" cellpadding="0" width="100%" border="0">
+      <tbody>
+        <tr>
+            <% Document::CATEGORY.each do |category| %>
+                <td width="" align="left"  bgcolor="#f4f4f4" class="nr01">
+                <%= link_to category, documents_path, :category => category %>
+                </td>
+            <% end %>
+        </tr>
+      </tbody>
+    </table>
+    <table cellspacing="0" cellpadding="0" width="550" align="center" 
+      border="0">
+      <tbody>
+        <tr>
+          <tr>
+          </tr>
+          <td height="400" valign="top" class="titlenor"><table width="100%" align="left">
+              <tr>
+                <th align="center" class="box02">日期</th>
+                <th align="center" class="box02">名称(<font color="#FF0000">点击下载</font>)</th>
+                <th align="center" class="box02">上传</th>
+              </tr>
+             <% @documents.each do |document| %>
+              <tr>
+                <td width="75" height="20" align="center" class="box01">
+                </td>
+                <td align="left" class="box01">
+                  <font  color="#092d70"></font>
+                  <%= link_to document.name,document_path(document), :style => 'color:#092d70' %>
+                </a>
+                </td>
+                <td width="80" align="center" class="box01">
+                  <%= document.author %>
+                </td>
+              </tr>
+            <% end %>
+            </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><div style="display:">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
