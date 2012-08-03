@@ -5,9 +5,7 @@
 <title></title>
 <link href="/assets/style.css" rel="stylesheet" type="text/css" />
 </head>
-
-<body>
-<table>
+<body> <table>
   <tr>
     <td align="left"><table cellspacing="0" cellpadding="0" width="580" align="left" border="0">
       <tbody>
@@ -58,10 +56,11 @@
         <tr>
             <% Document::CATEGORY.each do |category| %>
               <td width="" align="left"  bgcolor="#f4f4f4" class="nr01">
-                <% if @category_id == category %>
-                  <%= link_to category, documents_path, :category => category ,:style => "color:red"%>
+                <% if @category_type == category %>
+                  <%= link_to category,{:controller=>"documents",:action=>"index",:category_type => "学业学籍"},
+                    :style => "color:red"%>
                 <% else %>
-                  <%= link_to category, documents_path, :category => category %>
+                  <%= link_to category,{:controller=>"documents",:action=>"index",:category_type => category} %>
                 <% end %>
                 </td>
             <% end %>
@@ -99,7 +98,8 @@
     </td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><div style="display:">
+            <td colspan="2" align="center">
+              <p><%= will_paginate @documents , :previous_label => '前一页' , :next_label => '后一页' %></p>
             </td>
           </tr>
         </tbody>

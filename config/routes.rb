@@ -15,6 +15,8 @@ JwchWeb::Application.routes.draw do
   resources :news
   resources :documents
 
+  get "personal_space" => 'personal_space#index'
+
   get "mail" => 'mail#index'
 
 

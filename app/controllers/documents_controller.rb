@@ -1,7 +1,10 @@
+#coding=utf-8
+
 class DocumentsController < ApplicationController
   layout "application"
   def index
-    @documents = Document.where(:category => params[:category]).paginate :page => params[:page],
+    @category_type = params[:category_type]
+    @documents = Document.where(:category => @category_type).paginate :page => params[:page],
       :order => 'created_at desc', :per_page => 24
 
     respond_to do |format|

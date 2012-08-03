@@ -169,7 +169,7 @@ vspace=20 border="0"></a></TD>
         </TR>
         <TR>
           <TD class=box01 align=center height=20>
-            <%= link_to '下载专区', documents_path %>
+            <%= link_to '下载专区',{:controller=>"documents",:action=>"index",:category_type => "学业学籍"} %>
           </TD>
         </TR>
         <TR>
@@ -190,16 +190,13 @@ vspace=20 border="0"></a></TD>
             href="chuangxcap" target="mainFrame">创新竞赛</A></TD>
         </TR>
         <TR>
-          <TD class=box01 align=center height=20><a href="space" target="mainFrame">个人空间</a></TD>
+          <TD class=box01 align=center height=20>
+            <%= link_to '个人空间',personal_space_path %></TD>
         </TR>
         <TR>
           <TD class=box01 align=center height=20><A 
             href="jx" target="mainFrame">《教学简讯》</A></TD>
         </TR>
-        <!--<TR>
-          <TD class=box01 align=middle height=20><A 
-            href="http://soe.bnu.edu.cn/cn/xw/index.php?menuid=50&amp;itemid=0">“985” 
-            专栏</A></TD></TR>-->
 </TBODY></TABLE></td>
   </tr>
   <tr>
@@ -214,12 +211,6 @@ vspace=20 border="0"></a></TD>
           <TD align=left bgColor=#990000><STRONG><FONT 
             color=#ffffff>相关链接</FONT></STRONG></TD></TR>
         
-<!--
-<TR>
-          <TD height=3>>></TD>
-          <TD align=left height=20><a href="http://lab.sdut.edu.cn" target="_blank" class="caps STYLE1"><font color="#990000">实验教学网络管理系统</font></a></TD>
-		  </TR>
--->
 
 <TR>
           <TD height=3>>></TD>
