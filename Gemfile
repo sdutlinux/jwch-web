@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 gem 'mysql2'
 gem 'will_paginate', '~> 3.0'
 gem 'rails_kindeditor', '~> 0.3.0'
+gem 'carrierwave'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
