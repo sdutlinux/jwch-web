@@ -1,16 +1,10 @@
 source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.3'
-
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'mysql2'
 gem 'will_paginate', '~> 3.0'
 gem 'rails_kindeditor', '~> 0.3.0'
 
-
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -39,6 +33,6 @@ gem 'unicorn'
 
 # To use debugger
 group :development do
- gem 'ruby-debug19', :require => 'ruby-debug'
+ # gem 'ruby-debug19', :require => 'ruby-debug'
  gem 'pry'
 end
