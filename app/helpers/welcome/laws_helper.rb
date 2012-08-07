@@ -1,2 +1,0 @@
-module Welcome::LawsHelper
-end
