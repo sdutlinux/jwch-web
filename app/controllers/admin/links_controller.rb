@@ -63,5 +63,4 @@ class Admin::LinksController < ApplicationController
       format.html { redirect_to admin_links_url }
     end
   end
-
 end

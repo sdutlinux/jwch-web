@@ -36,5 +36,4 @@ class Admin::MessageChannelsController < ApplicationController
       end
     end
   end
-
 end

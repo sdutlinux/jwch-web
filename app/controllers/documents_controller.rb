@@ -1,7 +1,5 @@
 #coding=utf-8
-
 class DocumentsController < ApplicationController
-  layout "application"
   def index
     @category_type = params[:category_type]
     @documents = Document.where(:category => @category_type).paginate :page => params[:page],

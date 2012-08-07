@@ -1,5 +1,4 @@
 class WorkflowsController < ApplicationController
-  layout "application"
   before_filter :find_workflow_type 
 
   def index

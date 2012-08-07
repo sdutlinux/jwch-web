@@ -1,5 +1,4 @@
 class NewsController < ApplicationController
-  layout "application"
   def index
     @news = News.paginate :page => params[:page], :order => 'created_at desc',
       :per_page=>15

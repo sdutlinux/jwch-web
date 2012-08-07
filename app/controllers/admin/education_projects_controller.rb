@@ -2,6 +2,7 @@
 class Admin::EducationProjectsController < ApplicationController
   layout "admin"
   before_filter :require_logined
+  
   def index
     @education_projects = EducationProject.paginate :page=>params[:page], :order => 'created_at desc',
       :per_page => 10

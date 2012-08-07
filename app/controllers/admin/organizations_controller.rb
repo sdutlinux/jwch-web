@@ -66,5 +66,4 @@ class Admin::OrganizationsController < ApplicationController
       format.html { redirect_to admin_organizations_path  }
     end
   end
-
 end

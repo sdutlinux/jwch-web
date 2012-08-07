@@ -50,5 +50,4 @@ class Admin::MessageTypesController < ApplicationController
       format.js
     end
   end
-
 end

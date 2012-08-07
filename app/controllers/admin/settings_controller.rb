@@ -9,7 +9,5 @@ class Admin::SettingsController < ApplicationController
   def update
 
   end
-
-
 end
 

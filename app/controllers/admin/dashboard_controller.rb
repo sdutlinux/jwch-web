@@ -6,5 +6,4 @@ class Admin::DashboardController < ApplicationController
   def show
     @title = "后台管理"
   end
-
 end

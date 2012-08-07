@@ -1,6 +1,4 @@
 class RuleTypesController < ApplicationController
-  layout "application"
-
   def index
     @rule_types = RuleType.all
     

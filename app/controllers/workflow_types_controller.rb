@@ -1,5 +1,4 @@
 class WorkflowTypesController < ApplicationController
-  layout "application"
   def index
     @workflow_types = WorkflowType.all
 

@@ -1,6 +1,5 @@
 #coding=utf-8
 class Admin::CourseTypesController < ApplicationController
-
   layout "admin"
   before_filter :require_logined
 

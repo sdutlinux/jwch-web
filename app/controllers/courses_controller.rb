@@ -1,5 +1,4 @@
 class CoursesController < ApplicationController
-  layout "application"
   before_filter :find_course_type
 
   def index

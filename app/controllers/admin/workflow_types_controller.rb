@@ -58,5 +58,4 @@ class Admin::WorkflowTypesController < ApplicationController
       format.js
     end
   end
-
 end

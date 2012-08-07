@@ -66,9 +66,7 @@ class Admin::RulesController < ApplicationController
   end
 
   private
-
   def find_rule_type
     @rule_type = RuleType.find(params[:rule_type_id])
   end
-
 end

@@ -1,6 +1,4 @@
 class LawsController < ApplicationController
-  layout "application"
-
   def index
     @category_id = params[:category_id] 
     @laws = Law.where( :category_id => @category_id )

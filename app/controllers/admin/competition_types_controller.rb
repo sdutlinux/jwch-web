@@ -56,5 +56,4 @@ class Admin::CompetitionTypesController < ApplicationController
       format.html { redirect_to admin_competition_types_path }
     end
   end
-
 end

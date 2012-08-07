@@ -1,5 +1,4 @@
 class RulesController < ApplicationController
-  layout "application"
   before_filter :find_rule_type
 
   def index

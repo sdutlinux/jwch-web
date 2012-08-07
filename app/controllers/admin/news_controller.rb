@@ -63,5 +63,4 @@ class Admin::NewsController < ApplicationController
       format.html { redirect_to admin_news_index_url }
     end
   end
-
 end

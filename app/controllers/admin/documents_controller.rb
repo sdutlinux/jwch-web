@@ -42,5 +42,4 @@ class Admin::DocumentsController < ApplicationController
     @document.destroy
     redirect_to :action => :index
   end
-
 end

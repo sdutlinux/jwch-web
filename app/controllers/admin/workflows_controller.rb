@@ -68,9 +68,8 @@ class Admin::WorkflowsController < ApplicationController
   end
 
   private
-
   def find_workflow_type
     @workflow_type = WorkflowType.find(params[:workflow_type_id])
   end
-
+  
 end

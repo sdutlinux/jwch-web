@@ -1,5 +1,4 @@
 class CourseTypesController < ApplicationController
-  layout "application"
   def index
     @course_types = CourseType.all
 

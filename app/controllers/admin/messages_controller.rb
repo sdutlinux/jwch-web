@@ -52,5 +52,4 @@ class Admin::MessagesController < ApplicationController
       format.html {redirect_to admin_messages_path(:channel_id => @message.message_channel_id)}
     end
   end
-
 end

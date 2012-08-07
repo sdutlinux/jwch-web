@@ -55,5 +55,4 @@ class Admin::RuleTypesController < ApplicationController
       format.html { redirect_to admin_rule_types_path }
     end
   end
-
 end

@@ -61,5 +61,4 @@ class Admin::UsersController < ApplicationController
     @user.destroy
     redirect_to :action => :index
   end
-
 end
