@@ -29,7 +29,7 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn'
+# gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -38,4 +38,5 @@ gem 'unicorn'
 group :development do
  # gem 'ruby-debug19', :require => 'ruby-debug'
  gem 'pry'
+ gem 'thin'
 end
