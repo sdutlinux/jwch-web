@@ -1,7 +1,7 @@
 class CreateMessageTypes < ActiveRecord::Migration
   def change
     create_table :message_types do |t|
-      t.integer :channel_type_id
+      t.integer :message_channel_id
       t.string :name
 
       t.timestamps
