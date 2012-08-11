@@ -3,7 +3,6 @@
 
 # Chinese (China) translations for Ruby on Rails
 # by tsechingho (http://github.com/tsechingho)
-
 zh:
   date:
     formats:
@@ -223,3 +222,7 @@ zh:
   topic:
     errors:
       not_editable: 主题在创建5分钟后无法编辑
+
+  errors:
+    messages:
+      extension_white_list_error: "不允许上传扩展名为%{extension}的文件，允许的文件类型为%{allowed_types}"
