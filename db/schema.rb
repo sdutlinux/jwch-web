@@ -155,7 +155,8 @@ ActiveRecord::Schema.define(:version => 20120824162802) do
   end
 
   create_table "sections", :force => true do |t|
-    t.string   "name"
+    t.string   "name",              :null => false
+    t.string   "section_key",       :null => false
     t.integer  "parent_section_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
