@@ -131,10 +131,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
-  carrierwave
   coffee-rails (~> 3.2.1)
   jquery-rails
-  mime-types
   mysql2
   pry
   rails (= 3.2.3)

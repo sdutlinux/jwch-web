@@ -5,8 +5,8 @@ gem 'mysql2'
 gem 'will_paginate', '~> 3.0'
 gem 'rails_kindeditor', '~> 0.3.0'
 #attachment
-gem 'carrierwave'
-gem 'mime-types'
+# gem 'carrierwave'
+# gem 'mime-types'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
