@@ -1,7 +1,7 @@
 #coding=utf-8
 class Admin::LinksController < ApplicationController
    layout "admin"
-   before_filter :require_logined
+   before_filter :require_logined, :set_section_key
 
   def index
     @links = Link.all
@@ -62,5 +62,10 @@ class Admin::LinksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_links_url }
     end
+  end
+
+  private
+  def set_section_key
+    @section_key = 'xglj'
   end
 end

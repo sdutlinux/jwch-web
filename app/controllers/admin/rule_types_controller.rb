@@ -1,7 +1,7 @@
 #coding=utf-8
 class Admin::RuleTypesController < ApplicationController
   layout "admin"
-  before_filter :require_logined
+  before_filter :require_logined, :set_section_key
 
   def index
     @rule_types = RuleType.all
@@ -54,5 +54,9 @@ class Admin::RuleTypesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_rule_types_path }
     end
+  end
+  private 
+  def set_section_key
+    @section_key = 'gzzd'
   end
 end

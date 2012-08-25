@@ -45,16 +45,24 @@
     </div>
 
     <div class="container">
-      <div class="content">
+      <div activeclass="content">
         <div class="row">
             <div class="span2">
               <div class="well sidebar-nav">
                 <ul class="nav nav-list">
                   <% dashboard_menu.each do |m|%>
                     <li class="nav-header"><%= m[:name]%></li>
-                          <% m[:items].each do |item| %>
-                            <li><%= link_to "<i class=\"icon-list\"></i>#{item.first}".html_safe, item.last %></li>
-                          <%end%>
+                    <% m[:items].each do |item| %>
+                      <% if item[1] == @section_key %>
+                        <li class = 'active' >
+                          <%= link_to "<i class=\"icon-list icon-white\"></i>#{item.first}".html_safe, item.last %>
+                        </li>
+                      <% else %>
+                        <li>
+                          <%= link_to "<i class=\"icon-list\"></i>#{item.first}".html_safe, item.last %>
+                        </li>
+                      <% end %>
+                    <%end%>
                   <%end%>
                 </ul>
               </div><!--/.well -->

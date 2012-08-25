@@ -1,7 +1,7 @@
 #coding=utf-8
 class Admin::CourseTypesController < ApplicationController
   layout "admin"
-  before_filter :require_logined
+  before_filter :require_logined, :set_section_key
 
   def index
     @course_types = CourseType.all
@@ -55,5 +55,9 @@ class Admin::CourseTypesController < ApplicationController
       format.html { redirect_to admin_course_types_path }
     end
   end
-
+  
+  private
+  def set_section_key
+    @section_key = 'ccjs'
+  end 
 end

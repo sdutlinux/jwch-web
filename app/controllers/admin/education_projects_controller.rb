@@ -1,7 +1,7 @@
 #coding=utf-8
 class Admin::EducationProjectsController < ApplicationController
   layout "admin"
-  before_filter :require_logined
+  before_filter :require_logined, :set_section_key
   
   def index
     @education_projects = EducationProject.paginate :page=>params[:page], :order => 'created_at desc',
@@ -63,6 +63,10 @@ class Admin::EducationProjectsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_education_projects_path }
     end
+  end
+  private
+  def set_section_key
+    @section_key = 'jglx'
   end
 
 end

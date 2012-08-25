@@ -1,8 +1,7 @@
 #coding: utf-8
 class Admin::RulesController < ApplicationController
   layout "admin"
-  before_filter :require_logined
-  before_filter :find_rule_type
+  before_filter :require_logined, :set_section_key, :find_rule_type
 
   def index
     @rules = @rule_type.rules.all
@@ -68,5 +67,9 @@ class Admin::RulesController < ApplicationController
   private
   def find_rule_type
     @rule_type = RuleType.find(params[:rule_type_id])
+  end
+
+  def set_section_key
+    @section_key = 'gzzd'
   end
 end

@@ -1,7 +1,6 @@
 class Admin::CompetitionsController < ApplicationController
   layout "admin"
-  before_filter :require_logined
-  before_filter :find_competition_type
+  before_filter :require_logined, :set_section_key, :find_competition_type
 
   def index
     @competitions = @competition_type.competitions.paginate :page => params[:page], :order => 'created_at desc',
@@ -69,6 +68,10 @@ class Admin::CompetitionsController < ApplicationController
 
   def find_competition_type
     @competition_type = CompetitionType.find(params[:competition_type_id])
+  end
+
+  def set_section_key
+    @section_key = 'cxjs'
   end
 
 end

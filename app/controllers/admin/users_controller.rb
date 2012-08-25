@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   layout "admin"
-  before_filter :require_admin
+  before_filter :require_admin, :set_section_key
 
   def index
     @users = User.all
@@ -60,5 +60,10 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to :action => :index
+  end
+
+  private
+  def set_section_key
+    @section_key = 'yhgl'
   end
 end

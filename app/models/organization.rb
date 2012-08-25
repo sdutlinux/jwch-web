@@ -2,6 +2,7 @@
 class Organization < ActiveRecord::Base
   attr_accessible :author, :category_id, :name, :responsibility, :show
   validates :author, :category_id, :name, :responsibility, :presence => true
+  
   scope :category_posts, lambda {|category_id| where(:category_id => category_id)}
 end
 

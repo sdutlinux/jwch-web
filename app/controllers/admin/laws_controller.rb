@@ -1,7 +1,7 @@
 #coding: utf-8
 class Admin::LawsController < ApplicationController
   layout "admin"
-  before_filter :require_logined
+  before_filter :require_logined, :set_section_key
 
   def index
     @province_laws = Law.where(:category_id => 1)
@@ -67,5 +67,8 @@ class Admin::LawsController < ApplicationController
     end
   end
 
-
+  private 
+  def set_section_key
+    @section_key = 'zcfg'
+  end
 end

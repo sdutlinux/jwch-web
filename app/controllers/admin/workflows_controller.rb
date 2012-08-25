@@ -1,8 +1,7 @@
 #coding: utf-8
 class Admin::WorkflowsController < ApplicationController
   layout "admin"
-  before_filter :require_logined
-  before_filter :find_workflow_type
+  before_filter :require_logined, :set_section_key, :find_workflow_type
 
   def index
     @workflows = @workflow_type.workflows.paginate :page => params[:page], :order => 'created_at desc',
@@ -72,4 +71,7 @@ class Admin::WorkflowsController < ApplicationController
     @workflow_type = WorkflowType.find(params[:workflow_type_id])
   end
   
+  def set_section_key
+    @section_key = 'gzlc'
+  end
 end

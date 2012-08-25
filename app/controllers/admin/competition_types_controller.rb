@@ -1,7 +1,7 @@
 #coding=utf-8
 class Admin::CompetitionTypesController < ApplicationController
   layout "admin"
-  before_filter :require_logined
+  before_filter :require_logined, :set_section_key
 
   def index
     @competition_types = CompetitionType.paginate :page => params[:page], :order => 'created_at desc',
@@ -56,4 +56,8 @@ class Admin::CompetitionTypesController < ApplicationController
       format.html { redirect_to admin_competition_types_path }
     end
   end
+  private 
+  def set_section_key
+    @section_key = 'cxjs'
+  end 
 end

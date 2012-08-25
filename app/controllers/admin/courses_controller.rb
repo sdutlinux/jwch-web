@@ -1,8 +1,7 @@
 #coding: utf-8
 class Admin::CoursesController < ApplicationController
   layout "admin"
-  before_filter :require_logined
-  before_filter :find_course_type
+  before_filter :require_logined, :set_section_key, :find_course_type
 
   def index
     @courses = @course_type.courses.paginate :page => params[:page], :order => 'created_at desc',
@@ -72,4 +71,7 @@ class Admin::CoursesController < ApplicationController
     @course_type = CourseType.find(params[:course_type_id])
   end
 
+  def set_section_key
+    @section_key = 'ccjs'
+  end
 end

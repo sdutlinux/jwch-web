@@ -16,6 +16,7 @@ namespace :import do
       {:name => "创新竞赛", :section_key => "cxjs"},  #10  
       {:name => "个人空间", :section_key => "grkj"},  
       {:name => "《教学简讯》", :section_key =>"jxjx"},
+      {:name => "相关链接", :section_key =>"xglj"},
 
       {:name => "专业介绍", :parent_section_id => 4, :section_key => "zyjs"},
       {:name => "课程介绍", :parent_section_id => 4, :section_key => "kcjs" },   # id = 11

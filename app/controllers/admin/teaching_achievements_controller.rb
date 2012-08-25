@@ -1,7 +1,7 @@
 #coding=utf-8
 class Admin::TeachingAchievementsController < ApplicationController
   layout "admin"
-  before_filter :require_logined
+  before_filter :require_logined, :set_section_key
 
   def index
     @teaching_achievements = TeachingAchievement.paginate :page=>params[:page], :order => 'created_at desc',
@@ -64,5 +64,10 @@ class Admin::TeachingAchievementsController < ApplicationController
       format.html { redirect_to admin_teaching_achievements_path}
       format.json { head :no_content }
     end
+  end
+
+  private
+  def set_section_key
+    @section_key = 'jxcg'
   end
 end

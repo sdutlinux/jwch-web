@@ -1,7 +1,7 @@
 #coding=utf-8
 class Admin::WorkflowTypesController < ApplicationController
   layout "admin"
-  before_filter :require_logined
+  before_filter :require_logined, :set_section_key
 
   def index
     @workflow_types = WorkflowType.paginate :page => params[:page], :order => 'created_at desc',
@@ -58,4 +58,9 @@ class Admin::WorkflowTypesController < ApplicationController
       format.js
     end
   end
+  private 
+  def set_section_key
+    @section_key = 'gzlc'
+  end
+
 end

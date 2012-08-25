@@ -1,8 +1,7 @@
 #coding: utf-8
 class Admin::OrganizationsController < ApplicationController
   layout "admin"
-  before_filter :require_logined
-  before_filter :find_categories 
+  before_filter :require_logined, :find_categories, :set_section_key
 
   def index
   end
@@ -64,5 +63,9 @@ class Admin::OrganizationsController < ApplicationController
   private 
   def find_categories 
     @categories = Category.where(:section_key => 'jgsz')
+  end
+
+  def set_section_key
+    @section_key = 'jgsz'
   end
 end
