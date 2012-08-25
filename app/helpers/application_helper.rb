@@ -24,4 +24,7 @@ module ApplicationHelper
     ]
   end
 
+  def category_name(id)
+    Category.find(id).name
+  end
 end

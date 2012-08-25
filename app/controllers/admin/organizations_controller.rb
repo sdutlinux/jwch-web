@@ -2,14 +2,9 @@
 class Admin::OrganizationsController < ApplicationController
   layout "admin"
   before_filter :require_logined
+  before_filter :find_categories 
 
   def index
-    @people = Organization.where(:category_id => 1)
-    @organizations = Organization.where(:category_id => 2)
-
-    respond_to do |format|
-      format.html
-    end
   end
 
   def new
@@ -18,7 +13,6 @@ class Admin::OrganizationsController < ApplicationController
     respond_to do |format|
       format.html
     end
-
   end
 
   def create
@@ -65,5 +59,10 @@ class Admin::OrganizationsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_organizations_path  }
     end
+  end
+
+  private 
+  def find_categories 
+    @categories = Category.where(:section_key => 'jgsz')
   end
 end

@@ -27,10 +27,8 @@ JwchWeb::Application.routes.draw do
   namespace :admin do
     get '/', :to => "dashboard#show", :as => :dashboard
 
-    resources :categories do 
-    end 
-
-    resources :documents, :news, :users, :links, :organizations, :laws, :education_projects, :teaching_achievements
+    resources :organizations 
+    resources :documents, :news, :users, :links, :laws, :education_projects, :teaching_achievements
 
 # 创新竞赛
     resources :competition_types do

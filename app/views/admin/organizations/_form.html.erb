@@ -18,11 +18,14 @@
     </div>
 
     <div class="control-group">
-        <%= organization.hidden_field :author, :value => "#{current_user.name}", :class => 'text_field' %>
+      <%= organization.label "分类", :class => 'control-label' %>
+      <div class="controls">
+        <%= organization.select :category_id, @categories.collect{|cate| [cate.name, cate.id] } %>
+      </div>
     </div>
 
     <div class="control-group">
-        <%= organization.hidden_field :category_id, :value => "#{params[:category_id]}", :class => 'text_field' %>
+        <%= organization.hidden_field :author, :value => "#{current_user.name}", :class => 'text_field' %>
     </div>
 
     <div class="control-group">
