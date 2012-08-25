@@ -1,7 +1,7 @@
 #coding: utf-8
 namespace :import do
   desc "导入栏目"
-  task :section do
+  task :sections => :environment  do
     # 添加一些栏目
       sections = [
       {:name => "机构设置", :section_key => "jgsz"},  # id = 1
@@ -27,7 +27,7 @@ namespace :import do
   end
 
   desc "导入分类"
-   task :category => :section do
+   task :categories => :environment do
     categories = [
       {:name => "成员简介", :section_key => "jgsz"},
       {:name => "工作职责", :section_key => "jgsz"},
@@ -164,9 +164,13 @@ namespace :import do
       section_id = Section.find_by_section_key(category[:section_key]).id 
       Category.create(
         :name => category[:name],
-        :section_id => category[:section_id],
+        :section_id => section_id,
         :section_key => category[:section_key]
         )
     end
    end 
+
+   desc "import all "
+   task :all => [:sections, :categories] 
+
 end
