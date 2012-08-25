@@ -3,6 +3,7 @@ JwchWeb::Application.routes.draw do
   root :to => 'welcome#index'
   resources :organizations
   resources :laws
+
   resources :rule_types do
     resources :rules 
   end
@@ -19,23 +20,17 @@ JwchWeb::Application.routes.draw do
 
   get "mail" => 'mail#index'
 
-
   get "login" => "session#new", :as => :login
   post "login" => "session#create"
   delete "logout" => "session#destroy", :as => :logout
 
-
   namespace :admin do
     get '/', :to => "dashboard#show", :as => :dashboard
 
-    resources :documents
-    resources :news
-    resources :users
-    resources :links
-    resources :organizations
-    resources :laws
-    resources :education_projects
-    resources :teaching_achievements
+    resources :categories do 
+    end 
+
+    resources :documents, :news, :users, :links, :organizations, :laws, :education_projects, :teaching_achievements
 
 # 创新竞赛
     resources :competition_types do

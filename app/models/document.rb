@@ -9,6 +9,7 @@ class Document < ActiveRecord::Base
 
   validates :author,:name,:path,:category, :presence => true
 
+
   def upload_file=(file)
     @file_contents = file
     self.content_type = file.content_type
