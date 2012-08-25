@@ -1,2 +1,0 @@
-class EducationProjectsController < ApplicationController
-end

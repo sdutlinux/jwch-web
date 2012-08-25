@@ -4,7 +4,36 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>山东理工大学教务处</title>
   <%= csrf_meta_tags %>
- <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript">
+    function show(lay)
+
+{
+  var la=document.getElementById(lay);
+  var ta=document.getElementById("t1");
+  var la1=document.getElementById("la1");
+  var la2=document.getElementById("la2");
+  var la3=document.getElementById("la3");
+  if (la.style.display=="none"){
+      la.style.display="";
+          if (lay!="la1")
+                  la1.style.display="none";
+              if (lay!="la2")
+                      la2.style.display="none";
+                  if (lay!="la3")
+                          la3.style.display="none";
+                    }
+    else{
+          la.style.display="none";
+              if (lay!="la1")
+                      la1.style.display="none";
+                  if (lay!="la2")
+                          la2.style.display="none";
+                      if (lay!="la3")
+                              la3.style.display="none";
+                        }
+}
+  </script>
  
 </head>
 
@@ -28,7 +57,7 @@
                       <TABLE cellSpacing=0 cellPadding=0 width=300 border=0>
                         <TBODY>
                           <TR>
-                            <TD align=right>站内搜索<!--#include file="inc/search.asp"--></TD>
+                            <TD align=right>站内搜索</TD>
                           </TD></TR></TBODY></TABLE></TD></TR>
                           <TR>
                             <TD height=6></TD>
@@ -133,7 +162,9 @@
                                                   </TR>
                                                   <tr><td height="0px"><div id="la3" type="div" style="display:none; height:auto">
                                                     <table width="100%">
-                                                     <tr><td class="box03"><a href="jiaoxue" target="mainFrame"><font color="#990000">教学成果</font></a>			</td>
+                                                      <tr><td class="box03">
+                                                          <%= link_to "教学成果" ,education_path , :style => "color:#990000" %>
+                                                      </td>
                                                      </tr>
                                                      <tr><td class="box03"><a href="jiaogai" target="mainFrame"><font color="#990000">教改立项</font></a>			</td>
                                                      </tr>
