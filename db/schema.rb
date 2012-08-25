@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.string   "name"
     t.string   "path"
     t.string   "author"
-    t.string   "category"
+    t.string   "category_id"
     t.string   "content_type"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

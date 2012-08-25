@@ -1,14 +1,15 @@
 #coding=utf-8
 class Document < ActiveRecord::Base
-  CATEGORY = ['学业学籍','教学研究','实践教学','选课中心','教材','考务','实验教学','教学简讯','通知附件','质量管理','教学评估','其它']
-
   UPLOAD_PATH = "#{Rails.root.to_s}/public/uploads"
 
   after_create :write_file
-  attr_accessible :author, :category, :content_type, :name, :path,:upload_file
+  attr_accessible :author, :category_id, :content_type, :name, :path,:upload_file
 
-  validates :author,:name,:path,:category, :presence => true
+  validates :author,:name,:path,:category_id, :presence => true
 
+  def self.categories 
+    Category.where(:section_key => 'xzzq')
+  end 
 
   def upload_file=(file)
     @file_contents = file
@@ -33,7 +34,7 @@ end
 
 下载文档表
   :author string
-  :category string
+  :category_id  integer
   :content_type string
   :name   string
   :path   string
