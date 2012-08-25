@@ -1,10 +1,5 @@
 #encoding: utf-8
 module ApplicationHelper
-  def nav_menus
-    [
-      ['网站首页',root_path]
-    ]
-  end
 
   def dashboard_menu
     [
