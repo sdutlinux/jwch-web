@@ -13,20 +13,24 @@ class Admin::CategoriesController < ApplicationController
 
   def create
     @category  = Category.new(params[:category])
-    @category.section_id = @section.id 
- 
+    @category.section_id = @section.id
+    @category.section_key = @section.section_key
 
     respond_to do |format|
       if @category.save
-        format.js
+        format.js { render :js => 'window.location.reload()' }
       else
-        format.js 
+        format.js {render :action => "new" } 
       end
     end
   end
 
   def edit
     @category = Category.find(params[:id])
+
+    respond_to do |format|
+      format.js 
+    end
   end
 
   def update
@@ -34,9 +38,9 @@ class Admin::CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
-        format.html { redirect_to admin_section_categorys_path, notice: '更新成功' }
+        format.js { render :js => 'window.location.reload()' }
       else
-        format.html { render action: "edit" }
+        format.js {render :action => "edit" } 
       end
     end
   end
@@ -52,6 +56,6 @@ class Admin::CategoriesController < ApplicationController
 
   private 
   def find_section
-    @section = params[:section_id]
+    @section = Section.find(params[:section_id])
   end
 end
