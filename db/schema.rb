@@ -143,7 +143,6 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.string   "author"
     t.boolean  "show"
     t.integer  "category_id"
-    t.string   "category_name"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
@@ -157,9 +156,9 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
   create_table "rules", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "rule_type_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "sections", :force => true do |t|

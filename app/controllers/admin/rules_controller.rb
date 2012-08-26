@@ -4,7 +4,7 @@ class Admin::RulesController < ApplicationController
   before_filter :require_logined, :set_section_key, :find_rule_type
 
   def index
-    @rules = @rule_type.rules.all
+    @rules = Rule.where(:category_id => @rule_type.id)
 
     respond_to do |format|
       format.html
@@ -12,7 +12,7 @@ class Admin::RulesController < ApplicationController
   end
 
   def new
-    @rule = @rule_type.rules.build
+    @rule = Rule.new
 
     respond_to do |format|
       format.html
@@ -66,7 +66,7 @@ class Admin::RulesController < ApplicationController
 
   private
   def find_rule_type
-    @rule_type = RuleType.find(params[:rule_type_id])
+    @rule_type = Category.find(params[:rule_type_id])
   end
 
   def set_section_key

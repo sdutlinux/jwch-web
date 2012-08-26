@@ -27,8 +27,14 @@ JwchWeb::Application.routes.draw do
   namespace :admin do
     get '/', :to => "dashboard#show", :as => :dashboard
 
-    resources :organizations 
-    resources :documents, :news, :users, :links, :laws, :education_projects, :teaching_achievements
+    resources :news, :users, :links
+    resources :organizations, :laws
+    resources :documents, :education_projects, :teaching_achievements
+
+# 规章制度
+    resources :rule_types do
+      resources :rules
+    end
 
 # 创新竞赛
     resources :competition_types do
@@ -40,10 +46,6 @@ JwchWeb::Application.routes.draw do
       resources :workflows
     end
 
-# 规章制度
-    resources :rule_types do
-      resources :rules
-    end
 
 # 课程介绍
     resources :course_types do

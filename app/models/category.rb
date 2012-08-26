@@ -4,5 +4,6 @@ class Category < ActiveRecord::Base
   validates_presence_of :name, :section_key, :section_id
 
   belongs_to :section 
+  has_many :rules
 
 end

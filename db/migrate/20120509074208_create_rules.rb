@@ -3,7 +3,7 @@ class CreateRules < ActiveRecord::Migration
     create_table :rules do |t|
       t.string :title
       t.text :content
-      t.integer :rule_type_id
+      t.integer :category_id
 
       t.timestamps
     end
