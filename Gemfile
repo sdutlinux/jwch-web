@@ -38,5 +38,5 @@ gem 'jquery-rails'
 group :development do
  # gem 'ruby-debug19', :require => 'ruby-debug'
  gem 'pry'
- gem 'thin'
+# gem 'thin'
 end

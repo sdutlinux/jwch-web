@@ -3,7 +3,7 @@ class CreateWorkflows < ActiveRecord::Migration
     create_table :workflows do |t|
       t.string :title
       t.text :content
-      t.integer :workflow_type_id
+      t.integer :category_id
 
       t.timestamps
     end

@@ -8,8 +8,13 @@
   <%=raw @workflow.content %>
 </p>
 
+<p>
+  <b>分类</b>
+  <%= category_name  @workflow.category_id %>
+</p>
+
 <div class="form-actions">
-  <%= link_to '返回', admin_workflow_type_workflows_path, :class => 'btn'  %>
-  <%= link_to '编辑', edit_admin_workflow_type_workflow_path(@workflow_type, @workflow), :class => 'btn' %>
-  <%= link_to '删除', admin_workflow_type_workflow_path(@workflow_type, @workflow), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+  <%= link_to '返回', admin_category_workflows_path, :class => 'btn'  %>
+  <%= link_to '编辑', edit_admin_category_workflow_path(@workflow_type, @workflow), :class => 'btn' %>
+  <%= link_to '删除', admin_category_workflow_path(@workflow_type, @workflow), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
 </div>

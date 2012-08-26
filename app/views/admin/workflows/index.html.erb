@@ -10,18 +10,18 @@
   </thead>
   <tbody>
     <% @workflows.each do |workflow| %>
-      <tr>
+      <tr id="category_<%= workflow.id %>">
         <td><%= workflow.id %></td>
-        <td><%= link_to workflow.title, admin_workflow_type_workflow_path(@workflow_type,workflow) %></td>
+        <td><%= link_to workflow.title, admin_category_workflow_path(@workflow_type,workflow) %></td>
         <td><%= workflow.created_at %></td>
         <td>
-          <%= link_to '编辑', edit_admin_workflow_type_workflow_path(@workflow_type,workflow), :class => 'btn btn-mini' %>
-          <%= link_to '删除', admin_workflow_type_workflow_path(@workflow_type,workflow), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to '编辑', edit_admin_category_workflow_path(@workflow_type,workflow), :class => 'btn btn-mini' %>
+          <%= link_to '删除', admin_category_workflow_path(@workflow_type,workflow), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to '新条目', new_admin_workflow_type_workflow_path, :class => 'btn btn-primary' %>
+<%= link_to '新条目', new_admin_category_workflow_path, :class => 'btn btn-primary' %>
 <p><%= will_paginate @workflows  %></p>

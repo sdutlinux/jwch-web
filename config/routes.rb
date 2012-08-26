@@ -31,24 +31,40 @@ JwchWeb::Application.routes.draw do
     resources :organizations, :laws
     resources :documents, :education_projects, :teaching_achievements
     
-# 规章制度
-    resources :rule_types do
+    get 'rule_types' => 'rule_types#index'
+    get 'course_types' => 'course_types#index'
+    get 'workflow_types' => 'workflow_types#index'
+    get 'competition_types' => 'competition_types#index'
+
+    resources :sections do 
+      resources :categories
+    end 
+
+    resources :categories do 
       resources :rules
-    end
-# 课程介绍
-    resources :course_types do
       resources :courses
+      resources :workflows
+      resources :competitions 
     end
+
+# 工作流程
+    # resources :workflow_types do
+    #   resources :workflows
+    # end
+
+    # resources  :rule_types do
+    #   resources :rules
+    # end
+# 课程介绍
+    # resources :course_types do
+    #   resources :courses
+    # end
 
 # 创新竞赛
     resources :competition_types do
       resources :competitions
     end
 
-# 工作流程
-    resources :workflow_types do
-      resources :workflows
-    end
 
 
 

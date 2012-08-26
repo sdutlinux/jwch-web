@@ -6,5 +6,7 @@ class Category < ActiveRecord::Base
   belongs_to :section 
   has_many :rules
   has_many :courses 
+  has_many :workflows 
+  has_many :competitions
 
 end

@@ -24,7 +24,7 @@ class Admin::RulesController < ApplicationController
 
     respond_to do |format|
       if @rule.save
-        format.html { redirect_to admin_rule_type_rules_path(:rule_type_id => @rule_type.id), notice: ' 更新成功' }
+        format.html { redirect_to admin_category_rules_path(), notice: ' 更新成功' }
       else
         format.html { render action: "new" }
       end
@@ -48,7 +48,7 @@ class Admin::RulesController < ApplicationController
 
     respond_to do |format|
       if @rule.update_attributes(params[:rule])
-        format.html { redirect_to admin_rule_type_rule_path, notice: 'Competition was successfully updated.' }
+        format.html { redirect_to admin_category_rule_path, notice: '更新成功' }
       else
         format.html { render action: "edit" }
       end
@@ -60,13 +60,13 @@ class Admin::RulesController < ApplicationController
     @rule.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_rule_type_rules_path }
+      format.html { redirect_to admin_category_rules_path }
     end
   end
 
   private
   def find_rule_type
-    @rule_type = Category.find(params[:rule_type_id])
+    @rule_type = Category.find(params[:category_id])
   end
 
   def set_section_key

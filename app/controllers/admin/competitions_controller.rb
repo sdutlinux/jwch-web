@@ -1,3 +1,4 @@
+#coding: utf-8
 class Admin::CompetitionsController < ApplicationController
   layout "admin"
   before_filter :require_logined, :set_section_key, :find_competition_type
@@ -36,7 +37,7 @@ class Admin::CompetitionsController < ApplicationController
 
     respond_to do |format|
       if @competition.save
-        format.html { redirect_to [:admin, @competition_type,@competition], notice: 'Competition was successfully created.' }
+        format.html { redirect_to [:admin, @competition_type,@competition], notice: '创建成功.' }
       else
         format.html { render action: "new" }
       end
@@ -48,7 +49,7 @@ class Admin::CompetitionsController < ApplicationController
 
     respond_to do |format|
       if @competition.update_attributes(params[:competition])
-        format.html { redirect_to admin_competition_type_competition_path, notice: 'Competition was successfully updated.' }
+        format.html { redirect_to admin_category_competition_path, notice: '更新成功.' }
       else
         format.html { render action: "edit" }
       end
@@ -60,14 +61,14 @@ class Admin::CompetitionsController < ApplicationController
     @competition.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_competition_type_competitions_path }
+      format.html { redirect_to admin_category_competitions_path }
     end
   end
 
   private
 
   def find_competition_type
-    @competition_type = CompetitionType.find(params[:competition_type_id])
+    @competition_type = Category.find(params[:category_id])
   end
 
   def set_section_key

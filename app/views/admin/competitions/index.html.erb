@@ -12,16 +12,16 @@
     <% @competitions.each do |competition| %>
       <tr>
         <td><%= competition.id %></td>
-        <td><%= link_to competition.title, admin_competition_type_competition_path(@competition_type,competition) %></td>
+        <td><%= link_to competition.title, admin_category_competition_path(@competition_type, competition) %></td>
         <td><%= competition.created_at %></td>
         <td>
-          <%= link_to '编辑', edit_admin_competition_type_competition_path(@competition_type,competition), :class => 'btn btn-mini' %>
-          <%= link_to '删除', admin_competition_type_competition_path(@competition_type,competition), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to '编辑', edit_admin_category_competition_path(@competition_type,competition), :class => 'btn btn-mini' %>
+          <%= link_to '删除', admin_category_competition_path(@competition_type,competition), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to '新条目', new_admin_competition_type_competition_path, :class => 'btn btn-primary' %>
+<%= link_to '新条目', new_admin_category_competition_path, :class => 'btn btn-primary' %>
 <p><%= will_paginate @competitions %></p>

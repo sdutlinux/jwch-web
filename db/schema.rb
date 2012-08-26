@@ -30,12 +30,6 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "competition_types", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "competitions", :force => true do |t|
     t.string   "title"
     t.string   "rank"
@@ -43,9 +37,9 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.string   "teacher"
     t.string   "member"
     t.string   "remark"
-    t.integer  "competition_type_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "course_types", :force => true do |t|
@@ -190,18 +184,12 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "workflow_types", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "workflows", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "workflow_type_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

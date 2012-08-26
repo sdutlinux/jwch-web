@@ -1,9 +1,9 @@
 #coding: utf-8
 class Workflow < ActiveRecord::Base
-  attr_accessible :workflow_type_id, :content, :title
-  belongs_to :workflow_type
+  attr_accessible :category_id, :content, :title
+  belongs_to :category 
 
-  validates :content, :title, :presence => true
+  validates :content, :title, :category_id, :presence => true
 end
   
 =begin

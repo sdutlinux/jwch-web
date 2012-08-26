@@ -1,8 +1,8 @@
 #coding: utf-8
 class Competition < ActiveRecord::Base
-  attr_accessible :competition_type_id, :member, :rank, :remark, :teacher, :time, :title
-  belongs_to :competition_type
-  validates :member,:rank,:teacher,:time ,:title, :presence => true
+  attr_accessible :category_id, :member, :rank, :remark, :teacher, :time, :title
+  validates :member,:rank,:teacher,:time ,:title, :category_id, :presence => true
+  belongs_to :category 
 end
 
 
