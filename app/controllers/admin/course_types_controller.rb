@@ -4,7 +4,7 @@ class Admin::CourseTypesController < ApplicationController
   before_filter :require_logined, :set_section_key
 
   def index
-    @course_types = CourseType.all
+    @course_types = Category.where(:section_key => @section_key)
 
     respond_to do |format|
       format.html
@@ -12,7 +12,7 @@ class Admin::CourseTypesController < ApplicationController
   end
 
   def new
-    @course_type  = CourseType.new
+    @course_type  = Category.new
 
     respond_to do |format|
       format.html
@@ -20,7 +20,10 @@ class Admin::CourseTypesController < ApplicationController
   end
 
   def create
-    @course_type  = CourseType.new(params[:course_type])
+    @course_type  = Category.new(params[:category])
+    @course_type.section_key = @section_key
+    @course_type.section_id = Section.find_by_section_key(@section_key).id 
+ 
 
     respond_to do |format|
       if @course_type.save
@@ -32,11 +35,11 @@ class Admin::CourseTypesController < ApplicationController
   end
 
   def edit
-    @course_type = CourseType.find(params[:id])
+    @course_type = Category.find(params[:id])
   end
 
   def update
-    @course_type = CourseType.find(params[:id])
+    @course_type = Category.find(params[:id])
 
     respond_to do |format|
       if @course_type.update_attributes(params[:course_type])
@@ -48,7 +51,7 @@ class Admin::CourseTypesController < ApplicationController
   end
 
   def destroy
-    @course_type = CourseType.find(params[:id])
+    @course_type = Category.find(params[:id])
     @course_type.destroy
 
     respond_to do |format|
@@ -58,6 +61,6 @@ class Admin::CourseTypesController < ApplicationController
   
   private
   def set_section_key
-    @section_key = 'ccjs'
+    @section_key = 'kcjs'
   end 
 end

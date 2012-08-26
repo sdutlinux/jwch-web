@@ -1,4 +1,4 @@
-<%= form_for [:admin,@course_type,@course], :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for [:admin,@course_type,@course],:url => admin_course_type_courses_path, :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
     <legend>课程介绍</legend>
 

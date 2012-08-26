@@ -9,7 +9,7 @@ module ApplicationHelper
           ['机构设置', 'jgsz', admin_organizations_path],
           ['政策法规', 'zcfg', admin_laws_path],
           ['规章制度', 'gzzd', admin_rule_types_path],
-          ['课程介绍', 'ccjs', admin_course_types_path],
+          ['课程介绍', 'kcjs', admin_course_types_path],
           ['工作流程', 'gzlc', admin_workflow_types_path],
           ['教务通知', 'jwtz', admin_news_index_path],
           ['下载专区', 'xzzq', admin_documents_path],

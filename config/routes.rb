@@ -30,10 +30,14 @@ JwchWeb::Application.routes.draw do
     resources :news, :users, :links
     resources :organizations, :laws
     resources :documents, :education_projects, :teaching_achievements
-
+    
 # 规章制度
     resources :rule_types do
       resources :rules
+    end
+# 课程介绍
+    resources :course_types do
+      resources :courses
     end
 
 # 创新竞赛
@@ -47,10 +51,6 @@ JwchWeb::Application.routes.draw do
     end
 
 
-# 课程介绍
-    resources :course_types do
-      resources :courses
-    end
 
 # 教学简讯
     resources :message_channels

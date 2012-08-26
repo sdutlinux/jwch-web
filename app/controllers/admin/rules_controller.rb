@@ -24,7 +24,7 @@ class Admin::RulesController < ApplicationController
 
     respond_to do |format|
       if @rule.save
-        format.html { redirect_to [:admin, @rule_type,@rule], notice: ' 更新成功' }
+        format.html { redirect_to admin_rule_type_rules_path(:rule_type_id => @rule_type.id), notice: ' 更新成功' }
       else
         format.html { render action: "new" }
       end
