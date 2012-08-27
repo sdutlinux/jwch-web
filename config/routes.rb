@@ -14,6 +14,7 @@ JwchWeb::Application.routes.draw do
   end
   resources :news
   resources :documents
+  resources :education_projects
 
   get "personal_space" => 'personal_space#index'
 
