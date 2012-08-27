@@ -4,9 +4,7 @@ gem 'rails', '3.2.3'
 gem 'mysql2'
 gem 'will_paginate', '~> 3.0'
 gem 'rails_kindeditor', '~> 0.3.0'
-#attachment
-# gem 'carrierwave'
-# gem 'mime-types'
+gem 'roo'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -20,6 +18,14 @@ group :assets do
 end
 
 gem 'jquery-rails'
+# To use debugger
+group :development do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-remote'
+  gem 'pry-nav'
+  gem 'thin'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -31,14 +37,5 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
-# To use debugger
-group :development do
- # gem 'ruby-debug19', :require => 'ruby-debug'
-  gem 'pry'
-  gem 'pry-rails'
-  gem 'pry-remote'
-  gem 'pry-nav'
-  gem 'thin'
-end
