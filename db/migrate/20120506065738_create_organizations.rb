@@ -6,7 +6,6 @@ class CreateOrganizations < ActiveRecord::Migration
       t.string :author
       t.boolean :show
       t.integer :category_id
-      t.string  :category_name
 
       t.timestamps
     end

@@ -30,12 +30,6 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "competition_types", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "competitions", :force => true do |t|
     t.string   "title"
     t.string   "rank"
@@ -43,9 +37,9 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.string   "teacher"
     t.string   "member"
     t.string   "remark"
-    t.integer  "competition_type_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "course_types", :force => true do |t|
@@ -59,21 +53,21 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.integer  "number"
     t.integer  "point"
     t.string   "pre_course"
-    t.integer  "course_type_id"
+    t.integer  "category_id"
     t.string   "book"
     t.text     "introduction"
     t.string   "references"
     t.string   "major"
     t.string   "level"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "documents", :force => true do |t|
     t.string   "name"
     t.string   "path"
     t.string   "author"
-    t.string   "category"
+    t.string   "category_id"
     t.string   "content_type"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
@@ -143,7 +137,6 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.string   "author"
     t.boolean  "show"
     t.integer  "category_id"
-    t.string   "category_name"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
@@ -157,9 +150,9 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
   create_table "rules", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "rule_type_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "sections", :force => true do |t|
@@ -191,18 +184,12 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "workflow_types", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "workflows", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "workflow_type_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

@@ -9,11 +9,18 @@
     </tr>
   </thead>
   <tbody>
-    <% @workflow_types.each do |workflow_type| %>
-      <%= render workflow_type %>
+    <% @workflow_types.each do |work| %>
+      <tr id="category_<%= work.id %>">
+        <td><%= work.id %></td>
+        <td><%= link_to work.name, admin_category_workflows_path(work) %></td>
+        <td><%= work.created_at %></td>
+        <td>
+          <%= link_to '编辑', edit_admin_section_category_path(:section_id => work.section_id, :id => work.id ), :remote => true, :class => 'btn btn-mini' %>
+          <%= link_to '删除', admin_section_category_path(:section_id => work.section_id, :id => work.id), :method => :delete, :remote => true, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to '添加新分类', new_admin_workflow_type_path(), :class => 'btn btn-primary' %>
-<p><%= will_paginate @workflow_types  %></p>
+<%= link_to '添加新分类', new_admin_section_category_path(@section), :remote => true, :class => 'btn btn-primary' %>

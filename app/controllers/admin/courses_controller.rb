@@ -1,11 +1,10 @@
 #coding: utf-8
 class Admin::CoursesController < ApplicationController
   layout "admin"
-  before_filter :require_logined
-  before_filter :find_course_type
+  before_filter :require_logined, :set_section_key, :find_course_type
 
   def index
-    @courses = @course_type.courses.paginate :page => params[:page], :order => 'created_at desc',
+    @courses = Course.where(:category_id => params[:category_id] ).paginate :page => params[:page], :order => 'created_at desc',
       :per_page => 10
 
     respond_to do |format|
@@ -14,7 +13,7 @@ class Admin::CoursesController < ApplicationController
   end
 
   def new
-    @course = @course_type.courses.build
+    @course = Course.new
 
     respond_to do |format|
       format.html
@@ -26,7 +25,7 @@ class Admin::CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to [:admin, @course_type,@course], notice: ' 更新成功' }
+        format.html { redirect_to admin_category_courses_path(), notice: ' 更新成功' }
       else
         format.html { render action: "new" }
       end
@@ -50,7 +49,7 @@ class Admin::CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.update_attributes(params[:course])
-        format.html { redirect_to admin_course_type_course_path, notice: 'Competition was successfully updated.' }
+        format.html { redirect_to admin_category_course_path, notice: '更新成功.' }
       else
         format.html { render action: "edit" }
       end
@@ -62,14 +61,17 @@ class Admin::CoursesController < ApplicationController
     @course.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_course_type_courses_path }
+      format.html { redirect_to admin_category_courses_path }
     end
   end
 
   private
 
   def find_course_type
-    @course_type = CourseType.find(params[:course_type_id])
+    @course_type = Category.find(params[:category_id])
   end
 
+  def set_section_key
+    @section_key = 'ccjs'
+  end
 end

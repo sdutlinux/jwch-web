@@ -5,7 +5,7 @@ class CreateCourses < ActiveRecord::Migration
       t.integer :number
       t.integer :point
       t.string :pre_course
-      t.integer :course_type_id
+      t.integer :category_id 
       t.string :book
       t.text :introduction
       t.string :references

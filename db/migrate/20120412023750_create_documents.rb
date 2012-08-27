@@ -4,7 +4,7 @@ class CreateDocuments < ActiveRecord::Migration
       t.string :name
       t.string :path
       t.string :author
-      t.string :category
+      t.string :category_id 
       t.string :content_type
 
       t.timestamps

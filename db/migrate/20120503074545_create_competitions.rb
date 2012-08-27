@@ -7,7 +7,7 @@ class CreateCompetitions < ActiveRecord::Migration
       t.string :teacher
       t.string :member
       t.string :remark
-      t.integer :competition_type_id
+      t.integer :category_id
 
       t.timestamps
     end

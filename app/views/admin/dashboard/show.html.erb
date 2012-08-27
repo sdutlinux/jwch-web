@@ -1,9 +1,4 @@
-<%if flash[:notice] %>
-  <div class="alert alert-success">
-    <%= flash[:notice] %>
-    <%= button_tag 'x', :class =>"close" %>
-  </div>
-<% else %>
+<% unless flash[:notice] %>
   <div class="alert alert-success">
     欢迎使用
     <%= button_tag 'x', :class =>"close" %>

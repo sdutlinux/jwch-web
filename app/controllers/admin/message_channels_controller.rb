@@ -1,7 +1,7 @@
 #coding: utf-8
 class Admin::MessageChannelsController < ApplicationController
   layout "admin"
-  before_filter :require_logined
+  before_filter :require_logined, :set_section_key
 
   def index
     @message_channel = MessageChannel.new
@@ -36,4 +36,10 @@ class Admin::MessageChannelsController < ApplicationController
       end
     end
   end
+
+  private
+  def set_section_key
+    @section_key = 'jxjx'
+  end
+
 end

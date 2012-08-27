@@ -16,7 +16,6 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -37,6 +36,9 @@ gem 'jquery-rails'
 # To use debugger
 group :development do
  # gem 'ruby-debug19', :require => 'ruby-debug'
- gem 'pry'
- gem 'thin'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-remote'
+  gem 'pry-nav'
+  gem 'thin'
 end

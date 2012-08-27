@@ -1,15 +1,9 @@
 #coding: utf-8
 class Admin::LawsController < ApplicationController
   layout "admin"
-  before_filter :require_logined
+  before_filter :require_logined, :set_section_key, :find_categories
 
   def index
-    @province_laws = Law.where(:category_id => 1)
-    @country_laws = Law.where(:category_id => 2)
-
-    respond_to do |format|
-      format.html
-    end
   end
 
   def new
@@ -67,5 +61,12 @@ class Admin::LawsController < ApplicationController
     end
   end
 
+  private 
+  def find_categories 
+    @categories = Category.where(:section_key => 'zcfg')
+  end
 
+  def set_section_key
+    @section_key = 'zcfg'
+  end
 end

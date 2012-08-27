@@ -1,9 +1,9 @@
 #coding: utf-8
 class Rule < ActiveRecord::Base
-  attr_accessible :content, :rule_type_id, :title
-  belongs_to :rule_type
-
+  attr_accessible :content, :category_id, :title
   validates :content, :title, :presence => true
+
+  belongs_to :category
 end
 
 =begin rdoc

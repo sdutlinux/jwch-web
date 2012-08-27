@@ -1,7 +1,8 @@
 #coding=utf-8
 class Admin::NewsController < ApplicationController
   layout "admin"
-  before_filter :require_logined
+  before_filter :require_logined, :set_section_key
+
   def index
     @news = News.paginate :page=>params[:page], :order => 'created_at desc',
       :per_page => 10
@@ -62,5 +63,9 @@ class Admin::NewsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_news_index_url }
     end
+  end
+
+  def set_section_key
+    @section_key = "jwtz"
   end
 end

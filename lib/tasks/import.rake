@@ -16,6 +16,7 @@ namespace :import do
       {:name => "创新竞赛", :section_key => "cxjs"},  #10  
       {:name => "个人空间", :section_key => "grkj"},  
       {:name => "《教学简讯》", :section_key =>"jxjx"},
+      {:name => "相关链接", :section_key =>"xglj"},
 
       {:name => "专业介绍", :parent_section_id => 4, :section_key => "zyjs"},
       {:name => "课程介绍", :parent_section_id => 4, :section_key => "kcjs" },   # id = 11
@@ -157,7 +158,21 @@ namespace :import do
       {:name => "第八届全国机器人足球锦标赛", :section_key => "cxjs"},
       {:name => "“星科杯”山东省机器人大赛", :section_key => "cxjs"},
       {:name => "第十届“外研社”全国英语辩论赛", :section_key => "cxjs"},
-      {:name => "CCTV杯全国英语演讲比赛山东赛区", :section_key => "cxjs"}
+      {:name => "CCTV杯全国英语演讲比赛山东赛区", :section_key => "cxjs"},
+
+      {:name => '学业学籍', :section_key => "xzzq"},
+      {:name => '教学研究', :section_key => "xzzq"},
+      {:name => '实践教学', :section_key => "xzzq"},
+      {:name => '选课中心', :section_key => "xzzq"},
+      {:name => '教材', :section_key => "xzzq"},
+      {:name => '考务', :section_key => "xzzq"},
+      {:name => '实验教学', :section_key => "xzzq"},
+      {:name => '教学简讯', :section_key => "xzzq"},
+      {:name => '通知附件', :section_key => "xzzq"},
+      {:name => '质量管理', :section_key => "xzzq"},
+      {:name => '教学评估', :section_key => "xzzq"},
+      {:name => '其它', :section_key => "xzzq"}
+
     ]
 
     categories.each do |category|
