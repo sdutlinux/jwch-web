@@ -55,11 +55,11 @@
                     <% m[:items].each do |item| %>
                       <% if item[1] == @section_key %>
                         <li class = 'active' >
-                          <%= link_to "<i class=\"icon-list icon-white\"></i>#{item.first}".html_safe, item.last %>
+                          <%= link_to "<i class=\"#{item[2]} icon-white\"></i>#{item.first}".html_safe, item.last %>
                         </li>
                       <% else %>
                         <li>
-                          <%= link_to "<i class=\"icon-list\"></i>#{item.first}".html_safe, item.last %>
+                          <%= link_to "<i class=\"#{item[2]}\"></i>#{item.first}".html_safe, item.last %>
                         </li>
                       <% end %>
                     <%end%>
