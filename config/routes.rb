@@ -25,7 +25,7 @@ JwchWeb::Application.routes.draw do
   delete "logout" => "session#destroy", :as => :logout
 
   namespace :admin do
-    get '/', :to => "dashboard#show", :as => :dashboard
+    get '/', :to => "dashboard#show"
 
     resources :news, :users, :links
     resources :organizations, :laws

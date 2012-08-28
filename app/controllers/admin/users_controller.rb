@@ -2,7 +2,7 @@
 class Admin::UsersController < ApplicationController
   layout "admin"
   before_filter :require_logined, :set_section_key
-  before_filter :require_admin, :except =>[:update]
+  before_filter :require_admin, :except => [:edit,:update]
 
   def index
     @users = User.all
@@ -50,7 +50,7 @@ class Admin::UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to admin_user_path,
+        format.html { redirect_to admin_path,
                       notice: '修改成功' }
       else
         format.html { render action: "edit" }
