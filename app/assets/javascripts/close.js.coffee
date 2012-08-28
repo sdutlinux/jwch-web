@@ -1,3 +1,3 @@
 $ ->
-  $('.close').on 'click', ->
-    $('.close').parent().remove()
+  $('.alert .close').on 'click', ->
+    $(this).parent().remove()

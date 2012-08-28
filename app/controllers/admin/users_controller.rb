@@ -1,6 +1,8 @@
+#coding: utf-8
 class Admin::UsersController < ApplicationController
   layout "admin"
-  before_filter :require_admin, :set_section_key
+  before_filter :require_logined, :set_section_key
+  before_filter :require_admin, :except =>[:update]
 
   def index
     @users = User.all
@@ -24,7 +26,7 @@ class Admin::UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html { redirect_to admin_user_path(@user),
-          notice: 'User was successfully created.' }
+          notice: '成功创建了用户' }
       else
         format.html { render action: "new" }
       end
@@ -49,7 +51,7 @@ class Admin::UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to admin_user_path,
-                      notice: 'News was successfully updated.' }
+                      notice: '修改成功' }
       else
         format.html { render action: "edit" }
       end

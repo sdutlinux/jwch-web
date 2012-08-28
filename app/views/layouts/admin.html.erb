@@ -68,12 +68,6 @@
               </div><!--/.well -->
             </div><!--/span-->
              <div class="span10">
-              <% if flash[:notice] %>
-                 <div class="alert alert-success">
-                  <%= flash[:notice] %>
-                  <%= button_tag 'x', :class =>"close" %>
-                </div>
-              <% end %>
             <%= yield %>
             </div>
         </div><!--/row-->

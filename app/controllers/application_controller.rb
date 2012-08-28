@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def require_admin
     if session[:user_id]
       unless current_user.admin
-        flash[:notice] = "需要管理员权限"
+        flash[:error] = "需要管理员权限"
         redirect_to admin_dashboard_path
       end
     end
@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logined?
-    session[:user_id]
+    !!session[:user_id]
   end
 
 
