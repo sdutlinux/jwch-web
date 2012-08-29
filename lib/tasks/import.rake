@@ -188,4 +188,10 @@ namespace :import do
    desc "import all "
    task :all => [:sections, :categories] 
 
+   desc "destroy categories"
+   task :destroy_data => :environment do
+      Section.destroy_all
+      Category.destroy_all
+   end
+
 end

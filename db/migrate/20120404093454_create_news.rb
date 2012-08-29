@@ -5,7 +5,7 @@ class CreateNews < ActiveRecord::Migration
       t.text :content
       t.string :author
       t.string :department
-      t.boolean :show
+      t.boolean :show, :default => 1
 
       t.timestamps
     end

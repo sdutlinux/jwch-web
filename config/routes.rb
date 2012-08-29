@@ -61,9 +61,9 @@ JwchWeb::Application.routes.draw do
     # end
 
 # 创新竞赛
-    resources :competition_types do
-      resources :competitions
-    end
+    # resources :competition_types do
+    #   resources :competitions
+    # end
 
 
 
