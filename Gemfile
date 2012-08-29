@@ -12,14 +12,10 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bootstrap-sass' 
   gem 'therubyracer'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platform => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
-# To use debugger
 group :development do
   gem 'pry'
   gem 'pry-rails'
@@ -27,6 +23,8 @@ group :development do
   gem 'pry-nav'
   gem 'thin'
 end
+
+gem 'capistrano'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -37,6 +35,4 @@ end
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-gem 'capistrano'
 
