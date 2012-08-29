@@ -33,4 +33,4 @@
 </table>
 
 <%= link_to '新条目', new_admin_category_course_path, :class => 'btn btn-primary' %>
-<p><%= will_paginate @courses %></p>
+<p><%= will_paginate @courses,  :renderer => BootstrapPagination::Rails %></p>
