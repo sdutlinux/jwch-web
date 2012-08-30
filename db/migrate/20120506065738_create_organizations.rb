@@ -4,7 +4,7 @@ class CreateOrganizations < ActiveRecord::Migration
       t.string :name
       t.text :responsibility
       t.string :author
-      t.boolean :show
+      t.boolean :show, :default => 1
       t.integer :category_id
 
       t.timestamps

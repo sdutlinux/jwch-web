@@ -1,8 +1,10 @@
 <%= render :partial => "upload_form"%>
 
 <% if flash[:notice] %>
-<div class="alert alert-success">
-      <%= flash[:notice] %></div>
+  <div class="alert alert-success">
+      <%= flash[:notice] %>
+      <%= button_tag 'x', :class =>"close" %>
+  </div>
 <% end %>
 
 <h3>所有文件</h3>

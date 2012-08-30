@@ -9,9 +9,9 @@ class SessionController < ApplicationController
     if @user
       session[:user_id] = @user.id
       flash[:notice] = "欢迎 #{@user.name}"
-      redirect_to admin_dashboard_path
+      redirect_to admin_path
     else
-      flash[:notice] = "登陆失败，请检查用户名和密码"
+      flash[:error] = "登陆失败，请检查用户名和密码"
       redirect_to login_path
     end
   end

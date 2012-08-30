@@ -126,9 +126,9 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.text     "content"
     t.string   "author"
     t.string   "department"
-    t.boolean  "show"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "show",       :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "organizations", :force => true do |t|

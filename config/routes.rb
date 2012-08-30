@@ -26,7 +26,7 @@ JwchWeb::Application.routes.draw do
   delete "logout" => "session#destroy", :as => :logout
 
   namespace :admin do
-    get '/', :to => "dashboard#show", :as => :dashboard
+    get '/', :to => "dashboard#show"
 
     resources :news, :users, :links
     resources :organizations, :laws
@@ -62,9 +62,9 @@ JwchWeb::Application.routes.draw do
     # end
 
 # 创新竞赛
-    resources :competition_types do
-      resources :competitions
-    end
+    # resources :competition_types do
+    #   resources :competitions
+    # end
 
 
 

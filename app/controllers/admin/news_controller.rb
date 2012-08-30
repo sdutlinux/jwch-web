@@ -1,10 +1,10 @@
-#coding=utf-8
+#coding: utf-8
 class Admin::NewsController < ApplicationController
   layout "admin"
   before_filter :require_logined, :set_section_key
 
   def index
-    @news = News.paginate :page=>params[:page], :order => 'created_at desc',
+    @news = News.paginate :page=>params[:page], :order => 'id asc',
       :per_page => 10
 
     respond_to do |format|

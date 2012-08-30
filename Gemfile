@@ -3,23 +3,28 @@ source 'http://ruby.taobao.org'
 gem 'rails', '3.2.3'
 gem 'mysql2'
 gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 gem 'rails_kindeditor', '~> 0.3.0'
-#attachment
-# gem 'carrierwave'
-# gem 'mime-types'
+gem 'roo'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bootstrap-sass' 
   gem 'therubyracer'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platform => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
+group :development do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-remote'
+  gem 'pry-nav'
+  gem 'thin'
+end
+
+gem 'capistrano'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -30,15 +35,4 @@ gem 'jquery-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
 
-# To use debugger
-group :development do
- # gem 'ruby-debug19', :require => 'ruby-debug'
-  gem 'pry'
-  gem 'pry-rails'
-  gem 'pry-remote'
-  gem 'pry-nav'
-  gem 'thin'
-end

@@ -12,7 +12,7 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "admin", :media => "all" %>
     <%= javascript_include_tag "application" %>
 
     <!-- Le fav and touch icons -->
@@ -25,16 +25,7 @@
           <a class="brand" href="/admin">管理后台</a>
           <div class="container nav-collapse">
             <ul class="nav pull-right">
-              <li><%= link_to "<i class=\"icon-user icon-white\"></i> #{current_user.name}".html_safe, '#'  %></li>
-              <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "个人资料" %></li>
-                <li><%= link_to "更改密码" %></li>
-              </ul>
-              </li>
+              <li><%= link_to "<i class=\"icon-user icon-white\"></i> #{current_user.name}".html_safe, edit_admin_user_path(session[:user_id])  %> </li>
                <li><%= link_to "退出", logout_path, :method => "delete"  %></li>
               <li><%= link_to '网站首页','/' %></li>
             </ul>
@@ -55,11 +46,11 @@
                     <% m[:items].each do |item| %>
                       <% if item[1] == @section_key %>
                         <li class = 'active' >
-                          <%= link_to "<i class=\"icon-list icon-white\"></i>#{item.first}".html_safe, item.last %>
+                          <%= link_to "<i class=\"#{item[2]} icon-white\"></i>#{item.first}".html_safe, item.last %>
                         </li>
                       <% else %>
                         <li>
-                          <%= link_to "<i class=\"icon-list\"></i>#{item.first}".html_safe, item.last %>
+                          <%= link_to "<i class=\"#{item[2]}\"></i>#{item.first}".html_safe, item.last %>
                         </li>
                       <% end %>
                     <%end%>
@@ -68,12 +59,6 @@
               </div><!--/.well -->
             </div><!--/span-->
              <div class="span10">
-              <% if flash[:notice] %>
-                 <div class="alert alert-success">
-                  <%= flash[:notice] %>
-                  <%= button_tag 'x', :class =>"close" %>
-                </div>
-              <% end %>
             <%= yield %>
             </div>
         </div><!--/row-->

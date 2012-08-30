@@ -1,4 +1,4 @@
-#coding=utf-8
+#coding: utf-8
 class Admin::EducationProjectsController < ApplicationController
   layout "admin"
   before_filter :require_logined, :set_section_key
@@ -37,7 +37,7 @@ class Admin::EducationProjectsController < ApplicationController
 
     respond_to do |format|
       if @education_project.save
-        format.html { redirect_to [:admin,@education_project], notice: 'EducationProject was successfully created.' }
+        format.html { redirect_to [:admin,@education_project], notice: '创建成功.' }
       else
         format.html { render action: "new" }
       end
@@ -49,7 +49,7 @@ class Admin::EducationProjectsController < ApplicationController
 
     respond_to do |format|
       if @education_project.update_attributes(params[:education_project])
-        format.html { redirect_to admin_education_project_path, notice: 'EducationProject was successfully updated.' }
+        format.html { redirect_to admin_education_project_path, notice: '修改成功.' }
       else
         format.html { render action: "edit" }
       end

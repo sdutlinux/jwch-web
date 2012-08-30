@@ -1,4 +1,4 @@
-#coding=UTF-8
+#coding: utf-8
 class Admin::DashboardController < ApplicationController
   layout "admin"
   before_filter :require_logined

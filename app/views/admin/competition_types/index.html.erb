@@ -1,4 +1,8 @@
-<h1>创新竞赛</h1>
+<div class="page-header">
+<span class="section-title"> 创新竞赛 </span>
+<%= link_to '添加新分类', new_admin_section_category_path(@section), :remote => true, :class => 'btn btn-primary pull-right' %>
+</div>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -23,5 +27,4 @@
   </tbody>
 </table>
 
-<%= link_to '添加新分类', new_admin_section_category_path(@section), :remote => true, :class => 'btn btn-primary' %>
-<p><%= will_paginate @competition_types  %></p>
+<p><%= will_paginate @competition_types, :renderer => BootstrapPagination::Rails  %></p>

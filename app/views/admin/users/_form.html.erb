@@ -30,17 +30,18 @@
         <%= f.text_field :department, :class => 'text_field' %>
       </div>
     </div>
-
+    <% if is_admin?  %>
     <div class="control-group">
       <%= f.label '管理员权限', :class => 'control-label' %>
       <div class="controls">
         <%= f.check_box :admin, :class => 'check_box' %>
       </div>
     </div>
+    <% end %>
 
     <div class="form-actions">
       <%= f.submit '提交', :class => 'btn btn-primary' %>
-      <%= link_to '取消', admin_users_path, :class => 'btn' %>
+      <%= link_to '取消', admin_path, :class => 'btn' %>
     </div>
   </fieldset>
 <% end %>

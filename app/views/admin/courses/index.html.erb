@@ -1,3 +1,10 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+      <%= flash[:notice] %>
+      <%= button_tag 'x', :class =>"close" %>
+  </div>
+<% end %>
+
 <h1>课程介绍</h1>
 <table class="table table-striped">
   <thead>
@@ -26,4 +33,4 @@
 </table>
 
 <%= link_to '新条目', new_admin_category_course_path, :class => 'btn btn-primary' %>
-<p><%= will_paginate @courses %></p>
+<p><%= will_paginate @courses,  :renderer => BootstrapPagination::Rails %></p>

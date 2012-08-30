@@ -1,3 +1,10 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+      <%= flash[:notice] %>
+      <%= button_tag 'x', :class =>"close" %>
+  </div>
+<% end %>
+
 <p>
   <b>链接</b><br>
   <%= @link.name %>
