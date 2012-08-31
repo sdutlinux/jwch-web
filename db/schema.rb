@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120825071254) do
 
-  create_table "attachments", :force => true do |t|
-    t.string   "file_name"
-    t.string   "content_type"
-    t.string   "file_size"
-    t.string   "attachment"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
     t.integer  "section_id",  :null => false
@@ -40,12 +31,6 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.integer  "category_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-  end
-
-  create_table "course_types", :force => true do |t|
-    t.string   "college"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "courses", :force => true do |t|
@@ -135,16 +120,10 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
     t.string   "name"
     t.text     "responsibility"
     t.string   "author"
-    t.boolean  "show"
+    t.boolean  "show",           :default => true
     t.integer  "category_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  create_table "rule_types", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "rules", :force => true do |t|
