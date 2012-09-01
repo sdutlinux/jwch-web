@@ -17,7 +17,6 @@
   <thead>
     <tr>
       <th>标题</th>
-      <th>时间</th>
       <th>分类</th>
       <th>内容</th>
       <th>作者</th>
@@ -28,9 +27,8 @@
     <% Organization.category_posts(category.id).each do |p| %>
       <tr>
         <td><%= link_to p.name, admin_organization_path(p) %></td>
-        <td><%= p.created_at %></td>
         <td><%= category_name p.category_id %></td>
-        <td><%= p.responsibility %></td>
+        <td><%= truncate(remove_html_tag(p.responsibility), :length => 20) %></td>
         <td><%= p.author %></td>
         <td>
          <%= link_to '编辑', edit_admin_organization_path(p), :class => 'btn btn-mini' %>
