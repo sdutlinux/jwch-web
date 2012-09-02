@@ -16,8 +16,13 @@ set :branch, "master"
 ssh_options[:forward_agent] = true
 
 set :deploy_to, "/home/group/#{application}"
-set :current_public,   "/home/group/#{application}/current/public"
-set :shared_path,      "/home/group/#{application}/shared"
+# set path
+set(:releases_path)     { File.join(deploy_to, version_dir) }
+set(:shared_path)       { File.join(deploy_to, shared_dir) }
+set(:current_path)      { File.join(deploy_to, current_dir) }
+set(:release_path)      { File.join(releases_path, release_name) }
+# set :current_public,   "/home/group/#{application}/current/public"
+# set :shared_path,      "/home/group/#{application}/shared"
 
 server '211.64.30.55', :app, :web, :db, :primary => true
 set :rails_env, "production"
