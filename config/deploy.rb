@@ -14,6 +14,7 @@ set :deploy_to, "/home/group/#{application}"
 server '211.64.30.56', :app, :web, :db, :primary => true
 set :keep_releases, 2
 
+set :bundle_without, [:development,:test] 
 
 
 role :web, "Nginx"                          # Your HTTP server, Apache/etc
