@@ -11,7 +11,7 @@ default_run_options[:pty] = true  # Must be set for the password prompt
 ssh_options[:forward_agent] = true
 
 set :deploy_to, "/home/group/#{application}"
-server '211.64.30.56', :app, :web, :db, :primary => true
+server '211.64.30.55', :app, :web, :db, :primary => true
 set :keep_releases, 2
 
 set :bundle_without, [:development,:test] 
