@@ -4,14 +4,15 @@ require 'bundler/capistrano'                #添加之后部署时会调用bundl
 set :use_sudo, false
 set :rvm_type, :system 
 require 'rvm/capistrano'
+set :user, "lidashuang" 
 
 set :application, "jwch-web"
 default_run_options[:pty] = true  # Must be set for the password prompt
 
 set :repository,  "git@github.com:lidashuang/jwch-web.git"
 set :deploy_via, :remote_cache
-set :user, "lidashuang" 
 set :scm, :git
+set :scm_username 'lidashuang'
 set :branch, "master"
 ssh_options[:forward_agent] = true
 
