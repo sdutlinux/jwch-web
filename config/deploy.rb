@@ -12,7 +12,7 @@ default_run_options[:pty] = true  # Must be set for the password prompt
 set :repository,  "git@github.com:lidashuang/jwch-web.git"
 set :deploy_via, :remote_cache
 set :scm, :git
-set :scm_username 'lidashuang'
+set :scm_username, 'lidashuang'
 set :branch, "master"
 ssh_options[:forward_agent] = true
 
