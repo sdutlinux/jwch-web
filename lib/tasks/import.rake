@@ -68,6 +68,9 @@ namespace :import do
     end
   end
 
+  desc "import all "
+  task :all => [:news, :org, :laws]
+
  # for test 
   desc "destroy all"
   task :destroy_all => :environment do
