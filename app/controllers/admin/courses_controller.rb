@@ -72,6 +72,6 @@ class Admin::CoursesController < ApplicationController
   end
 
   def set_section_key
-    @section_key = 'ccjs'
+    @section_key = 'kcjs'
   end
 end

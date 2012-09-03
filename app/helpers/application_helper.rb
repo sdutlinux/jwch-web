@@ -27,4 +27,7 @@ module ApplicationHelper
   def category_name(id)
     Category.find(id).name
   end
+  def remove_html_tag(text)
+    text.gsub(%r{</?[^>]+?>}, '')
+  end
 end
