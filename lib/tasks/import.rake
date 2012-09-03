@@ -68,6 +68,58 @@ namespace :import do
     end
   end
 
+  desc "规章制度"
+  task :rules => :environment do
+    puts "import 规章制度"
+    r_sheet = Excel.new("#{Rails.root}/lib/tasks/guizhangzhidu.xls")
+    r_sheet.default_sheet = r_sheet.sheets.first
+
+    puts "find id "
+    zh_id   = Category.find_by_name('综合类').id 
+    jxyj_id = Category.find_by_name('教学研究与改革').id 
+    jxjh_id = Category.find_by_name('教学计划管理').id 
+    jxyx_id = Category.find_by_name('教学运行管理').id 
+    xjgl_id = Category.find_by_name('学籍管理').id 
+    kgzy_id = Category.find_by_name('课程及专业建设').id 
+    syjx_id = Category.find_by_name('实验教学管理').id 
+    sjjx_id = Category.find_by_name('实践教学管理').id 
+    jcjs_id = Category.find_by_name('教材建设与管理').id 
+    jxzl_id = Category.find_by_name('教学质量管理').id 
+
+
+    2.upto(r_sheet.last_row) do |line|
+      puts "now import #{r_sheet.cell(line,'A')} low #{r_sheet.cell(line, 'B')} "
+      rule = Rule.new
+      rule.title = r_sheet.cell(line,'B')
+      rule.content = r_sheet.cell(line,'C')
+      case r_sheet.cell(line,'D')
+      when 8
+        rule.category_id = zh_id
+      when 10
+        rule.category_id = jxyj_id
+      when 11
+        rule.category_id = jxjh_id
+      when 12
+        rule.category_id = jxyx_id
+      when 13
+        rule.category_id = xjgl_id
+      when 14
+        rule.category_id = kgzy_id
+      when 15
+        rule.category_id = syjx_id
+      when 16
+        rule.category_id = sjjx_id
+      when 17
+        rule.category_id = jcjs_id
+      when 18
+        rule.category_id = jxzl_id
+      else
+        next
+      end
+      rule.save!
+    end
+  end
+
   desc "import all "
   task :all => [:news, :org, :laws]
 

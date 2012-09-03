@@ -26,6 +26,7 @@ set(:release_path)      { File.join(releases_path, release_name) }
 # set :shared_path,      "/home/group/#{application}/shared"
 
 server '211.64.30.55', :app, :web, :db, :primary => true
+# ssh_options[:port] = 80
 set :rails_env, "production"
 set :rvm_ruby_string, 'ruby-1.9.3-p194@jwch-web'
 set :keep_releases, 2
@@ -64,3 +65,10 @@ namespace :deploy do
   	run "cd #{release_path}; bundle exec rake import:all RAILS_ENV=#{rails_env}"
   end
 end
+
+# after "bundle:install", "deploy:create_database"
+# after "deploy:create_database", "deploy:migrate"
+# after "deploy:migrate", "deploy:init"
+# after "deploy:init", "deploy:import_data"
+
+# after "deploy:create_symlink", "deploy:cleanup"
