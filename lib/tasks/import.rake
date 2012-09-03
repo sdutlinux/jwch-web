@@ -16,6 +16,8 @@ namespace :import do
     puts 'import down'
   end
 
+
+
  # for test 
   desc "destroy all"
   task :destroy_all => :environment do
