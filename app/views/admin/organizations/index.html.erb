@@ -1,41 +1,41 @@
 <% if flash[:notice] %>
   <div class="alert alert-success">
-      <%= flash[:notice] %>
-      <%= button_tag 'x', :class =>"close" %>
+    <%= flash[:notice] %>
+    <%= button_tag 'x', :class =>"close" %>
   </div>
 <% end %>
 
 <div class="page-header">
   <span class="section-title">
-     组织机构 
+    组织机构 
   </span>
-<%= link_to "添加", new_admin_organization_path(),  :class => 'btn btn-primary pull-right'%>
+  <%= link_to "添加", new_admin_organization_path(),  :class => 'btn pull-right'%>
 </div>
 <% @categories.each do |category|%>
-<h4><%= category_name category.id %></h4>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>标题</th>
-      <th>分类</th>
-      <th>内容</th>
-      <th>作者</th>
-       <th>动作</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% Organization.category_posts(category.id).each do |p| %>
+  <h4><%= category_name category.id %></h4>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= link_to p.name, admin_organization_path(p) %></td>
-        <td><%= category_name p.category_id %></td>
-        <td><%= truncate(remove_html_tag(p.responsibility), :length => 20) %></td>
-        <td><%= p.author %></td>
-        <td>
-         <%= link_to '编辑', edit_admin_organization_path(p), :class => 'btn btn-mini' %>
-          <%= link_to '删除', admin_organization_path(p), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-        </td>
+        <th>标题</th>
+        <th>分类</th>
+        <th>内容</th>
+        <th>作者</th>
+        <th>动作</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% Organization.category_posts(category.id).each do |p| %>
+        <tr>
+          <td><%= link_to p.name, admin_organization_path(p) %></td>
+          <td><%= category_name p.category_id %></td>
+          <td><%= truncate(remove_html_tag(p.responsibility), :length => 20) %></td>
+          <td><%= p.author %></td>
+          <td>
+            <%= link_to '编辑', edit_admin_organization_path(p), :class => 'btn btn-mini' %>
+            <%= link_to '删除', admin_organization_path(p), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% end %>

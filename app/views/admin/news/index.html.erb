@@ -1,13 +1,13 @@
 <% if flash[:notice] %>
   <div class="alert alert-success">
-      <%= flash[:notice] %>
-      <%= button_tag 'x', :class =>"close" %>
+    <%= flash[:notice] %>
+    <%= button_tag 'x', :class =>"close" %>
   </div>
 <% end %>
 
 <div class="page-header">
   <span class="section-title"> 教务通知 </span>
-  <%= link_to '发布', new_admin_news_path, :class => 'btn btn-primary pull-right' %>
+  <%= link_to '发布', new_admin_news_path, :class => 'btn pull-right' %>
 </div>
 
 <table class="table table-striped">
