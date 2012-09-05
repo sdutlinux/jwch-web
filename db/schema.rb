@@ -35,15 +35,18 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
 
   create_table "courses", :force => true do |t|
     t.string   "name"
-    t.integer  "number"
-    t.integer  "point"
+    t.string   "engname"
+    t.string   "number"
+    t.string   "point"
     t.string   "pre_course"
-    t.integer  "category_id"
     t.string   "book"
+    t.integer  "category_id"
     t.text     "introduction"
     t.string   "references"
     t.string   "major"
     t.string   "level"
+    t.string   "college"
+    t.string   "attribution"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
