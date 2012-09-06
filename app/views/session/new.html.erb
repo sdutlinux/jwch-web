@@ -1,15 +1,39 @@
-<%if flash[:error]%>
-  <p id="notice"><%= flash[:error] %></p>
-<%end%>
-<div class="row">
-  <div class="span4 ">
-    <%= form_tag login_path do%>
-      <label for="login">用户名:</label>
-      <%= text_field_tag :name, params[:name]%>
-      <label for="password">密码:</label>
-      <%= password_field_tag :password, params[:password]%>
-      <br>
-      <%= submit_tag "登陆", :class => 'btn btn-primary'%>
+<!DOCTYPE html>
+<html lang="en">
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <head>
+    <title>登录</title>
+    <%= stylesheet_link_tag "login", :media => "all" %>
+  </head> 
+  <body>
+    <%if flash[:error]%>
+      <p id="notice"><%= flash[:error] %></p>
     <%end%>
-  </div>
-</div>
+    <div class="container">
+      <div class="row">
+        <div class="span6 offset2 well">
+          <%= form_tag login_path,  :class => 'form-horizontal'  do%>
+            <div class="control-group">
+              <%= label_tag 'login', '用户名:', :class => 'control-label'  %>
+              <div class="controls">
+                <%= text_field_tag :name, params[:name]%>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= label_tag 'password', '密码:', :class => 'control-label' %>
+              <div class="controls">
+                <%= password_field_tag :password, params[:password], :class => "text_field"%>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <%= submit_tag "登陆", :class => 'btn'%>
+              </div>
+            </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
