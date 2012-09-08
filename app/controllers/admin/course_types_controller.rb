@@ -4,7 +4,7 @@ class Admin::CourseTypesController < ApplicationController
   before_filter :require_logined, :set_section_key, :find_section
 
   def index
-    @course_types = Category.where(:section_key => @section_key)
+    @course_types = Category.where(:section_key => @section_key).paginate(:per_page => 6, :page => params[:page])
 
     respond_to do |format|
       format.html

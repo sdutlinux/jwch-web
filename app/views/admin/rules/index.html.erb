@@ -5,7 +5,12 @@
   </div>
 <% end %>
 
-<h1>规章制度</h1>
+<div class="page-header">
+  <span class="section-title">
+      规章制度
+  </span>
+    <%= link_to '新条目', new_admin_category_rule_path, :class => 'btn pull-right' %>
+</div>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -30,4 +35,3 @@
   </tbody>
 </table>
 
-<%= link_to '新条目', new_admin_category_rule_path, :class => 'btn btn-primary' %>

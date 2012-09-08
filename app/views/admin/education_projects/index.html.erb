@@ -1,15 +1,13 @@
 <% if flash[:notice] %>
   <div class="alert alert-success">
-      <%= flash[:notice] %>
-      <%= button_tag 'x', :class =>"close" %>
+    <%= flash[:notice] %>
+    <%= button_tag 'x', :class =>"close" %>
   </div>
 <% end %>
 
 <div class="page-header">
-  <span class="section-title">
-    教改立项
-  </span>
-  <%= link_to '发布', new_admin_education_project_path, :class => 'btn btn-primary pull-right' %>
+  <span class="section-title"> 教改立项 </span>
+  <%= link_to '发布', new_admin_education_project_path, :class => 'btn pull-right' %>
 </div>
 <table class="table table-striped">
   <thead>
@@ -24,17 +22,17 @@
   </thead>
   <tbody>
     <% @education_projects.each do |education_project| %>
-    <tr>
-      <td><%= link_to education_project.name, admin_education_project_path(education_project) %></td>
-      <td><%= education_project.rank  %></td>
-      <td><%= education_project.year  %></td>
-      <td><%= education_project.department  %></td>
-      <td><%= education_project.team  %></td>
-      <td>
-        <%= link_to '编辑', edit_admin_education_project_path(education_project), :class => 'btn btn-mini' %>
-        <%= link_to '删除', admin_education_project_path(education_project), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-      </td>
-    </tr>
+      <tr>
+        <td><%= link_to education_project.name, admin_education_project_path(education_project) %></td>
+        <td><%= education_project.rank  %></td>
+        <td><%= education_project.year  %></td>
+        <td><%= education_project.department  %></td>
+        <td><%= education_project.team  %></td>
+        <td>
+          <%= link_to '编辑', edit_admin_education_project_path(education_project), :class => 'btn btn-mini' %>
+          <%= link_to '删除', admin_education_project_path(education_project), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
