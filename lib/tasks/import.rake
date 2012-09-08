@@ -19,6 +19,7 @@ namespace :import do
     puts 'import down'
   end
 
+
   desc "import jigoushezhi"
   task :org => :environment do    
     puts "import 机构设置"

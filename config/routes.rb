@@ -4,17 +4,19 @@ JwchWeb::Application.routes.draw do
   resources :organizations
   resources :laws
 
-  resources :rule_types do
+  resources :categories do
     resources :rules 
-  end
-  resources :course_types do
     resources :courses 
-  end
-  resources :workflow_types do
     resources :workflows
   end
+  get 'rule_types' => 'rule_types#index'
+  get 'course_types' => 'course_types#index'
+  get 'workflow_types' => 'workflow_types#index'
+  get 'competition_types' => 'competition_types#index'
+
   resources :news
   resources :documents
+  resources :education_projects
 
   get "personal_space" => 'personal_space#index'
 

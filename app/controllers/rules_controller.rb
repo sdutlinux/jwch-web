@@ -1,10 +1,9 @@
 class RulesController < ApplicationController
-  before_filter :find_rule_type
 
   def index
-
-    @rules = @rule_type.rules.paginate :page => params[:page], :order => 'created_at desc',
-      :per_page => 15
+    @rule_type_name = Category.find( :id => '15').name
+    @rules = Rule.where( :category_id => params[:category_id] ).paginate :page => params[:page],
+      :order => 'created_at desc',:per_page => 15
 
     respond_to do |format|
       format.html
@@ -13,17 +12,10 @@ class RulesController < ApplicationController
 
 
   def show
-    @rule =  @rule_type.rules.find(params[:id])
+    @rule = Rule.find(params[:id])
 
     respond_to do |format|
       format.html
     end
   end
-
-  private
-
-  def find_rule_type
-    @rule_type = RuleType.find(params[:rule_type_id])
-  end
-
 end

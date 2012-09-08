@@ -103,13 +103,13 @@
                                                     <table id="t1" width="100%">
                                                       <tr>
                                                         <td class="box03" height="20">
-                                                          <%= link_to "山东省教育教学文件",{:controller=>"laws" ,:action => "index", :category_id => 1},
+                                                          <%= link_to "山东省教育教学文件",{:controller=>"laws" ,:action => "index", :category_id => 3},
                                                           :style => "color:#990000" %>
                                                         </td>
                                                       </tr>
                                                       <tr>
                                                         <td class="box03" height="20">
-                                                          <%= link_to '国家教育教学政策法规',{:controller=>"laws",:action=>"index", :category_id=>2},
+                                                          <%= link_to '国家教育教学政策法规',{:controller=>"laws",:action=>"index", :category_id=>4},
                                                           :style => "color:#990000" %>
                                                         </td>
                                                       </tr>
@@ -166,7 +166,10 @@
                                                           <%= link_to "教学成果" ,'#', :style => "color:#990000" %>
                                                       </td>
                                                      </tr>
-                                                     <tr><td class="box03"><a href="jiaogai" target="mainFrame"><font color="#990000">教改立项</font></a>			</td>
+                                                     <tr>
+                                                       <td class="box03">
+                                                         <%= link_to "教改立项",education_projects_path, :style => "color:#990000" %>
+                                                       </td>
                                                      </tr>
                                                    </table>
                                                  </div></td></tr>

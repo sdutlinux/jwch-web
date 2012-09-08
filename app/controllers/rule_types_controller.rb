@@ -1,6 +1,6 @@
 class RuleTypesController < ApplicationController
   def index
-    @rule_types = RuleType.all
+    @rule_types = Category.where( :section_key =>"gzzd" )
     
     respond_to do |format|
       format.html

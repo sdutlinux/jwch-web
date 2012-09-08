@@ -1,0 +1,2 @@
+module TeachingAchievementsHelper
+end
