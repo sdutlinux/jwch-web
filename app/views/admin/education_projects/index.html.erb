@@ -29,8 +29,8 @@
         <td><%= education_project.department  %></td>
         <td><%= education_project.team  %></td>
         <td>
-          <%= link_to '编辑', edit_admin_education_project_path(education_project), :class => 'btn btn-mini' %>
-          <%= link_to '删除', admin_education_project_path(education_project), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_admin_education_project_path(education_project) %>
+          <%= link_to '<i class="icon-edit"></i>'.html_safe, admin_education_project_path(education_project), :method => :delete, :confirm => 'Are you sure?' %>
         </td>
       </tr>
     <% end %>

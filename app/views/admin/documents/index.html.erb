@@ -26,7 +26,7 @@
         <td><%= category_name document.category_id %></td>
         <td><%= document.created_at %></td>
          <td>
-          <%= link_to '删除', admin_document_path(document), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to '<i class="icon-trash"></i>'.html_safe, admin_document_path(document), :method => :delete, :confirm => 'Are you sure?' %>
         </td>
       </tr>
     <% end %>

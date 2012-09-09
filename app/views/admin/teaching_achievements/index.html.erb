@@ -30,8 +30,8 @@
         <td><%= teaching_achievement.department %></td>
         <td><%= teaching_achievement.team  %></td>
         <td>
-          <%= link_to '编辑', edit_admin_teaching_achievement_path(teaching_achievement), :class => 'btn btn-mini' %>
-          <%= link_to '删除', admin_teaching_achievement_path(teaching_achievement), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_admin_teaching_achievement_path(teaching_achievement) %>
+          <%= link_to '<i class="icon-trash"></i>'.html_safe, admin_teaching_achievement_path(teaching_achievement), :method => :delete, :confirm => 'Are you sure?' %>
         </td>
       </tr>
     <% end %>
