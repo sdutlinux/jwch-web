@@ -12,7 +12,7 @@
     <div class="control-group">
       <%= f.label "年份", :class => 'control-label' %>
       <div class="controls">
-        <%= f.date_select :year, :start_year => 2004, :class => 'date_select' %>
+        <%= f.select(:year, 2004..Time.now.year, :class => 'date_select') %>
       </div>
     </div>
 

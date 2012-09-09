@@ -233,13 +233,32 @@ namespace :import do
       ta.year = oo.cell(line,'D').to_i.to_s
       ta.department = oo.cell(line,'E')
       ta.rank = oo.cell(line,'G')
-      ta.save
+      ta.save!
     end
     puts 'import down'
   end
 
+  desc "import 教改立项"
+  task :edu_project => :environment do 
+    puts "import jiaogailixiang"
+    oo = Excel.new("#{Rails.root}/lib/tasks/jiaogailixiang.xls")
+    # setting the sheets 
+    oo.default_sheet = oo.sheets.first
+    2.upto(oo.last_row) do |line|
+      puts "now import #{oo.cell(line,'B')}"
+      ep = EducationProject.new
+      ep.name = oo.cell(line, 'B')
+      ep.team = oo.cell(line,'C')
+      ep.year = oo.cell(line, 'D').to_i.to_s
+      ep.department = oo.cell(line,'E')
+      ep.rank = oo.cell(line, 'G')
+      ep.save!
+    end
+    puts "import down"
+  end
+
   desc "import all "
-  task :all => [:news, :org, :laws]
+  task :all => [:news, :org, :laws, :rules, :courses, :teaching, :edu_project]
 
  # for test 
   desc "destroy all"

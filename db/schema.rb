@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120909044152) do
+ActiveRecord::Schema.define(:version => 20120825071254) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(:version => 20120909044152) do
 
   create_table "education_projects", :force => true do |t|
     t.string   "name"
-    t.date     "year"
+    t.string   "year"
     t.string   "department"
     t.string   "team"
     t.string   "rank"
