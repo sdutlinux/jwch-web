@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120825071254) do
+ActiveRecord::Schema.define(:version => 20120909044152) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
 
   create_table "teaching_achievements", :force => true do |t|
     t.string   "name"
-    t.date     "year"
+    t.string   "year"
     t.string   "department", :default => "山东理工大学"
     t.string   "team"
     t.string   "rank"

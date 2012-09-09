@@ -37,7 +37,7 @@ class Admin::TeachingAchievementsController < ApplicationController
 
     respond_to do |format|
       if @teaching_achievement.save
-        format.html { redirect_to [:admin,@teaching_achievement], notice: 'TeachingAchievement was successfully created.' }
+        format.html { redirect_to [:admin,@teaching_achievement], notice: '创建成功' }
       else
         format.html { render action: "new" }
       end
@@ -49,7 +49,7 @@ class Admin::TeachingAchievementsController < ApplicationController
 
     respond_to do |format|
       if @teaching_achievement.update_attributes(params[:teaching_achievement])
-        format.html { redirect_to admin_teaching_achievement_path, notice: 'TeachingAchievement was successfully updated.' }
+        format.html { redirect_to admin_teaching_achievement_path, notice: '修改成功' }
       else
         format.html { render action: "edit" }
       end

@@ -218,6 +218,26 @@ namespace :import do
     end
   end
 
+  desc "import 教学成果"
+  task :teaching => :environment do 
+    puts 'import teaching_achievement'
+    oo = Excel.new("#{Rails.root}/lib/tasks/jiaoxuechengguo.xls")
+    # setting the sheets 
+    oo.default_sheet = oo.sheets.first
+    2.upto(oo.last_row) do |line|
+      puts "now import #{oo.cell(line, 'B')}"
+      ta = TeachingAchievement.new
+      # id = oo.cell(line, 'A')
+      ta.name = oo.cell(line, 'B')
+      ta.team = oo.cell(line,'C')
+      ta.year = oo.cell(line,'D').to_i.to_s
+      ta.department = oo.cell(line,'E')
+      ta.rank = oo.cell(line,'G')
+      ta.save
+    end
+    puts 'import down'
+  end
+
   desc "import all "
   task :all => [:news, :org, :laws]
 
