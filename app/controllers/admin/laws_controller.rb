@@ -4,6 +4,11 @@ class Admin::LawsController < ApplicationController
   before_filter :require_logined, :set_section_key, :find_categories
 
   def index
+    @laws = Law.paginate(:page => params[:page], :per_page => 7)
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   def new

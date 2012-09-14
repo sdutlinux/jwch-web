@@ -12,8 +12,6 @@
   <%= link_to "添加", new_admin_law_path(),  :class => 'btn pull-right'%>
 </div>
 
-<% @categories.each do |category|%>
-  <h4><%= category_name category.id %></h4>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -24,7 +22,7 @@
       </tr>
     </thead>
     <tbody>
-      <% Law.category_posts(category.id).each do |p| %>
+      <% @laws.each do |p| %>
         <tr>
           <td><%= link_to p.title, admin_law_path(p) %></td>
           <td><%= p.created_at %></td>
@@ -37,5 +35,5 @@
       <% end %>
     </tbody>
   </table>
-<% end %>
   
+<p><%= will_paginate @laws, :renderer => BootstrapPagination::Rails %></p>
