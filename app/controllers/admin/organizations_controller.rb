@@ -4,6 +4,11 @@ class Admin::OrganizationsController < ApplicationController
   before_filter :require_logined, :find_categories, :set_section_key
 
   def index
+    @organizations = Organization.paginate(:page => params[:page], :per_page => 7)
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   def new

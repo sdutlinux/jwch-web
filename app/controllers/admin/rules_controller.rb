@@ -4,7 +4,7 @@ class Admin::RulesController < ApplicationController
   before_filter :require_logined, :set_section_key, :find_rule_type
 
   def index
-    @rules = Rule.where(:category_id => @rule_type.id)
+    @rules = Rule.where(:category_id => @rule_type.id).order("created_at DESC").paginate(:page => params[:page],:per_page => 7)
 
     respond_to do |format|
       format.html
