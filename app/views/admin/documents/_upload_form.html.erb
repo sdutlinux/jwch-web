@@ -1,6 +1,7 @@
-<%= form_for :document,  :html => {:multipart => true} do |f|%>
+<%= form_for :document,  :html => {:multipart => true, :class=> 'form-inline'} do |f|%>
   <%= f.hidden_field :author, :value => "#{current_user.name}"%>
   <%= f.file_field :upload_file, :size => 20%>
-  分类:<%= f.select :category_id, Document.categories.collect {|c| [c.name, c.id ] }  %>
-  <%= f.submit "上传", :class => "btn btn-primary"%>
+  <%= f.label '分类:' %>
+  <%= f.select :category_id, Document.categories.collect {|c| [c.name, c.id ] }  %>
+  <%= f.submit "上传", :class => "btn "%>
 <% end %>
