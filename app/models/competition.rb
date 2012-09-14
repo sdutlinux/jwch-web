@@ -1,7 +1,7 @@
 #coding: utf-8
 class Competition < ActiveRecord::Base
-  attr_accessible :category_id, :member, :rank, :remark, :teacher, :time, :title
-  validates :member,:rank,:teacher,:time ,:title, :category_id, :presence => true
+  attr_accessible :category_id, :member, :rank, :remark, :teacher, :year, :title
+  validates :member,:rank,:teacher,:year,:title, :category_id, :presence => true
   belongs_to :category 
 end
 
@@ -15,7 +15,7 @@ end
 :rank          string 奖项等级
 :remark        string 备注
 :member        string  成员
-:time          date 时间
+:year          string 时间
 :teacher       string 指导老师
 :created_at    date
 :updated_at    date

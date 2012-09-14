@@ -257,6 +257,121 @@ namespace :import do
     puts "import down"
   end
 
+  desc "import 创新竞赛"
+  task :competitions => :environment do
+    puts "import competitions"
+    oo = Excel.new("#{Rails.root}/lib/tasks/chaungxijingsai.xls")
+    # setting the sheets 
+    oo.default_sheet = oo.sheets.first
+
+       12_id = Category.find_by_name("全国大学生数学建模竞赛").id 
+       _id = Category.find_by_name("全国大学生电子设计大赛").id 
+       14_id = Category.find_by_name("“挑战杯”全国大学生创业计划大赛").id 
+       15_id = Category.find_by_name("“挑战杯”全国大学生课外学术科技作品竞赛").id 
+       16_id = Category.find_by_name("中国智能机器人大赛").id 
+       17_id = Category.find_by_name("山东省机电产品创新大赛").id 
+       _id = Category.find_by_name("ACM程序设计邀请赛").id 
+       19_id = Category.find_by_name("全国大学生广告艺术大赛").id 
+       20_id = Category.find_by_name("专利").id 
+       _id = Category.find_by_name("艺术类").id 
+       _id = Category.find_by_name("首届全国大学生测绘科技创新论文大赛").id 
+       _id = Category.find_by_name("村庄规划大学生暑期社会实践活动科技成果").id 
+       _id = Category.find_by_name("ACT第三届全国青少年外语口语电视大赛").id 
+       _id = Category.find_by_name("第十二届“外研社杯”全国英语辩论赛").id 
+       _id = Category.find_by_name("2008“CCTV杯”全国英语演讲大赛").id 
+       _id = Category.find_by_name("全国大学生英语竞赛").id 
+       _id = Category.find_by_name("全国大学生“飞思卡尔”杯智能汽车竞赛").id 
+       _id = Category.find_by_name("2008年中国机器人大赛暨RoboCup公开赛").id 
+       _id = Category.find_by_name("山东省高校结构设计大赛").id 
+       _id = Category.find_by_name("齐鲁大学生计算机软件设计及外语大赛").id 
+       _id = Category.find_by_name("SuperMap杯第七届全国高校GIS大赛").id 
+       _id = Category.find_by_name("第四届全国英语高师英语技能竞赛").id 
+       _id = Category.find_by_name("山东省第二届高校音乐专业师生基本功比赛").id 
+       _id = Category.find_by_name("第二届“北京住六杯”全国高等院校广联达软件算量大赛总决赛").id 
+       _id = Category.find_by_name("第六届“挑战杯”山东省大学生创业计划竞赛").id 
+       _id = Category.find_by_name("2009山东省大学生建筑设计竞赛").id 
+       _id = Category.find_by_name("山东省“南方测绘杯”大学生测量技能大赛").id 
+       _id = Category.find_by_name("全国ITAT教育工程就业技能大赛—瑞萨超级MCU模型车大赛").id 
+       _id = Category.find_by_name("数学竞赛").id 
+       _id = Category.find_by_name("村庄规划大学生暑期社会实践活动科技成果").id 
+       13_id = Category.find_by_name("山东省电子设计大赛" ).id 
+       _id = Category.find_by_name("第十四届全国推艺术新人大赛（山东赛区）").id 
+       _id = Category.find_by_name("首届校园金话筒选拔活动山东总决赛").id 
+       _id = Category.find_by_name("山东省机电产品创新大赛").id 
+       _id = Category.find_by_name("山东省首届高校美术专业师生基本功比赛").id 
+       _id = Category.find_by_name("第二届“高教杯”全国大学生先进图形技能与创新大赛").id 
+       _id = Category.find_by_name("第三十四界山东陶瓷艺术设计创新评比").id 
+       _id = Category.find_by_name("第六届中国舞蹈荷花奖校园舞蹈比赛").id 
+       _id = Category.find_by_name("山东省大学生科技节拓普杯物理科技创新大赛").id 
+       _id = Category.find_by_name("第五届全国青少年优秀艺术作品展示活动").id 
+       _id = Category.find_by_name("“艺术使者”全国优秀新人作品展示").id 
+       _id = Category.find_by_name("山东省舞蹈新作品评奖").id 
+       _id = Category.find_by_name("山东省第三届高校音乐专业师生基本功比赛").id 
+       _id = Category.find_by_name("2008年山东省大学生田径锦标赛").id 
+       _id = Category.find_by_name("2008年山东省大学生乒乓球锦标赛5月10-12日").id 
+       _id = Category.find_by_name("2008年山东省大学生CUBA篮球锦标赛12月10-20日").id 
+       _id = Category.find_by_name("首届全国大学生创业大赛").id 
+       _id = Category.find_by_name("第三十四界山东陶瓷艺术设计创新评比").id 
+       _id = Category.find_by_name("中国互联网协会建行“e路通”杯第二届全国大学生网络商务创新应用大赛").id 
+       _id = Category.find_by_name("全国大学生电子设计竞赛").id 
+       _id = Category.find_by_name("山东省第十届大学生科技文化艺术节之山东省大学生舞蹈大赛").id 
+       _id = Category.find_by_name("首届搜狐国家校园博客大师赛").id 
+       _id = Category.find_by_name("山东省第三届学生文学艺术博览会").id 
+       _id = Category.find_by_name("第八届全国机器人足球锦标赛").id 
+       _id = Category.find_by_name("“星科杯”山东省机器人大赛").id 
+       _id = Category.find_by_name("第十届“外研社”全国英语辩论赛").id 
+       _id = Category.find_by_name("CCTV杯全国英语演讲比赛山东赛区").id 
+
+    2.upto(oo.last_row) do |line|
+      com = Competition.new 
+
+      com.title = oo.cell(line,'B')
+      com.rank = oo.cell(line,'C')
+      com.year= oo.cell(line,'D')
+      com.teacher = oo.cell(line,'E')
+      com.member = oo.cell(line,'F')
+      com.remark = oo.cell(line,'I')
+
+      case  oo.cell(line,'H')
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      when 13 
+       com.category_id = _id 
+      end
+     com.save!
+    end
+  end
+
   desc "import all "
   task :all => [:news, :org, :laws, :rules, :courses, :teaching, :edu_project]
 

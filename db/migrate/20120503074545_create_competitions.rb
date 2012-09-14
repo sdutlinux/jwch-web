@@ -3,7 +3,7 @@ class CreateCompetitions < ActiveRecord::Migration
     create_table :competitions do |t|
       t.string :title
       t.string :rank
-      t.date :time
+      t.string :year
       t.string :teacher
       t.string :member
       t.string :remark
