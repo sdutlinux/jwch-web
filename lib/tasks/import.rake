@@ -457,8 +457,54 @@ namespace :import do
     puts "import down"
   end
 
+  desc "import 工作流程"
+  task :workflow => :environment do
+    puts "import workflow"
+    oo = Excel.new("#{Rails.root}/lib/tasks/gongzuoliucheng.xls")
+    oo.default_sheet = oo.sheets.first
+
+    wf_3_id = Category.find_by_name("教学计划及教学研究工作流程").id
+    wf_4_id = Category.find_by_name("实践教学工作流程").id
+    wf_6_id = Category.find_by_name("实验室管理工作流程").id
+    wf_7_id = Category.find_by_name("考试工作流程").id
+    wf_8_id = Category.find_by_name("学业学籍工作流程").id
+    wf_9_id = Category.find_by_name("教材工作流程").id
+    wf_10_id = Category.find_by_name("选课中心工作流程").id
+
+    2.upto(oo.last_row) do |line|
+      puts "now import #{oo.cell(line,'B')}"
+      wf = Workflow.new
+      wf.title = oo.cell(line, 'C')
+      wf.content = oo.cell(line, 'D')
+      case  oo.cell(line,'B')
+      when 3
+        wf.category_id = wf_3_id
+      when 4
+        wf.category_id = wf_4_id
+      when 6
+        wf.category_id = wf_6_id
+      when 7
+        wf.category_id = wf_7_id 
+      when 8
+        wf.category_id = wf_8_id
+      when 9
+        wf.category_id = wf_9_id
+      when 10
+        wf.category_id = wf_10_id
+      else
+        puts "some error"
+        next 
+      end
+      wf.save!
+    end
+    puts "import workflow ok"
+  end
+
   desc "import all "
-  task :all => [:news, :org, :laws, :rules, :courses, :teaching, :edu_project, :competitions]
+  task :all => [:news, :org, :laws, :rules, :courses, :teaching, :edu_project, :competitions, :workflow] do
+    puts "It's prefect"
+  end
+
 
   # for test 
   desc "destroy all"

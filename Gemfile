@@ -14,16 +14,19 @@ group :assets do
   gem 'therubyracer'
   gem 'uglifier', '>= 1.0.3'
 end
+
 gem 'modernizr-rails'
 gem 'jquery-rails'
+
 group :development do
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-nav'
   gem 'thin'
-  gem 'capistrano'
-  gem 'rvm-capistrano'
 end
+
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 
