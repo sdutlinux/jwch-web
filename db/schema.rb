@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20120825071254) do
   create_table "competitions", :force => true do |t|
     t.string   "title"
     t.string   "rank"
-    t.date     "time"
+    t.string   "year"
     t.string   "teacher"
     t.string   "member"
     t.string   "remark"

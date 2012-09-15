@@ -1,7 +1,8 @@
 #coding: utf-8
 class Competition < ActiveRecord::Base
   attr_accessible :category_id, :member, :rank, :remark, :teacher, :year, :title
-  validates :member,:rank,:teacher,:year,:title, :category_id, :presence => true
+  validates :rank, :category_id, :presence => true
+  #validates_presence_of :title, :year, :member # for import data 
   belongs_to :category 
 end
 
