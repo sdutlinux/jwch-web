@@ -458,7 +458,7 @@ namespace :import do
   end
 
   desc "import 工作流程"
-  task :workflow => :environment do
+  task :workflows => :environment do
     puts "import workflow"
     oo = Excel.new("#{Rails.root}/lib/tasks/gongzuoliucheng.xls")
     oo.default_sheet = oo.sheets.first
@@ -475,7 +475,7 @@ namespace :import do
       puts "now import #{oo.cell(line,'B')}"
       wf = Workflow.new
       wf.title = oo.cell(line, 'C')
-      wf.content = oo.cell(line, 'D')
+      wf.content = oo.cell(line, 'D').gsub(/(<P align=center>|<\/P>|border=0)/,'').gsub(/\/admin/,'')
       case  oo.cell(line,'B')
       when 3
         wf.category_id = wf_3_id
@@ -501,7 +501,7 @@ namespace :import do
   end
 
   desc "import all "
-  task :all => [:news, :org, :laws, :rules, :courses, :teaching, :edu_project, :competitions, :workflow] do
+  task :all => [:news, :org, :laws, :rules, :courses, :teaching, :edu_project, :competitions, :workflows] do
     puts "It's prefect"
   end
 

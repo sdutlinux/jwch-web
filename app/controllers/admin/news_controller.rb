@@ -37,7 +37,7 @@ class Admin::NewsController < ApplicationController
 
     respond_to do |format|
       if @news.save
-        format.html { redirect_to [:admin,@news], notice: 'News was successfully created.' }
+        format.html { redirect_to [:admin,@news], notice: '创建成功.' }
       else
         format.html { render action: "new" }
       end
@@ -49,7 +49,7 @@ class Admin::NewsController < ApplicationController
 
     respond_to do |format|
       if @news.update_attributes(params[:news])
-        format.html { redirect_to admin_news_path, notice: '创建成功' }
+        format.html { redirect_to admin_news_path, notice: '修改成功' }
       else
         format.html { render action: "edit" }
       end
