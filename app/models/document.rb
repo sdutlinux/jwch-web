@@ -2,7 +2,7 @@
 class Document < ActiveRecord::Base
   UPLOAD_PATH = "#{Rails.root.to_s}/public/uploads"
 
-  after_create :write_file
+  # after_create :write_file
   attr_accessible :author, :category_id, :content_type, :name, :path,:upload_file
 
   validates :author,:name,:path,:category_id, :presence => true
@@ -15,7 +15,7 @@ class Document < ActiveRecord::Base
     @file_contents = file
     self.content_type = file.content_type
     self.name = file.original_filename
-    self.path = File.join(UPLOAD_PATH,self.object_id.to_s + file.original_filename)
+    self.path = File.join("public/uploads",self.object_id.to_s + '_' + file.original_filename)
   end
 
   def write_file(file = nil)

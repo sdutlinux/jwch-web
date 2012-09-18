@@ -27,6 +27,7 @@ group :development do
 end
 
 gem 'capistrano'
+gem 'capistrano-ext'
 gem 'rvm-capistrano'
-
+gem 'capistrano-resque'
 

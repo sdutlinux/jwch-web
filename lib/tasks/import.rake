@@ -500,8 +500,71 @@ namespace :import do
     puts "import workflow ok"
   end
 
+  desc "import down file"
+  task :down => :environment do
+    puts 'import down file table'
+
+    down_1_id = Category.find_by_name('学业学籍').id 
+    down_2_id = Category.find_by_name('教学研究').id 
+    down_3_id = Category.find_by_name('实践教学').id 
+    down_4_id = Category.find_by_name('选课中心').id 
+    down_5_id = Category.find_by_name('教材').id 
+    down_6_id = Category.find_by_name('考务').id 
+    down_7_id = Category.find_by_name('实验教学').id 
+    down_8_id = Category.find_by_name('教学简讯').id 
+    down_9_id = Category.find_by_name('通知附件').id 
+    down_10_id = Category.find_by_name('质量管理').id 
+    down_11_id = Category.find_by_name('教学评估').id 
+    down_12_id = Category.find_by_name('其他').id 
+
+    oo = Excel.new("#{Rails.root}/lib/tasks/down.xls")
+    # setting the sheets 
+    oo.default_sheet = oo.sheets.first
+    oo.last_row.downto(2) do |line|
+      puts "now import #{oo.cell(line,"A")} #{oo.cell(line,'B')}"
+      doc = Document.new
+      doc.name = oo.cell(line,'B')
+      doc.path = "public/upload/old"+oo.cell(line,'C')
+      doc.author = oo.cell(line,'D')
+      doc.created_at = oo.cell(line,'F')
+      case oo.cell(line,'G')
+      when '学业学籍'
+        doc.category_id = down_1_id
+      when '教学研究'
+        doc.category_id = down_2_id
+      when '实践教学'
+        doc.category_id = down_3_id
+      when '选课中心'
+        doc.category_id = down_4_id
+      when '教材'    
+        doc.category_id = down_5_id
+      when '考务'    
+        doc.category_id = down_6_id
+      when '实验教学'
+        doc.category_id = down_7_id
+      when '教学简讯'
+        doc.category_id = down_8_id
+      when '通知附件'
+        doc.category_id = down_9_id
+      when '质量管理'
+        doc.category_id = down_10_id
+      when '教学评估'
+        doc.category_id = down_11_id
+      when '其他'    
+        doc.category_id = down_12_id
+      when '常用软件'
+        next 
+      else
+        next 
+        puts "some error please check"
+      end
+      doc.save!
+    end
+    puts 'import down table down'
+  end
+
   desc "import all "
-  task :all => [:news, :org, :laws, :rules, :courses, :teaching, :edu_project, :competitions, :workflows] do
+  task :all => [:news, :org, :laws, :rules, :courses, :teaching, :edu_project, :competitions, :workflows, :down] do
     puts "It's prefect"
   end
 
