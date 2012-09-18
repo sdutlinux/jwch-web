@@ -10,7 +10,6 @@ class Admin::DocumentsController < ApplicationController
     end
   end
 
-
   def create
     @file = Document.new(params[:document])
     respond_to do |format|
@@ -26,21 +25,25 @@ class Admin::DocumentsController < ApplicationController
 
   def show
     @file = Document.find(params[:id])
-    path = @file.path
-    content_type = @file.content_type
-    if File.exists?(path)
-      send_file path,:type => content_type
+    
+    if File.exists?(@file.full_path)
+      send_file @file.full_path,:type => @file.content_type
     else
-      render "public/404.html"
+      redirect_to admin_documents_path, :notice => '文件未找到'
     end
   end
 
-
   def destroy
     @document = Document.find(params[:id])
-    File.delete(@document.path)
-    @document.destroy
-    redirect_to :action => :index
+    respond_to do |format|
+      if File.exists?(@document.full_path)
+        File.delete(@document.full_path)
+        @document.destroy
+        format.html { redirect_to admin_documents_path, :notice => '删除成功'}
+      else
+        format.html { redirect_to admin_documents_path, :notice => '删除失败'}
+      end
+    end
   end
 
   private

@@ -13,6 +13,7 @@ public/uploads/
 public/editor
 public/topics
 public/topics/**/*
+public/upload_old/*
 .redcar
 .DS_Store
 *.swp

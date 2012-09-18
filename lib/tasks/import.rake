@@ -524,9 +524,10 @@ namespace :import do
       puts "now import #{oo.cell(line,"A")} #{oo.cell(line,'B')}"
       doc = Document.new
       doc.name = oo.cell(line,'B')
-      doc.path = "public/upload/old"+oo.cell(line,'C')
+      doc.path = "/upload_old/"+oo.cell(line,'C')
       doc.author = oo.cell(line,'D')
       doc.created_at = oo.cell(line,'F')
+      doc.content_type = "application/octet-stream"
       case oo.cell(line,'G')
       when '学业学籍'
         doc.category_id = down_1_id
@@ -580,5 +581,6 @@ namespace :import do
     Course.destroy_all
     TeachingAchievement.destroy_all
     EducationProject.destroy_all
+    Document.destroy_all
   end
 end
