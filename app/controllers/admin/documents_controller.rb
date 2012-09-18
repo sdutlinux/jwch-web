@@ -46,6 +46,17 @@ class Admin::DocumentsController < ApplicationController
     end
   end
 
+  def editor_file
+    @file_name = params[:file] + '.' + params[:format]
+    @full_path = Rails.root.to_s + '/public/editor_old/' + @file_name
+
+    if File.exists?(@full_path)
+      send_file @full_path
+    else
+      render  'public/404.html'
+    end
+  end
+
   private
   def set_section_key
     @section_key = 'xzzq'
