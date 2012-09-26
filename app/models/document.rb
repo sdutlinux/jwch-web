@@ -32,11 +32,18 @@ class Document < ActiveRecord::Base
   end
 end
  
-=begin rdoc
-下载文档表
-  :author string
-  :category_id  integer
-  :content_type string
-  :name   string
-  :path   string
-=end
+# 下载文档表
+# == Schema Information
+#
+# Table name: documents
+#
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  path         :string(255)
+#  author       :string(255)
+#  category_id  :string(255)
+#  content_type :string(255)
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+

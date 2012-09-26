@@ -44,15 +44,20 @@ private
 end
 
 
-=begin
-用户表
-  integer :id     primary_key
-  string  :name
-  string  :hashed_password
-  string  :salt
-  string  :department
-  boolean :admin
-  string :power
-  date   :created_at
-  date   :updated_at
-=end
+# 用户表
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  hashed_password :string(255)
+#  salt            :string(255)
+#  department      :string(255)
+#  admin           :boolean
+#  power           :string(255)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+

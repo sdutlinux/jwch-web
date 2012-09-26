@@ -4,11 +4,16 @@ class Link < ActiveRecord::Base
   validates :name,:url, :presence => true
 end
 
-=begin rdoc
+# 链接表
+# == Schema Information
+#
+# Table name: links
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  sort       :integer
+#  url        :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 
-链接表
-  :name   string
-  :sort   integer
-  :url string
-
-=end

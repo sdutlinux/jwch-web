@@ -6,12 +6,16 @@ class Workflow < ActiveRecord::Base
   validates :content, :title, :category_id, :presence => true
 end
   
-=begin
-工作流程表
-  integer   :id
-  integer   :workflow_type_id
-  string    :title
-  text      :content
-  date      :created_at
-  date      :updated_at
-=end
+# 工作流程表
+# == Schema Information
+#
+# Table name: workflows
+#
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  content     :text
+#  category_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+

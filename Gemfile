@@ -23,11 +23,11 @@ group :development do
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-nav'
+  gem 'annotate'
   gem 'thin'
 end
 
 gem 'capistrano'
 gem 'capistrano-ext'
 gem 'rvm-capistrano'
-gem 'capistrano-resque'
 

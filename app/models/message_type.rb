@@ -7,3 +7,15 @@ class MessageType < ActiveRecord::Base
   validates :name, :uniqueness => true
 
 end
+
+# == Schema Information
+#
+# Table name: message_types
+#
+#  id                 :integer          not null, primary key
+#  message_channel_id :integer
+#  name               :string(255)
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+

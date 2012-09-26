@@ -7,17 +7,20 @@ class Competition < ActiveRecord::Base
 end
 
 
+# 创新竞赛表
+# == Schema Information
+#
+# Table name: competitions
+#
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  rank        :string(255)
+#  year        :string(255)
+#  teacher     :string(255)
+#  member      :string(255)
+#  remark      :string(255)
+#  category_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
 
-=begin
-创新竞赛表
-:id            integer primary_key
-:competition_type_id    integer 分类
-:title         string 标题
-:rank          string 奖项等级
-:remark        string 备注
-:member        string  成员
-:year          string 时间
-:teacher       string 指导老师
-:created_at    date
-:updated_at    date
-=end

@@ -5,16 +5,18 @@ class News < ActiveRecord::Base
 end
  
 
-=begin
+# 教务通知表
+# == Schema Information
+#
+# Table name: news
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  content    :text
+#  author     :string(255)
+#  department :string(255)
+#  show       :boolean          default(TRUE)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 
-教务通知表
-      integer :id     primary_key
-      string :title
-      text :content
-      string :author
-      string :department
-      boolean :show
-      date    :created_at
-      date    :updated_at
-
-=end

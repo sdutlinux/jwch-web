@@ -7,5 +7,25 @@ class Course < ActiveRecord::Base
 
 end
 
-# attribution 归属
+# == Schema Information
+#
+# Table name: courses
+#
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  engname      :string(255)
+#  number       :string(255)
+#  point        :string(255)
+#  pre_course   :string(255)
+#  book         :string(255)
+#  category_id  :integer
+#  introduction :text
+#  references   :string(255)
+#  major        :string(255)
+#  level        :string(255)
+#  college      :string(255)
+#  attribution  :string(255)
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
 

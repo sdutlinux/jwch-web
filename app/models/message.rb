@@ -5,3 +5,16 @@ class Message < ActiveRecord::Base
   validates :content, :title, :message_type_id, :message_channel_id, :presence => true
 
 end
+
+# == Schema Information
+#
+# Table name: messages
+#
+#  id                 :integer          not null, primary key
+#  message_type_id    :integer
+#  title              :string(255)
+#  content            :text
+#  message_channel_id :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#

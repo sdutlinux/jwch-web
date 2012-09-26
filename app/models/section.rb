@@ -8,3 +8,16 @@ class Section < ActiveRecord::Base
   validates_presence_of :name, :section_key
   validates_uniqueness_of :section_key 
 end
+
+# == Schema Information
+#
+# Table name: sections
+#
+#  id                :integer          not null, primary key
+#  name              :string(255)      not null
+#  section_key       :string(255)      not null
+#  parent_section_id :integer
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
