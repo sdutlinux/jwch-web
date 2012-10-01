@@ -8,7 +8,7 @@ set :stages, %w(staging production)
 set :default_stage, "staging"
 require 'capistrano/ext/multistage'
 
-set :user, "lidashuang"  # ssh user 
+set :user, "group"  # ssh user 
 set :application, "jwch-web"
 
 # ssh to the deploy server
@@ -44,11 +44,11 @@ end
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
+#  task :start do ; end
+#  task :stop do ; end
+#  task :restart, :roles => :app, :except => { :no_release => true } do
+#    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+#  end
 
   task :create_database do
     run "cd #{release_path}; bundle exec rake db:create RAILS_ENV=#{rails_env}"
