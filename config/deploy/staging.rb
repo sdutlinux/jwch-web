@@ -8,8 +8,8 @@ set :rvm_ruby_string, 'ruby-1.9.3-p125@jwch'
 set :deploy_to, "/home/group/#{application}"
 
 # first 
-after "bundle:install", "deploy:db_create"
-after "deploy:db_create", "deploy:init"
-after "deploy:init", "deploy:import_data"
-after "deploy:create_symlink", "deploy:cleanup"
+#after "bundle:install", "deploy:create_database"
+#after "deploy:db_create", "deploy:init"
+#after "deploy:init", "deploy:import_data"
+#after "deploy:create_symlink", "deploy:cleanup"
 
