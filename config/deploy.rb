@@ -49,6 +49,11 @@ namespace :deploy do
 #  task :restart, :roles => :app, :except => { :no_release => true } do
 #    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #  end
+  
+  desc "copy config file"
+  task :cp_config_file do
+    run "cp #{shared_path}/database.yml #{release_path}/config/"
+  end
 
   task :create_database do
     run "cd #{release_path}; bundle exec rake db:create RAILS_ENV=#{rails_env}"
