@@ -19,3 +19,4 @@ public/upload_old/*
 *.swp
 *.swo
 bin/
+config/database.yml
