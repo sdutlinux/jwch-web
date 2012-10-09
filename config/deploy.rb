@@ -45,7 +45,7 @@ end
 namespace :deploy do
   task :start, :roles => :app do
     run "cd #{current_path}; 
-         setsid puma  -e production -b unix:///tmp/jwch-web.sock 
+         setsid puma  -e staging -b unix:///tmp/jwch-web.sock 
          --pidfile #{current_path}/tmp/pids/puma.pid > /dev/null 2>&1"
   end
 
