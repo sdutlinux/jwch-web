@@ -4,7 +4,7 @@ set :port, 80
 set :use_sudo, false
 set :branch, "master"
 set :rails_env, "staging"
-set :rvm_ruby_string, 'ruby-1.9.3-p194@jwch'
+set :rvm_ruby_string, 'ruby-1.9.3-p194@jwch-web'
 set :deploy_to, "/home/group/#{application}"
 
 #  2012-10-01
