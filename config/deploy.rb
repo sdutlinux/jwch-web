@@ -36,7 +36,6 @@ namespace :rvm do
   end
 end
 
-# if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
 # if you're still using the script/reaper helper you will need
@@ -44,15 +43,21 @@ end
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
-#  task :start do ; end
-#  task :stop do ; end
-#  task :restart, :roles => :app, :except => { :no_release => true } do
-#    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#  end
-  
-  desc "copy config file"
-  task :cp_config_file do
-    run "cp #{shared_path}/database.yml #{release_path}/config/"
+  task :start, :roles => :app do
+    run "cd #{current_path}; 
+         setsid puma  -e production -b unix:///tmp/cosm.sock 
+         --pidfile #{current_path}/tmp/pids/puma.pid > /dev/null 2>&1"
+  end
+
+  task :stop, :roles => :app do
+    run "kill -QUIT `cat #{current_path}/tmp/pids/puma.pid`"
+  end
+
+  task :restart, :roles => :app do
+    run "kill -USR2 `cat #{current_path}/tmp/pids/puma.pid`"
+  end
+  task :config_file do
+    run "ln -s  #{shared_path}/database.yml #{release_path}/config/database.yml"
   end
 
   task :create_database do
@@ -67,10 +72,3 @@ namespace :deploy do
   	run "cd #{release_path}; bundle exec rake import:all RAILS_ENV=#{rails_env}"
   end
 end
-
-# after "bundle:install", "deploy:create_database"
-# after "deploy:create_database", "deploy:migrate"
-# after "deploy:migrate", "deploy:init"
-# after "deploy:init", "deploy:import_data"
-
-# after "deploy:create_symlink", "deploy:cleanup"
