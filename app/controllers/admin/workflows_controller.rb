@@ -6,7 +6,6 @@ class Admin::WorkflowsController < Admin::BaseController
     @workflows = @workflow_type.workflows.paginate :page => params[:page], :order => 'created_at desc',
       :per_page => 10
 
-
     respond_to do |format|
       format.html
     end
