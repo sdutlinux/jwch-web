@@ -1,8 +1,5 @@
 #coding: utf-8
-class Admin::DashboardController < ApplicationController
-  layout "admin"
-  before_filter :require_logined
-
+class Admin::DashboardController < Admin::BaseController
   def show
     @title = "后台管理"
   end

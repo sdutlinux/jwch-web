@@ -1,7 +1,6 @@
 #coding: utf-8
-class Admin::LawsController < ApplicationController
-  layout "admin"
-  before_filter :require_logined, :set_section_key, :find_categories
+class Admin::LawsController < Admin::BaseController
+  before_filter  :set_section_key, :find_categories
 
   def index
     @laws = Law.paginate(:page => params[:page], :per_page => 7)

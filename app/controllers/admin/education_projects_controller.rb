@@ -1,7 +1,6 @@
 #coding: utf-8
-class Admin::EducationProjectsController < ApplicationController
-  layout "admin"
-  before_filter :require_logined, :set_section_key
+class Admin::EducationProjectsController < Admin::BaseController
+  before_filter :set_section_key
   
   def index
     @education_projects = EducationProject.paginate :page=>params[:page], :order => 'created_at desc',

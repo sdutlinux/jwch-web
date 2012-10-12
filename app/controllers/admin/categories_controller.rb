@@ -1,7 +1,6 @@
 #coding: utf-8
-class Admin::CategoriesController < ApplicationController
- layout "admin"
- before_filter :require_logined, :find_section
+class Admin::CategoriesController < Admin::BaseController
+ before_filter :find_section
 
   def new
     @category  = Category.new

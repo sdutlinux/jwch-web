@@ -1,7 +1,6 @@
 #coding: utf-8
-class Admin::RuleTypesController < ApplicationController
-  layout "admin"
-  before_filter :require_logined, :set_section_key, :find_section 
+class Admin::RuleTypesController < Admin::BaseController
+  before_filter  :set_section_key, :find_section 
 
   def index
     @rule_types = Category.where(:section_key => @section_key )

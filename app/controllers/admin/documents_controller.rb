@@ -1,7 +1,6 @@
 #coding: utf-8
-class Admin::DocumentsController < ApplicationController
-  layout "admin"
-  before_filter :require_logined, :set_section_key
+class Admin::DocumentsController < Admin::BaseController
+  before_filter :set_section_key
 
   def index
     @documents = Document.paginate :page=>params[:page], :order => 'created_at desc',:per_page => 10

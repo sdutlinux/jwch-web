@@ -1,7 +1,5 @@
 #coding: utf-8
-class Admin::MessageTypesController < ApplicationController
-  layout "admin"
-  before_filter :require_logined
+class Admin::MessageTypesController < Admin::BaseController
 
   def index
     @message_type = MessageType.new

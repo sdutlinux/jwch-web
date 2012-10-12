@@ -1,7 +1,6 @@
 #coding: utf-8
-class Admin::OrganizationsController < ApplicationController
-  layout "admin"
-  before_filter :require_logined, :find_categories, :set_section_key
+class Admin::OrganizationsController < Admin::BaseController
+  before_filter  :find_categories, :set_section_key
 
   def index
     @organizations = Organization.paginate(:page => params[:page], :per_page => 7)

@@ -1,7 +1,6 @@
 #coding: utf-8
-class Admin::CourseTypesController < ApplicationController
-  layout "admin"
-  before_filter :require_logined, :set_section_key, :find_section
+class Admin::CourseTypesController < Admin::BaseController
+  before_filter  :set_section_key, :find_section
 
   def index
     @course_types = Category.where(:section_key => @section_key).paginate(:per_page => 7, :page => params[:page])

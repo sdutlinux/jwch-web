@@ -1,7 +1,5 @@
 #coding: utf-8
-class Admin::MessagesController < ApplicationController
-  layout "admin"
-  before_filter :require_logined
+class Admin::MessagesController < Admin::BaseController
 
   def index
 #    @messages = Message.where(:message_channel_id => params[:channel_id])

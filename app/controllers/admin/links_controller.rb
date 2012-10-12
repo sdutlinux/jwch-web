@@ -1,7 +1,6 @@
 #coding: utf-8
-class Admin::LinksController < ApplicationController
-   layout "admin"
-   before_filter :require_logined, :set_section_key
+class Admin::LinksController < Admin::BaseController
+   before_filter  :set_section_key
 
   def index
     @links = Link.all

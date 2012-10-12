@@ -1,7 +1,6 @@
 #coding: utf-8
-class Admin::MessageChannelsController < ApplicationController
-  layout "admin"
-  before_filter :require_logined, :set_section_key
+class Admin::MessageChannelsController < Admin::BaseController
+  before_filter :set_section_key
 
   def index
     @message_channel = MessageChannel.new
