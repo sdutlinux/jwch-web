@@ -1,6 +1,5 @@
 #coding: utf-8
 class Admin::MessageChannelsController < Admin::BaseController
-  before_filter :set_section_key
 
   def index
     @message_channel = MessageChannel.new

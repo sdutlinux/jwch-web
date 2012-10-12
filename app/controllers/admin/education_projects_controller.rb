@@ -1,6 +1,5 @@
 #coding: utf-8
 class Admin::EducationProjectsController < Admin::BaseController
-  before_filter :set_section_key
   
   def index
     @education_projects = EducationProject.paginate :page=>params[:page], :order => 'created_at desc',
@@ -67,5 +66,4 @@ class Admin::EducationProjectsController < Admin::BaseController
   def set_section_key
     @section_key = 'jglx'
   end
-
 end

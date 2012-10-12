@@ -1,6 +1,6 @@
 #coding: utf-8
 class Admin::RuleTypesController < Admin::BaseController
-  before_filter  :set_section_key, :find_section 
+  before_filter :find_section 
 
   def index
     @rule_types = Category.where(:section_key => @section_key )

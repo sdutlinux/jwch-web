@@ -1,6 +1,5 @@
 #coding: utf-8
 class Admin::NewsController < Admin::BaseController
-  before_filter  :set_section_key
 
   def index
     @news = News.paginate :page=>params[:page], :order => 'id asc',

@@ -1,6 +1,7 @@
 #coding: utf-8
 class Admin::CategoriesController < Admin::BaseController
  before_filter :find_section
+ skip_before_filter :set_section_key 
 
   def new
     @category  = Category.new

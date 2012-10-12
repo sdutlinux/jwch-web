@@ -50,4 +50,9 @@ class Admin::MessagesController < Admin::BaseController
       format.html {redirect_to admin_messages_path(:channel_id => @message.message_channel_id)}
     end
   end
+
+  private
+  def set_section_key
+    @section_key = 'jxjx'
+  end
 end

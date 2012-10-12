@@ -1,6 +1,5 @@
 #coding: utf-8
 class Admin::UsersController < Admin::BaseController
-  before_filter :set_section_key
   before_filter :require_admin, :except => [:edit,:update]
 
   def index

@@ -1,6 +1,6 @@
 #coding: utf-8
 class Admin::CoursesController < Admin::BaseController
-  before_filter :set_section_key, :find_course_type
+  before_filter :find_course_type
 
   def index
     @courses = Course.where(:category_id => params[:category_id] ).paginate :page => params[:page], :order => 'created_at desc',

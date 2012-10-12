@@ -1,6 +1,6 @@
 #coding: utf-8
 class Admin::LawsController < Admin::BaseController
-  before_filter  :set_section_key, :find_categories
+  before_filter :find_categories
 
   def index
     @laws = Law.paginate(:page => params[:page], :per_page => 7)

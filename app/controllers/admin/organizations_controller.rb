@@ -1,6 +1,6 @@
 #coding: utf-8
 class Admin::OrganizationsController < Admin::BaseController
-  before_filter  :find_categories, :set_section_key
+  before_filter :find_categories
 
   def index
     @organizations = Organization.paginate(:page => params[:page], :per_page => 7)

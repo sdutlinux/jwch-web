@@ -1,6 +1,6 @@
 #coding: utf-8
 class Admin::RulesController < Admin::BaseController
-  before_filter  :set_section_key, :find_rule_type
+  before_filter :find_rule_type
 
   def index
     @rules = Rule.where(:category_id => @rule_type.id).order("created_at DESC").paginate(:page => params[:page],:per_page => 7)

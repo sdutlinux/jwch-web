@@ -48,4 +48,9 @@ class Admin::MessageTypesController < Admin::BaseController
       format.js
     end
   end
+
+  private
+  def set_section_key
+    @section_key = 'jxjx'
+  end
 end

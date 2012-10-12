@@ -1,6 +1,5 @@
 #coding: utf-8
 class Admin::LinksController < Admin::BaseController
-   before_filter  :set_section_key
 
   def index
     @links = Link.all

@@ -1,6 +1,6 @@
 #coding: utf-8
 class Admin::CompetitionsController < Admin::BaseController
-  before_filter :set_section_key, :find_competition_type
+  before_filter :find_competition_type
 
   def index
     @competitions = @competition_type.competitions.paginate :page => params[:page], :order => 'created_at desc',

@@ -1,6 +1,5 @@
 #coding: utf-8
 class Admin::TeachingAchievementsController < Admin::BaseController
-  before_filter  :set_section_key
 
   def index
     @teaching_achievements = TeachingAchievement.paginate :page=>params[:page], :order => 'created_at desc',
