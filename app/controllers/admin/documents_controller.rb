@@ -52,7 +52,7 @@ class Admin::DocumentsController < Admin::BaseController
     if File.exists?(@full_path)
       send_file @full_path
     else
-      render  'public/404.html'
+      render  'public/404.html', :layout => false 
     end
   end
 
