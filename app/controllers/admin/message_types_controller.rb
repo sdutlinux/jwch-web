@@ -1,8 +1,8 @@
 #coding: utf-8
 class Admin::MessageTypesController < Admin::BaseController
+  before_filter :find_message_channel
 
   def index
-    @message_type = MessageType.new
     @message_types = MessageType.where(:message_channel_id => params[:channel_id])
 
     respond_to do |format|
@@ -10,14 +10,22 @@ class Admin::MessageTypesController < Admin::BaseController
     end
   end
 
+  def new
+    @message_type = @message_channel.message_types.new
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
   def create
-    @message_type = MessageType.new(params[:message_type])
+    @message_type = @message_channel.message_types.build(params[:message_type])
 
     respond_to do |format|
       if @message_type.save
-        format.html { redirect_to admin_message_types_path(:channel_id => @message_type.message_channel_id ) , notice: '创建成功' }
+        format.html { redirect_to admin_message_channel_messages_path(:message_channel_id => @message_type.message_channel_id) , notice: '创建成功' }
       else
-        format.html { redirect_to admin_message_types_path(:channel_id => @message_type.message_channel_id ), notice: '创建失败' }
+        format.html { render action: "new" }
       end
     end
   end
@@ -52,5 +60,9 @@ class Admin::MessageTypesController < Admin::BaseController
   private
   def set_section_key
     @section_key = 'jxjx'
+  end
+
+  def find_message_channel
+    @message_channel = MessageChannel.find(params[:message_channel_id])
   end
 end

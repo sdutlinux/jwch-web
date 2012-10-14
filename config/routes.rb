@@ -20,7 +20,6 @@ JwchWeb::Application.routes.draw do
   resources :education_projects
 
   get "personal_space" => 'personal_space#index'
-  get "mail" => 'mail#index'
 
   get "login" => "session#new", :as => :login
   post "login" => "session#create"
@@ -43,13 +42,15 @@ JwchWeb::Application.routes.draw do
       resources :categories
     end 
     resources :categories do 
-      resources :rules
-      resources :courses
-      resources :workflows
-      resources :competitions 
+      resources :rules, :courses, :workflows, :competitions
     end
-    resources :message_channels
-    resources :message_types
-    resources :messages
+
+    resources :message_channels, :only => [:index, :create, :destroy] do
+      resources :message_types, :except => [:show]
+      resources :messages
+    end
+    resources :message_types, :except => [:show] do 
+      resources :messages
+    end
   end
 end

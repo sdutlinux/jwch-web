@@ -3,7 +3,7 @@ class Admin::MessagesController < Admin::BaseController
 
   def index
 #    @messages = Message.where(:message_channel_id => params[:channel_id])
-    @message_types = MessageType.where(:message_channel_id => params[:channel_id])
+    @message_types = MessageType.where(:message_channel_id => params[:message_channel_id])
 
     respond_to do |format|
       format.html
