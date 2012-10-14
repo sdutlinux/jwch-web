@@ -1,5 +1,6 @@
 #coding: utf-8
 class Admin::DocumentsController < Admin::BaseController
+ skip_before_filter :require_logined 
 
   def index
     @documents = Document.paginate :page=>params[:page], :order => 'created_at desc',:per_page => 10
