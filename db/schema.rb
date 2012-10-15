@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120926144248) do
+ActiveRecord::Schema.define(:version => 20121015141059) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(:version => 20120926144248) do
   end
 
   create_table "message_channels", :force => true do |t|
-    t.integer  "number"
+    t.string   "number"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
