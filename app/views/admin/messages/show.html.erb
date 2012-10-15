@@ -1,0 +1,28 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+      <%= flash[:notice] %>
+      <%= button_tag 'x', :class =>"close" %>
+  </div>
+<% end %>
+
+<p>
+  <b>标题</b><br>
+  <%= @message.title %>
+</p>
+
+<p>
+  <b>内容</b><br>
+  <%= raw @message.content %>
+</p>
+
+<p>
+  <b>栏目分类</b><br>
+  <%= @message.message_type_id %>
+</p>
+
+
+<div class="form-actions">
+  <%= link_to '返回', admin_message_channel_messages_path, :class => 'btn'  %>
+  <%= link_to '编辑', edit_admin_message_channel_message_path(@message_channel, @message), :class => 'btn' %>
+  <%= link_to '删除', admin_message_channel_message_path(@message_channel,@message), :method => 'delete', :confirm => '确认?', :class => 'btn btn-danger' %>
+</div>

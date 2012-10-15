@@ -1,27 +1,25 @@
-<h1>教学简讯</h1>
+<div class="page-header">
+  <span class="section-title"> 教学简讯</span>
+  <%= link_to "添加简讯", new_admin_message_channel_message_path(@message_channel), :class => 'btn pull-right'%>
+</div>
 <table class="table table-striped" id="message_type">
   <thead>
     <tr>
-      <th>简讯栏目</th>
+      <th>简讯</th>
+      <th>栏目</th>
       <th>动作</th>
     </tr>
   </thead>
   <tbody>
-    <% @message_types.each do |msg_t|%>
+      <% @messages.each do |message|%>
       <tr>
-        <td> <i class="icon-tags"></i> <%= msg_t.name%></td>
+        <td><%= link_to message.title, admin_message_channel_message_path(@message_channel, message) %></td>
+        <td><%= message.message_type_id %></td>
         <td>
-          <%= link_to ' 添加文章',new_admin_message_path(:channel_id => "#{params[:channel_id]}",:message_type_id =>msg_t.id), :class => 'btn btn-mini' %>
-        </td>
-      </tr>
-      <% message_by_type(msg_t.id).each do |message|%>
-      <tr>
-        <td>&nbsp; &nbsp; <i class="icon-book"></i><%=link_to message.title, edit_admin_message_path(message) %></td>
-        <td>
-          <%= link_to '删除', admin_message_path(message), :method => :delete, :confirm => '确定删除?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to '编辑', edit_admin_message_channel_message_path(@message_channel, message), :class => 'btn btn-mini' %>
+          <%= link_to '删除', admin_message_channel_message_path(@message_channel, message), :method => :delete, :confirm => '确定删除?', :class => 'btn btn-mini btn-danger' %>
         <td/>
       </tr>
       <%end%>
-    <%end%>
   </tbody>
 </table>

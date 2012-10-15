@@ -1,15 +1,4 @@
-<%= form_for [:admin,@message], :html => { :class => 'form-horizontal' } do |f| %>
-  <% if @message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @message.errors.count %>错误，不能保存：</h2>
-
-      <ul>
-      <% @message.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for [:admin,@message_channel, @message], :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> 教学简讯</legend>
 
@@ -28,16 +17,15 @@
     </div>
 
     <div class="control-group">
-        <%= f.hidden_field :message_channel_id, :value => "#{params[:channel_id]}", :class => 'text_field' %>
-    </div>
-
-    <div class="control-group">
-       <%= f.hidden_field :message_type_id, :value => "#{params[:message_type_id]}", :class => 'text_field' %>
+      <%= f.label "栏目", :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :message_type_id, @message_channel.message_types.map{|m| [m.name, m.id]}, :class => 'text_field' %>
+      </div>
     </div>
 
     <div class="form-actions">
       <%= f.submit '发布', :class => 'btn btn-primary' %>
-      <%= link_to '取消', admin_messages_path, :class => 'btn' %>
+      <%= link_to '取消', admin_message_channel_messages_path, :class => 'btn' %>
     </div>
   </fieldset>
 <% end %>

@@ -1,9 +1,10 @@
 #coding: utf-8
 class Admin::MessagesController < Admin::BaseController
+  before_filter :find_channel
 
   def index
-#    @messages = Message.where(:message_channel_id => params[:channel_id])
-    @message_types = MessageType.where(:message_channel_id => params[:message_channel_id])
+    @messages = Message.where(:message_channel_id => params[:message_channel_id])
+    #@message_types = MessageType.where(:message_channel_id => params[:message_channel_id])
 
     respond_to do |format|
       format.html
@@ -11,18 +12,26 @@ class Admin::MessagesController < Admin::BaseController
   end
 
   def new
-    @message = Message.new
+    @message = @message_channel.messages.new
   end
 
   def create
-    @message = Message.new(params[:message])
+    @message = @message_channel.messages.build(params[:message])
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to admin_messages_path(:channel_id => @message.message_channel_id), notice: '创建成功' }
+        format.html { redirect_to admin_message_channel_messages_path(@message_channel), notice: '创建成功' }
       else
         format.html { render action: "new" }
       end
+    end
+  end
+
+  def show
+    @message = Message.find(params[:id])
+
+    respond_to do |format|
+      format.html
     end
   end
 
@@ -35,7 +44,7 @@ class Admin::MessagesController < Admin::BaseController
 
     respond_to do |format|
       if @message.update_attributes(params[:message])
-        format.html { redirect_to admin_messages_path(:channel_id => @message.message_channel_id), notice: '更新成功' }
+        format.html { redirect_to admin_message_channel_messages_path(@message_channel), notice: '更新成功' }
       else
         format.html { render action: "edit" }
       end
@@ -47,12 +56,15 @@ class Admin::MessagesController < Admin::BaseController
     @message.destroy
 
     respond_to do |format|
-      format.html {redirect_to admin_messages_path(:channel_id => @message.message_channel_id)}
+      format.html {redirect_to admin_message_channel_messages_path(@message_channel)}
     end
   end
 
   private
   def set_section_key
     @section_key = 'jxjx'
+  end
+  def find_channel
+    @message_channel = MessageChannel.find(params[:message_channel_id])
   end
 end

@@ -1,6 +1,7 @@
 class MessageChannel < ActiveRecord::Base
   attr_accessible :number
   has_many :message_types
+  has_many :messages
 
   validates :number, :presence => true
   validates :number, :uniqueness => true

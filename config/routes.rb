@@ -1,4 +1,4 @@
-#coding=utf-8
+#coding: utf-8
 JwchWeb::Application.routes.draw do
   root :to => 'welcome#index'
 
@@ -28,16 +28,12 @@ JwchWeb::Application.routes.draw do
   namespace :admin do
     get '/', :to => "dashboard#show"
     get 'editorbak/uploadfile/:file(.:format)' => 'documents#editor_file'
-
-    resources :news, :users, :links
-    resources :organizations, :laws
-    resources :documents, :education_projects, :teaching_achievements
-    
     get 'rule_types' => 'rule_types#index'
     get 'course_types' => 'course_types#index'
     get 'workflow_types' => 'workflow_types#index'
     get 'competition_types' => 'competition_types#index'
 
+    resources :news, :users, :links, :organizations, :laws, :documents, :education_projects, :teaching_achievements
     resources :sections do 
       resources :categories
     end 
@@ -49,8 +45,8 @@ JwchWeb::Application.routes.draw do
       resources :message_types, :except => [:show]
       resources :messages
     end
-    resources :message_types, :except => [:show] do 
-      resources :messages
-    end
+    # resources :message_types, :except => [:show] do 
+      #resources :messages
+    # end
   end
 end
