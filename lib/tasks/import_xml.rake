@@ -64,4 +64,9 @@ namespace :import_xml do
       message.save!
     end
   end
+
+  desc "import xml all data"
+  task :all => [:jianx_channel, :jianx, :messages] do
+    puts "import all ok"
+  end
 end

@@ -15,6 +15,6 @@ set :deploy_to, "/home/group/#{application}"
 #after "deploy:init", "deploy:import_data"
 #after "deploy:create_symlink", "deploy:cleanup"
 #
-
-after "bundle:install", "deploy:config_file", "deploy:migrate"
+# 2012-10-16 
+after "bundle:install", "deploy:config_file", "deploy:migrate", "deploy:import_xml"
 after "deploy:create_symlink", "deploy:cleanup"

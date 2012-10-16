@@ -71,4 +71,8 @@ namespace :deploy do
   task :import_data do
   	run "cd #{release_path}; bundle exec rake import:all RAILS_ENV=#{rails_env}"
   end
+  
+  task :import_xml do
+  	run "cd #{release_path}; bundle exec rake import_xml:all RAILS_ENV=#{rails_env}"
+  end
 end
