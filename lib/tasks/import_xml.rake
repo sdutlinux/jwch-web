@@ -6,6 +6,7 @@ namespace :import_xml do
   desc "message_channel table"
   task :jianx_channel => :environment do 
     puts "import jianx_channel"
+    MessageChannel.destroy_all
     oo = Excel.new("#{Rails.root}/lib/tasks/jianxunshijian.xls")
     # setting the sheets 
     oo.default_sheet = oo.sheets.first
@@ -22,6 +23,7 @@ namespace :import_xml do
   desc "import jianx"
   task :jianx => :environment do
     puts "import jx category"
+    MessageType.destroy_all
     oo = Excel.new("#{Rails.root}/lib/tasks/jianxun_cat.xls")
     # setting the sheets 
     oo.default_sheet = oo.sheets.first
@@ -42,6 +44,7 @@ namespace :import_xml do
 
   desc "import messages xml data"
   task :messages => :environment do
+    Message.destroy_all
     xml_file = File.open(Rails.root.to_s + "/lib/tasks/jinx.xml") 
     jx_xml = REXML::Document.new(xml_file)
 
