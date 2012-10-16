@@ -1,5 +1,11 @@
 <div class="page-header">
   <span class="section-title"> 教学简讯 </span>
+  <%= form_for [:admin,@message_channel], :html => { :class => 'form-horizontal pull-right' } do |f| %>
+    <div class="control-group">
+      期号: <%= f.text_field :number, :class => 'number_field' %>
+      <%= f.submit '提交', :class => 'btn' %>
+    </div>
+  <%end%>
 </div>
 
 <table class="table table-striped" id="channel">
@@ -24,22 +30,4 @@
   </tbody>
 </table>
 
-<%= form_for [:admin,@message_channel], :html => { :class => 'form-horizontal' } do |f| %>
-  <% if @message_channel.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @message_channel.errors.count %>错误，不能保存：</h2>
-      <ul>
-        <% @message_channel.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="control-group">
-    期号: <%= f.text_field :number, :class => 'number_field' %>
-    <%= f.submit '提交', :class => 'btn' %>
-  </div>
-<%end%>
-
-<p><%= will_paginate @channels, :renderer => BootstrapPagination::Rails %></p>
+<%= will_paginate @channels, :renderer => BootstrapPagination::Rails %>
