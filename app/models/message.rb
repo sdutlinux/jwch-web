@@ -2,7 +2,8 @@ class Message < ActiveRecord::Base
   attr_accessible :content, :message_channel_id, :message_type_id, :title
   belongs_to :message_channel
 
-  validates :content, :title, :message_type_id, :message_channel_id, :presence => true
+  validates_presence_of :title, :message_type_id, :message_channel_id#, :content 
+  #TODO comment content
 
 end
 
