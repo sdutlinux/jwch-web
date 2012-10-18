@@ -3,4 +3,5 @@
 //= require kindeditor
 //= require close
 //= require bootstrap-modal
+//= require bootstrap-collapse
 //= require modernizr

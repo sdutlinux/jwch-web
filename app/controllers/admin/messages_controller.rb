@@ -3,8 +3,7 @@ class Admin::MessagesController < Admin::BaseController
   before_filter :find_channel
 
   def index
-    @messages = Message.where(:message_channel_id => params[:message_channel_id])
-    #@message_types = MessageType.where(:message_channel_id => params[:message_channel_id])
+    @message_type = @message_channel.message_types
 
     respond_to do |format|
       format.html
