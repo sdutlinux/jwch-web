@@ -15,6 +15,7 @@ class Admin::MessageTypesController < Admin::BaseController
 
     respond_to do |format|
       format.html
+      format.js
     end
   end
 
