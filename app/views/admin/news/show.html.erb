@@ -12,7 +12,7 @@
     <p> <%= News.human_attribute_name(:author)%>: <%= @news.author%></p>
   </div>
   <div class="content">
-    <%= @news.content.html_safe %>
+    <%=raw @news.content%>
   </div>
 </div>
 

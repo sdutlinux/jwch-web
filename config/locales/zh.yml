@@ -168,6 +168,9 @@ zh:
       law:
         created_at: '发表于'
         category: '分类'
+      workflow:
+        created_at: '发表于'
+        category: '分类'
       rule:
         created_at: '发表于'
         category: '分类'

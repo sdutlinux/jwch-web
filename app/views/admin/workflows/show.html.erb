@@ -4,20 +4,18 @@
       <%= button_tag 'x', :class =>"close" %>
   </div>
 <% end %>
-<p>
-  <b>标题</b>
-  <%= @workflow.title %>
-</p>
 
-<p>
-  <b>内容</b>
-  <%=raw @workflow.content %>
-</p>
+<div class="detail">
+  <div class="title">
+    <h3> <%= @workflow.title %> </h3>
+    <p> <%= Workflow.human_attribute_name(:created_at)%>: <%= @workflow.created_at.strftime('%y/%m/%d') %></p>
+    <p> <%= Workflow.human_attribute_name(:category)%>:<%= category_name(@workflow.category_id)%> </p>
+  </div>
+  <div class="content">
+    <%=raw @workflow.content %>
+  </div>
+</div>
 
-<p>
-  <b>分类</b>
-  <%= category_name  @workflow.category_id %>
-</p>
 
 <div class="form-actions">
   <%= link_to '返回', admin_category_workflows_path, :class => 'btn'  %>
