@@ -17,7 +17,7 @@
       <tr id="category_<%= t.id %>">
         <td><%= t.id %></td>
         <td><%= link_to t.name, admin_category_competitions_path(t)%></td>
-        <td><%= t.created_at %></td>
+        <td><%= t.created_at.strftime('%y/%m/%d')  %></td>
         <td>
           <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_admin_section_category_path(@section, t), :remote =>true %>
           <%= link_to '<i class="icon-trash"></i>'.html_safe, admin_section_category_path(@section, t), :method => :delete, :confirm => 'Are you sure?',:remote => true  %>

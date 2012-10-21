@@ -4,19 +4,15 @@
       <%= button_tag 'x', :class =>"close" %>
   </div>
 <% end %>
-
-<h1>详细信息</h1>
-
-<p>
-  <b>标题</b><br>
-  <%= @rule.title %>
-</p>
-
-<p>
-  <b>内容</b><br>
-  <%=raw @rule.content %>
-</p>
-
+<div class="detail">
+  <div class="title">
+    <h3> <%= @rule.title %> </h3>
+    <p> <%= Rule.human_attribute_name(:created_at)%>: <%= @rule.created_at.strftime('%y/%m/%d') %></p>
+  </div>
+  <div class="content">
+    <%=raw @rule.content%>
+  </div>
+</div>
 
 <div class="form-actions">
   <%= link_to '返回', admin_category_rules_path, :class => 'btn'  %>

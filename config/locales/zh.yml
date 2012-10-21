@@ -158,13 +158,29 @@ zh:
 
   activerecord:
     modules:
-      user: 用户
+      user: '用户'
+      news: '新闻'
     attributes:
+      news:
+        author: '作者'
+        created_at: '发表于'
+        category: '分类'
+      law:
+        created_at: '发表于'
+        category: '分类'
+      rule:
+        created_at: '发表于'
+        category: '分类'
+      organization:
+        author: '作者'
+        created_at: '发表于'
+        category: '分类'
+        
       user:
-        nickname: 用户名
-        email: 电子邮件
-        password: 密码
-        password_confirmation: 密码确认
+        nickname: '用户名'
+        email: '电子邮件'
+        password: '密码'
+        password_confirmation: '密码确认'
     errors:
       template: # ~ 2.3.5 backward compatible
         header:
