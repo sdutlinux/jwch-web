@@ -17,7 +17,7 @@
     <% @links.each do |link| %>
       <tr>
         <td><%= link.id %></td>
-        <td><%= link_to link.name, admin_link_path(link) %></td>
+        <td><%= link.name %></td>
         <td><%= link.url %></td>
         <td><%= link.sort %></td>
         <td>
