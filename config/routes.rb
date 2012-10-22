@@ -9,6 +9,10 @@ JwchWeb::Application.routes.draw do
     resources :courses 
     resources :workflows
   end
+  
+  resources :message_channel do
+    resources :message
+  end
 
   get 'rule_types' => 'rule_types#index'
   get 'course_types' => 'course_types#index'

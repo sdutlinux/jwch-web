@@ -131,11 +131,16 @@
                       <td>　</td>
                       <td>　</td></TR></TBODY></table>
                 <table width="340">
-                  <tr class="header">
-
-                    <td width="200" align="left"></td>
-                    <td align="center"><a href="#" onClick="MM_openBrWindow('JxT.asp?dat=&name=&id=)','','scrollbars=yes,resizable=yes,width=860,height=750')">《教学简讯第</a>          </td>
-                  </tr>
+                  <% @message_channels.each do |message_channel| %>
+                   <tr class="header">
+                     <td width="200" align="left">
+                       <%= message_channel.created_at.strftime("%Y-%m-%d") %>
+                     </td>
+                      <td align="center">
+                        <%= link_to '《教学简讯第'+message_channel.number+'期》', message_channel_path(message_channel)%>
+                     </td>
+                   </tr>
+                  <% end %>
                 </table>
                 <table cellspacing="0" cellpadding="0" width="340"
                   border="0">
