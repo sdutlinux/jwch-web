@@ -1,6 +1,7 @@
 class WorkflowTypesController < ApplicationController
   def index
-    @workflow_types = WorkflowType.all
+    @section = Section.find_by_section_key('gzlc')
+    @workflow_types = @section.categories.all
 
     respond_to do |format|
       format.html
