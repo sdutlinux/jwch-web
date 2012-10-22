@@ -1,0 +1,2 @@
+module MessageTypeHelper
+end
