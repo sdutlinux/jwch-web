@@ -25,7 +25,7 @@
       <% @laws.each do |p| %>
         <tr>
           <td><%= link_to p.title, admin_law_path(p) %></td>
-          <td><%= p.created_at %></td>
+          <td><%= p.created_at.strftime('%y/%m/%d') %></td>
           <td><%= category_name p.category_id %></td>
           <td>
             <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_admin_law_path(p)  %>

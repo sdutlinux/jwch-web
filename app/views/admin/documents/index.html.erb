@@ -24,7 +24,7 @@
         <td><%= link_to document.name,admin_document_path(document)%></td>
         <td><%= document.author %></td>
         <td><%= category_name document.category_id %></td>
-        <td><%= document.created_at %></td>
+        <td><%= document.created_at.strftime('%y/%m/%d')  %></td>
          <td>
           <%= link_to '<i class="icon-trash"></i>'.html_safe, admin_document_path(document), :method => :delete, :confirm => 'Are you sure?' %>
         </td>

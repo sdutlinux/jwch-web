@@ -5,30 +5,16 @@
   </div>
 <% end %>
 
-<p>
-  <b>标题</b>
-  <%= @news.title %>
-</p>
-
-<p>
-  <b>内容</b>
-  <%=raw @news.content %>
-</p>
-
-<p>
-  <b>作者</b>
-  <%= @news.author %>
-</p>
-
-<p>
-  <b>部门</b>
-  <%= @news.department %>
-</p>
-
-<p>
-  <b>是否发布</b>
-  <%= @news.show %>
-</p>
+<div class="detail">
+  <div class="title">
+    <h3> <%= @news.title %> </h3>
+    <p> <%= News.human_attribute_name(:created_at)%>: <%= @news.created_at.strftime('%y/%m/%d') %></p>
+    <p> <%= News.human_attribute_name(:author)%>: <%= @news.author%></p>
+  </div>
+  <div class="content">
+    <%=raw @news.content%>
+  </div>
+</div>
 
 <div class="form-actions">
   <%= link_to '返回', admin_news_index_path, :class => 'btn'  %>

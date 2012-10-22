@@ -23,7 +23,7 @@
       <tr>
         <td><%= competition.id %></td>
         <td><%= link_to competition.title, admin_category_competition_path(@competition_type, competition) %></td>
-        <td><%= competition.created_at %></td>
+        <td><%= competition.created_at.strftime('%y/%m/%d')  %></td>
         <td>
           <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_admin_category_competition_path(@competition_type,competition) %>
           <%= link_to '<i class="icon-trash"></i>'.html_safe, admin_category_competition_path(@competition_type,competition), :method => :delete, :confirm => 'Are you sure?' %>
