@@ -1,6 +1,43 @@
 #encoding: utf-8
 module ApplicationHelper
 
+  def home_menu
+    @law_category = Section.find_by_section_key('zcfg')
+    [
+      {:name => '首页',     :path => root_path,         :children => nil },
+      {:name => '机构设置', :path => organizations_path, :children => nil}, 
+
+      {:name => '政策法规', :path => '', :children => [ 
+        {:name => '山东省教学文件', :path => laws_path, :children => nil},
+        {:name => '国家教育教学政策法规', :path => laws_path, :children => nil}
+        ]
+      }, 
+        
+      {:name => '规章制度', :path => rule_types_path, :children => nil}, 
+
+      {:name => '人才培养', :path => '', :children => [
+        {:name => '专业介绍', :path => '', :children => nil}, 
+        {:name => '课程介绍', :path => course_types_path, :children => nil}
+      ]
+      },
+
+      {:name => '工作流程', :path => workflow_types_path, :children => nil},
+      {:name => '教务通知', :path => news_path, :children => nil}, 
+      {:name => '处长信箱', :path => mail_path, :children => nil}, 
+      {:name => '下载专区', :path => document_path, :children => nil}, 
+
+      {:name => '教学研究', :path => '', :children => [
+        {:name => '教学成果', :path => teaching_achievements_path, :children => nil}, 
+        {:name => '教改立项', :path => education_projects_path, :children => nil}, 
+      ]
+      },
+
+      {:name => '创新竞赛', :path => competition_types_path, :children => nil}, 
+      {:name => '个人空间', :path => personal_space_path, :children => nil}, 
+      {:name => '《教学简讯》', :path => message_channels_path, :children => nil}
+    ]
+  end
+
   def dashboard_menu
     [
       {
