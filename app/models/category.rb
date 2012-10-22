@@ -8,7 +8,6 @@ class Category < ActiveRecord::Base
   has_many :courses 
   has_many :workflows 
   has_many :competitions
-
 end
 
 # == Schema Information

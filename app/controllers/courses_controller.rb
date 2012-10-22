@@ -11,14 +11,15 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @course = @course_type.courses.find(params[:id])
+    @course = Course.find(params[:id])
 
     respond_to do |format|
       format.html
     end
   end
 
+  private 
   def find_course_type
-    @course_type =  CourseType.find(params[:course_type_id])
+    @course_type =  Category.find(params[:category_id])
   end
 end

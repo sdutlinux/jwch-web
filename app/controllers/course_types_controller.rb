@@ -1,6 +1,7 @@
 class CourseTypesController < ApplicationController
   def index
-    @course_types = CourseType.all
+    @section = Section.find_by_section_key('kcjs')
+    @course_types = @section.categories 
 
     respond_to do |format|
       format.html
