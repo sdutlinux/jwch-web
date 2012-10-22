@@ -1,9 +1,11 @@
 #coding=utf-8
 class DocumentsController < ApplicationController
   def index
-    @category_type = params[:category_type]
-    @documents = Document.where(:category => @category_type).paginate :page => params[:page],
+    @category_id = params[:category_id] || Category.find_by_name("学业学籍").id
+    @category_id = @category_id.to_i
+    @documents = Document.where(:category_id => @category_id).paginate :page => params[:page],
       :order => 'created_at desc', :per_page => 24
+    @categorys = Category.find( :all,  :conditions => {:section_key => "xzzq"})
 
     respond_to do |format|
       format.html

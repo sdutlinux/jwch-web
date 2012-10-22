@@ -54,13 +54,13 @@
       <table cellspacing="0" cellpadding="0" width="100%" border="0">
       <tbody>
         <tr>
-            <% Document::CATEGORY.each do |category| %>
+            <% @categorys.each do |category| %>
               <td width="" align="left"  bgcolor="#f4f4f4" class="nr01">
-                <% if @category_type == category %>
-                  <%= link_to category,{:controller=>"documents",:action=>"index",:category_type => "学业学籍"},
+                <% if @category_id == category.id %>
+                  <%= link_to category.name,{:controller=>"documents",:action=>"index",:category_id => category.id},
                     :style => "color:red"%>
                 <% else %>
-                  <%= link_to category,{:controller=>"documents",:action=>"index",:category_type => category} %>
+                  <%= link_to category.name,{:controller=>"documents",:action=>"index",:category_id => category.id} %>
                 <% end %>
                 </td>
             <% end %>
