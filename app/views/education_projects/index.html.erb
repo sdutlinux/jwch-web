@@ -1,10 +1,3 @@
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
-<link href="/assets/style.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
 <table border="0" cellspacing="0">
 <TR>
           <TD><TABLE cellSpacing=0 cellPadding=0 width=566 align=center border=0>
@@ -38,8 +31,7 @@
 		  <tr>
 		      <td height="200" valign="top" class="titlenor">
                 <table width="100%" align="left">
-                  <% i = 0 %>
-                  <% RANK.each do |rank| %>
+
                   <tr>
                     <td valign="top" align="left">
                       <table cellspacing="0" cellpadding="0" width="100%" border="0">
@@ -47,7 +39,7 @@
                           <tr>
                             <td width="16"><img height="22" src="/assets/bit_03.gif" width="16"></td>
                             <td width="15" bgcolor="#e0e8f8">　</td>
-                            <td bgcolor="#e0e8f8">&nbsp;<strong><%= rank %></strong></td>
+                            <td bgcolor="#e0e8f8">&nbsp;<strong><%= %></strong></td>
                           </tr>
                         </tbody>
                       </table>
@@ -60,7 +52,7 @@
                             <th width="130" height="25" align="center">部门</th>
                             <th width="60" height="25" align="center">负责人</th>
                           </tr>
-                          <% @education_projects.at(i).each do |education_project| %>
+
                           <tr>
                             <td align="left">&nbsp;<%= education_project.name %></td>
                             <td align="center">&nbsp;<%= education_project.created_at.strftime("%Y") %></td>
@@ -81,5 +73,3 @@
       </table>    </td>
   </tr>
 </table>
-</body>
-</html>
