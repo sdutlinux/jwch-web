@@ -4,6 +4,11 @@
   </div>
 <%end%>
 
+<!--[if (IE 6) | (IE 7)]>
+  <div class = "alert alert-error">
+    <h1>您的浏览器版本太低，请使用ie8以上版本浏览器，推荐 chrome 和 firefox浏览器</h1>
+  </div>
+<![endif]-->
 <% if flash[:notice] %>
   <div class="alert alert-success">
     <%= flash[:notice] %>
