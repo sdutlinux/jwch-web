@@ -12,6 +12,7 @@ JwchWeb::Application.routes.draw do
     resources :messages
   end
   get 'zhengfang' => 'zhengfang#index'
+  get 'about' => 'about#index'
   get 'rule_types' => 'rule_types#index'
   get 'course_types' => 'course_types#index'
   get 'workflow_types' => 'workflow_types#index'
