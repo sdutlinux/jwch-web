@@ -1,5 +1,4 @@
 class MessageChannelController < ApplicationController
-  layout 'message_channel'
   def index
     @message_channels = MessageChannel.all.paginate  :page => params[:page],
       :order => 'created_at desc', :perpage => 15
@@ -9,6 +8,8 @@ class MessageChannelController < ApplicationController
     end
   end
 
+
+  layout 'message_channel'
   def show
     @message_channel = MessageChannel.find(params[:id])
     @messages = Message.where( :message_channel_id => @message_channel.id )

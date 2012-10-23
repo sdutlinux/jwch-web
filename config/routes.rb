@@ -4,15 +4,14 @@ JwchWeb::Application.routes.draw do
 
   resources :organizations, :laws, :only => [:index, :show]
   resources :news, :documents, :education_projects, :teaching_achievements, :only => [:index, :show]
-  resources :message_channels, :only => [:index, :show]
   resources :categories, :only => [] do
     resources :rules,:courses, :workflows, :competitions, :only => [:index, :show]
   end
   
-  resources :message_channel do
-    resources :message
+  resources :message_channels, :only => [:index, :show] do
+    resources :messages
   end
-
+  get 'zhengfang' => 'zhengfang#index'
   get 'rule_types' => 'rule_types#index'
   get 'course_types' => 'course_types#index'
   get 'workflow_types' => 'workflow_types#index'
