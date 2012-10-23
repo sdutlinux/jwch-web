@@ -14,9 +14,9 @@ group :assets do
   gem 'bootstrap-sass' 
   gem 'therubyracer'
   gem 'uglifier', '>= 1.0.3'
+  gem 'modernizr-rails'
 end
 
-gem 'modernizr-rails'
 gem 'jquery-rails'
 
 group :development do
@@ -26,9 +26,9 @@ group :development do
   gem 'pry-nav'
   gem 'annotate'
   gem 'thin'
-end
 
-gem 'capistrano'
-gem 'capistrano-ext'
-gem 'rvm-capistrano'
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'rvm-capistrano'
+end
 
