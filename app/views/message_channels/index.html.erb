@@ -1,53 +1,35 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title></title>
-<link href="/assets/style.css" rel="stylesheet" type="text/css" />
-<script type="text/JavaScript">
-<!--
-function MM_openBrWindow(theURL,winName,features) { //v2.0
-  window.open(theURL,winName,features);
-}
-//-->
-</script>
-</head>
-
-<body>
-
-
-
 <table border="0" cellspacing="0">
-<TR>
-          <TD><TABLE cellSpacing=0 cellPadding=0 width=566 align=center border=0>
+  <TR>
+    <TD><TABLE cellSpacing=0 cellPadding=0 width=566 align=center border=0>
         <TBODY>
-        <TR>
-          <TD width=358 height=4></TD>
-          <TD width=2><IMG height=1 src="/assets/spacer.gif" width=1></TD>
-          <TD></TD></TR>
-        <TR>
-          <TD><img height=122 src="/assets/3.jpg" width=358 /></TD>
-          <TD><IMG height=1 src="/assets/spacer.gif" width=1></TD>
-          <TD vAlign=bottom background=/assets/bg_02.gif>
-            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
-              <TBODY>
-              <TR>
-                <TD align="left"><IMG height=41 hspace=25 src="/assets/jx.jpg" 
-                  width=81 vspace=10></TD>
-              </TR>
-              <TR>
-              <TD background=/assets/bg_03.gif 
-              height=20>　</TD></TR></TBODY></TABLE></TD></TR>
-        <TR>
-          <TD height=4></TD>
-          <TD><IMG height=1 src="/assets/spacer.gif" width=1></TD>
-          <TD></TD></TR></TBODY></TABLE></TD>
+          <TR>
+            <TD width=358 height=4></TD>
+            <TD width=2><IMG height=1 src="/assets/spacer.gif" width=1></TD>
+            <TD></TD></TR>
+          <TR>
+            <TD><img height=122 src="/assets/3.jpg" width=358 /></TD>
+            <TD><IMG height=1 src="/assets/spacer.gif" width=1></TD>
+            <TD vAlign=bottom background=/assets/bg_02.gif>
+              <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                <TBODY>
+                  <TR>
+                    <TD align="left"><IMG height=41 hspace=25 src="/assets/jx.jpg" 
+                      width=81 vspace=10></TD>
+                  </TR>
+                  <TR>
+                    <TD background=/assets/bg_03.gif 
+                      height=20>　</TD></TR></TBODY></TABLE></TD></TR>
+          <TR>
+            <TD height=4></TD>
+            <TD><IMG height=1 src="/assets/spacer.gif" width=1></TD>
+            <TD></TD></TR></TBODY></TABLE></TD>
   </TR>
   <tr>
     <td valign="top" align="center"><table cellspacing="0" cellpadding="0" width="100%" border="0">
         <tbody>
           <tr>
             <td width="16"><img height="22" 
-                        src="/assets/bit_03.gif" width="16" /></td>
+              src="/assets/bit_03.gif" width="16" /></td>
             <td width="15" bgcolor="#f4f4f4">　</td>
             <td align="left" bgcolor="#f4f4f4" class="nr01"><strong>当前位置&gt;&gt;《教学简讯》</strong></td>
           </tr>
@@ -57,39 +39,37 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
             <td>　</td>
           </tr>
         </tbody>
-    </table>
-        <table width="100%" height="400" 
-                  border="0" align="center" cellpadding="0" cellspacing="0" class="box01">
-          <tbody>
-		  <tr><td valign="top" height="350">
-		  
-		  
-		  
-		    <p style="height:15px">&nbsp;</p>
-            <table width="100%" align="left">
-              <% @message_channels.each do |message_channel| %>
-              <tr class="header">
-                <td width="200" align="center">
-                  <p align="left">　　时间: <%= message_channel.created_at.strftime("%Y-%m-%d") %>
-                </td>
-                <td align="center">
-                  <%= link_to "《教学简讯第" + message_channel.number + "期》" ,message_channel_path(message_channel) %>
-                </td>
-              </tr>
-            <% end %>
-            </table>
-		  
-		  
-		  
-		  
-		  </td></tr>
+      </table>
+      <table width="100%" height="400" 
+        border="0" align="center" cellpadding="0" cellspacing="0" class="box01">
+        <tbody>
+          <tr><td valign="top" height="350">
+
+
+
+              <p style="height:15px">&nbsp;</p>
+              <table width="100%" align="left">
+                <% @message_channels.each do |message_channel| %>
+                  <tr class="header">
+                    <td width="200" align="center">
+                      <p align="left">　　时间: <%= message_channel.created_at.strftime("%Y-%m-%d") %>
+                    </td>
+                    <td align="center">
+                      <%= link_to "《教学简讯第" + message_channel.number + "期》" ,message_channel_path(message_channel), :target => '_blank' %>
+                    </td>
+                  </tr>
+                <% end %>
+              </table>
+
+
+
+
+          </td></tr>
           <tr><td colspan="2" align="center">
               <p><%= will_paginate @news , :previous_label => '前一页' , :next_label => '后一页' %></p>
-			<td>
-			</tr>
-          </tbody>
-      </table>    </td>
-  </tr>
-</table>
-</body>
-</html>
+              <td>
+              </tr>
+            </tbody>
+        </table>    </td>
+      </tr>
+    </table>
