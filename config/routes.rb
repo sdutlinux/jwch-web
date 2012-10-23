@@ -11,7 +11,7 @@ JwchWeb::Application.routes.draw do
   resources :message_channels, :only => [:index, :show] do
     resources :messages
   end
-
+  get 'zhengfang' => 'zhengfang#index'
   get 'rule_types' => 'rule_types#index'
   get 'course_types' => 'course_types#index'
   get 'workflow_types' => 'workflow_types#index'
