@@ -2,7 +2,7 @@
 
 ## 备份文件 
 
-*  将下载专区的文件链接到 'public/upload_old/'
-*  将工作流程的图片放在 'public/editor/UploadFile'
-*  将编辑器上传的文件 'public/editor_old' 
+*  将下载专区的文件链接到 'public/upload_old/', share_path => upload_old
+*  将工作流程的图片放在 'public/editor/UploadFile', share_path => workflow_pic
+*  现在上传文件在public/uploads/ public/uploads/editor, share_path => uploads
 
