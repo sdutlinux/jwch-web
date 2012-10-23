@@ -5,7 +5,7 @@ JwchWeb::Application.routes.draw do
   resources :organizations, :laws, :only => [:index, :show]
   resources :news, :documents, :education_projects, :teaching_achievements, :only => [:index, :show]
   resources :categories, :only => [] do
-    resources :rules,:courses, :workflows,:competitions, :only => [:index, :show]
+    resources :rules,:courses, :workflows, :competitions, :only => [:index, :show]
   end
   
   resources :message_channels, :only => [:index, :show] do

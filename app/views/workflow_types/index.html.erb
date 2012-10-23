@@ -1,11 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title></title>
-<link href="/assets/style.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
 <table border="0" cellspacing="0">
 <TR>
           <TD><TABLE cellSpacing=0 cellPadding=0 width=566 align=center border=0>
@@ -57,11 +49,9 @@
             <table width="100%" align="left">
               <% @workflow_types.each do |workflow_type| %>
                 <tr>
-                  <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;
-
-                    <%= link_to workflow_type.name, workflow_type_workflows_path(workflow_type) %>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <td align="left">
+                    &gt;&gt;
+                    <%= link_to workflow_type.name, category_workflows_path(workflow_type) %>
                   </td>
                 </tr>	
               <% end %>  
@@ -77,5 +67,3 @@
     </td>
   </tr>
 </table>
-</body>
-</html>

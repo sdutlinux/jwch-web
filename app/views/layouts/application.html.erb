@@ -137,39 +137,38 @@
                       <td class=box01 align=center height=20> <%= link_to '处长信箱', mail_path %> </td>
                     </tr>
                     <tr>
-                      <td class=box01 align=center height=20>
-                        <%= link_to '下载专区', documents_path %>
-                      </td>
+                      <td class=box01 align=center height=20> <%= link_to '下载专区', documents_path %></td>
                     </tr>
                     <tr>
                       <td class=box01 align=center height=20 style="cursor:hand" onclick="show('la3')">教学研究 </td>
                     </tr>
                     <tr><td height="0px"><div id="la3" type="div" style="display:none; height:auto">
                           <table width="100%">
-                            <tr><td class="box03">
-                                <%= link_to "教学成果" ,'#', :style => "color:#990000" %>
-                              </td>
+                            <tr>
+                              <td class="box03"> <%= link_to "教学成果" ,teaching_achievements_path, :style => "color:#990000" %> </td>
                             </tr>
                             <tr>
-                              <td class="box03">
-                                <%= link_to "教改立项",education_projects_path, :style => "color:#990000" %>
-                              </td>
+                              <td class="box03"> <%= link_to "教改立项",education_projects_path, :style => "color:#990000" %> </td>
                             </tr>
                           </table>
                     </div></td></tr>
                     <tr>
-                      <td class=box01 align=center height=20><A 
-                          href="chuangxcap" target="mainFrame">创新竞赛</A></td>
+                      <td class=box01 align=center height=20 >
+                        <%= link_to '创新竞赛',competition_types_path %>
+                      </td>
                     </tr>
                     <tr>
-                      <td class=box01 align=center height=20>
-                        <%= link_to '个人空间',personal_space_path %></td>
+                      <td class=box01 align=center height=20> <%= link_to '个人空间',personal_space_path %></td>
                     </tr>
                     <tr>
+<<<<<<< HEAD
                       <td class=box01 align=center height=20>
                         <%= link_to "《教学简讯》",message_channels_path %> 
                       </td>
                     </tr>
+=======
+                      <td class=box01 align=center height=20><A href="jx" target="mainFrame">《教学简讯》</A></td> </tr>
+>>>>>>> ddb147572ef84bebb7d53e6a584b00096264bb92
               </TBODY></table></td>
             </tr>
             <tr>
