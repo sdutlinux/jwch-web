@@ -47,7 +47,7 @@ class Admin::DocumentsController < Admin::BaseController
 
   def editor_file
     @file_name = params[:file] + '.' + params[:format]
-    @full_path = Rails.root.to_s + '/public/editor_old/' + @file_name
+    @full_path = Rails.root.to_s + '/public/upload_old/' + @file_name
 
     if File.exists?(@full_path)
       send_file @full_path
