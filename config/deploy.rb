@@ -56,6 +56,7 @@ namespace :deploy do
   task :restart, :roles => :app do
     run "kill -USR2 `cat #{current_path}/tmp/pids/puma.pid`"
   end
+
   task :config_file do
     run "ln -s  #{shared_path}/database.yml #{release_path}/config/database.yml"
   end
@@ -70,9 +71,11 @@ namespace :deploy do
 
   task :import_data do
   	run "cd #{release_path}; bundle exec rake import:all RAILS_ENV=#{rails_env}"
+  	run "cd #{release_path}; bundle exec rake import_xml:all RAILS_ENV=#{rails_env}"
   end
   
-  task :import_xml do
-  	run "cd #{release_path}; bundle exec rake import_xml:all RAILS_ENV=#{rails_env}"
+  task :ln_backup_date do
+    run "ln -s  #{shared_path}/workflow_pic #{release_path}/public/editor/UploadFile"
+    run "ln -s  #{shared_path}/upload_old #{release_path}/public/upload_old"
   end
 end
