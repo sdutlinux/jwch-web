@@ -1,4 +1,4 @@
-class MessageController < ApplicationController
+class MessagesController < ApplicationController
   layout 'message_channel'
   def show
     @message = Message.find( params[:id] )
