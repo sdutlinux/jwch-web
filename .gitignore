@@ -10,7 +10,7 @@ public/assets/
 config/database.yml
 config/config.yml
 public/uploads/
-public/editor
+public/editor/*
 public/topics
 public/topics/**/*
 public/upload_old/*

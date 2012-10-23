@@ -14,11 +14,16 @@ set :deploy_to, "/home/group/#{application}"
 #after "deploy:migrate", "deploy:init"
 #after "deploy:init", "deploy:import_data"
 #after "deploy:create_symlink", "deploy:cleanup"
-#
+
 # 2012-10-16 
 # after "bundle:install", "deploy:config_file", "deploy:migrate", "deploy:import_xml"
 # after "deploy:create_symlink", "deploy:cleanup"
 
 #2012-10-18 
-after "bundle:install", "deploy:config_file", "deploy:migrate"
+#after "bundle:install", "deploy:config_file", "deploy:migrate"
+#after "deploy:create_symlink", "deploy:cleanup"
+
+#2012-10-23
+after "bundle:install", "deploy:config_file", "deploy:migrate", "deploy:ln_backup_date"
 after "deploy:create_symlink", "deploy:cleanup"
+
