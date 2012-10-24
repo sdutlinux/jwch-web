@@ -61,7 +61,7 @@
                                 <TBODY>
                                   <% @people.each do |p| %>
                                     <tr>
-                                      <td><%= p.created_at.strftime("%Y-%m-%d") %></td>
+                                      <td width = 100><%= p.created_at.strftime("%Y-%m-%d") %></td>
                                       <td><%= link_to p.name,organization_path(p),:style =>"color:#092D70" %></td>
                                     </tr>
                                   <% end %>
