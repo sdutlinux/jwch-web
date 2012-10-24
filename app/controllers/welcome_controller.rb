@@ -7,5 +7,4 @@ class WelcomeController < ApplicationController
       format.html
     end
   end
-
 end
