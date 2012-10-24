@@ -5,7 +5,7 @@ JwchWeb::Application.routes.draw do
   resources :organizations, :laws, :only => [:index, :show]
   resources :news, :documents, :education_projects, :teaching_achievements, :only => [:index, :show]
   resources :categories, :only => [] do
-    resources :rules,:courses, :workflows, :competitions, :only => [:index, :show]
+    resources :rules,:courses, :workflows, :competitions, :competitions, :only => [:index, :show]
   end
   
   resources :message_channels, :only => [:index, :show] do
@@ -27,6 +27,7 @@ JwchWeb::Application.routes.draw do
   namespace :admin do
     get '/', :to => "dashboard#show"
     get 'editorbak/uploadfile/:file(.:format)' => 'documents#editor_file'
+    get 'editor/uploadfile/:file(.:format)' => 'documents#editor_file'
     get 'rule_types' => 'rule_types#index'
     get 'course_types' => 'course_types#index'
     get 'workflow_types' => 'workflow_types#index'

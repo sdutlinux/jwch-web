@@ -25,11 +25,48 @@
           <TD></TD></TR></TBODY></TABLE></TD>
   </TR>
   <tr>
-    <td valign="top" align="center"><table cellspacing="0" cellpadding="0" width="100%" align="center" 
-                  border="0">
+    <td valign="top" align="center"><table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
           <tbody>
-		  <tr><td height="200" valign="top" class="titlenor"><table width="100%" align="left">
-		  </table></td></tr>
+            <tr>
+              <td height="200" valign="top" class="titlenor">
+                <table width="100%" align="left">
+                  <% @teaching_achievements.each do |rank, items| %>
+                  <tr>
+                    <td valign="top" align="left">
+                      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                        <tbody>
+                          <tr>
+                            <td width="16"><img height="22" src="/assets/bit_03.gif" width="16"></td>
+                            <td width="15" bgcolor="#e0e8f8">　</td>
+                            <td bgcolor="#e0e8f8">&nbsp;<strong><%= rank %></strong></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table align="left" width="98%">
+                        <tbody>
+                          <tr>
+                            <th width="130" height="25" align="center">名称
+                            </th>
+                            <th width="60" height="25" align="center">年度</th>
+                            <th width="130" height="25" align="center">部门</th>
+                            <th width="60" height="25" align="center">负责人</th>
+                          </tr>
+                          <% items.each do |education_project| %>
+                          <tr>
+                            <td align="left">&nbsp;<%= education_project.name %></td>
+                            <td align="center">&nbsp;<%= education_project.created_at.strftime("%Y") %></td>
+                            <td align="center">&nbsp;山东理工大学</td>
+                            <td align="center">&nbsp;王兰美、孙玉峰、殷昌贵、葛文庆、邢自聪</td>
+                          </tr>
+                        <% end %>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                <% end %>
+            </table>
+        </td>
+      </tr>
 			<tr><td colspan="2" align="center">
 			</td>
 			</tr>
