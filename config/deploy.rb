@@ -5,10 +5,10 @@ set :rvm_type, :system
 require 'rvm/capistrano'
 
 set :stages, %w(staging production)
-set :default_stage, "staging"
+set :default_stage, "production"
 require 'capistrano/ext/multistage'
 
-set :user, "group"  # ssh user 
+set :user, "rails"  # ssh user 
 set :application, "jwch-web"
 
 # ssh to the deploy server
@@ -43,19 +43,24 @@ end
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
-  task :start, :roles => :app do
-    run "cd #{current_path}; 
-         setsid puma  -e staging -b unix:///tmp/jwch-web.sock 
-         --pidfile #{current_path}/tmp/pids/puma.pid > /dev/null 2>&1"
+  task :start do ; end
+  task :stop do ; end
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+  #task :start, :roles => :app do
+  #  run "cd #{current_path}; 
+  #       setsid puma  -e staging -b unix:///tmp/jwch-web.sock 
+  #       --pidfile #{current_path}/tmp/pids/puma.pid > /dev/null 2>&1"
+  #end
 
-  task :stop, :roles => :app do
-    run "kill -QUIT `cat #{current_path}/tmp/pids/puma.pid`"
-  end
+  #task :stop, :roles => :app do
+  #  run "kill -QUIT `cat #{current_path}/tmp/pids/puma.pid`"
+  #end
 
-  task :restart, :roles => :app do
-    run "kill -USR2 `cat #{current_path}/tmp/pids/puma.pid`"
-  end
+  #task :restart, :roles => :app do
+  #  run "kill -USR2 `cat #{current_path}/tmp/pids/puma.pid`"
+  #end
 
   task :config_file do
     run "ln -s  #{shared_path}/database.yml #{release_path}/config/database.yml"
