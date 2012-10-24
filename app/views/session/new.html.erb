@@ -7,7 +7,7 @@
   </head> 
   <body>
     <%if flash[:error]%>
-      <p id="notice"><%= flash[:error] %></p>
+      <div class ="alert alert-error "><%= flash[:error] %></div>
     <%end%>
     <div class="container">
       <div class="row">
