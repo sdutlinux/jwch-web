@@ -1,6 +1,28 @@
 #coding: utf-8
 namespace :import do
 
+
+  desc "import links"
+  task :link => :environment do
+    puts 'import links'
+    oo = Excel.new("#{Rails.root}/lib/tasks/links.xls")
+    oo.default_sheet = oo.sheets.first
+    2.upto(oo.last_row) do |line|
+      puts "now import #{line} low #{oo.cell(line, 'B')} "
+      link = Link.new
+      
+      link.name = oo.cell(line,'A')
+      link.sort = oo.cell(line,'B').to_i
+      link.url = oo.cell(line,'C')
+      link.created_at = Time.now
+
+      link.save
+    end
+    puts 'import down'
+  end
+
+
+
   desc "import news "
   task :news => :environment do
     puts 'import news tables'
@@ -565,7 +587,7 @@ namespace :import do
   end
 
   desc "import all "
-  task :all => [:news, :org, :laws, :rules, :courses, :teaching, :edu_project, :competitions, :workflows, :down] do
+  task :all => [:news, :org, :laws, :rules, :courses, :teaching, :edu_project, :competitions, :workflows, :down, :link] do
     puts "It's prefect"
   end
 
