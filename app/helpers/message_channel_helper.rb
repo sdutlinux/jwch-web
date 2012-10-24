@@ -1,2 +1,0 @@
-module MessageChannelHelper
-end

@@ -110,7 +110,7 @@
                   </TR>
                   <tr>
                     <td class=nr02 align=right height=40><%= link_to "详细内容 
-                        ",about_path %>&gt;&gt; </td>
+                    ", 'pages/about' %>&gt;&gt; </td>
       </TR></TBODY></table></td></TR></TBODY></table>
       <form id="form1" style="height:20px" name="form1" method="post" action="Login">
         <table cellSpacing=0 cellPadding=0 width=570 border=0>
@@ -146,8 +146,8 @@
                   border="0">
                   <tbody>
                     <tr>
-                      <td class="nr02" align="right" height="24"><a 
-                          href="jx.asp">更多&gt;&gt;</a> </td>
+                      <td class="nr02" align="right" height="24"> 
+                        <%= link_to "更多>>", message_channels_path %> </td>
                     </tr>
                   </tbody>
               </table>          </td>
