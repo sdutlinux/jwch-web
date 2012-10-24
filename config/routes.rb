@@ -28,6 +28,7 @@ JwchWeb::Application.routes.draw do
   namespace :admin do
     get '/', :to => "dashboard#show"
     get 'editorbak/uploadfile/:file(.:format)' => 'documents#editor_file'
+    get 'editor/uploadfile/:file(.:format)' => 'documents#editor_file'
     get 'rule_types' => 'rule_types#index'
     get 'course_types' => 'course_types#index'
     get 'workflow_types' => 'workflow_types#index'
