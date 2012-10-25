@@ -1,9 +1,7 @@
 class PagesController < ApplicationController
   def index
-    if params[:key] == 'about'
-      render 'about'
-    elsif params[:key] == 'zhengfang'
-      render 'zhengfang'
+    respond_to do |format|
+      format.html { render params[:key] }
     end
   end
 end

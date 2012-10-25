@@ -11,7 +11,7 @@ JwchWeb::Application.routes.draw do
   resources :message_channels, :only => [:index, :show] do
     resources :messages
   end
-  get 'pages/:key' => 'pages#index'
+  get 'pages/:key' => 'pages#index', :as => :pages
   get 'rule_types' => 'rule_types#index'
   get 'course_types' => 'course_types#index'
   get 'workflow_types' => 'workflow_types#index'
