@@ -6,7 +6,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>序号</th>
       <th>标题</th>
       <th>发布于</th>
       <th>动作</th>
@@ -15,7 +14,6 @@
   <tbody>
     <% @workflow_types.each do |work| %>
       <tr id="category_<%= work.id %>">
-        <td><%= work.id %></td>
         <td><%= link_to work.name, admin_category_workflows_path(work) %></td>
         <td><%= work.created_at.strftime('%y/%m/%d')  %></td>
         <td>

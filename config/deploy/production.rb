@@ -25,6 +25,6 @@ set :deploy_to, "/home/rails/#{application}"
 #after "deploy:create_symlink", "deploy:cleanup"
 
 #2012-10-23
-after "bundle:install", "deploy:config_file", "deploy:migrate", "deploy:ln_backup_date","deploy:import_links"
+after "bundle:install", "deploy:config_file", "deploy:migrate", "deploy:ln_backup_date"
 after "deploy:create_symlink", "deploy:cleanup"
 
