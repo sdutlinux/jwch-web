@@ -70,6 +70,11 @@ namespace :deploy do
     run "cd #{release_path}; bundle exec rake db:create RAILS_ENV=#{rails_env}"
   end
 
+  desc ""
+  task :add_user  do
+  	run "cd #{release_path}; bundle exec rake add_user:lidashuang  RAILS_ENV=#{rails_env}"
+  end
+
   task :init do
   	run "cd #{release_path}; bundle exec rake init:all RAILS_ENV=#{rails_env}"
   end
