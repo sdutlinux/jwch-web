@@ -83,6 +83,10 @@ namespace :deploy do
   	run "cd #{release_path}; bundle exec rake import:all RAILS_ENV=#{rails_env}"
   	run "cd #{release_path}; bundle exec rake import_xml:all RAILS_ENV=#{rails_env}"
   end
+
+  task :import_links do
+  	run "cd #{release_path}; bundle exec rake import:link RAILS_ENV=#{rails_env}"
+  end
   
   task :ln_backup_date do
     run "ln -s  #{shared_path}/workflow_pic #{release_path}/public/editor/UploadFile"
