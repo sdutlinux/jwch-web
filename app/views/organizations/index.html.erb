@@ -1,123 +1,98 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-    <link href="/assets/style.css" rel="stylesheet" type="text/css" />
-  </head>
-
-  <body>
-    <TBODY>
-      <TR>
-        <TD vAlign=top align=left width=570><table width="566" border="0" cellspacing="0">
-            <tr>
-              <td><table width="568" border="0" cellspacing="0">
-                  <TR>
-                    <TD width="48%"><img height=122 src="/assets/1.jpg" width=358 /><IMG height=1 src="/assets/spacer.gif" width=1></TD>
-                    <TD width="52%" vAlign=bottom background=/assets/bg_02.gif>
-                      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
-                        <TBODY>
-                          <TR>
-                            <TD><IMG height=41 hspace=25 src="/assets/jig.jpg" 
-                              width=81 vspace=10></TD>
-                          </TR>
-                          <TR>
-                            <TD background=/assets/bg_03.gif 
-                              height=20>&nbsp;
-                            </TD>
-                          </TR>
-                        </TBODY>
-                      </TABLE>
-                    </TD>
-                  </TR>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td><TBODY>
-                  <TR>
-                    <TD vAlign=top align=left width=570>
-                      <TABLE cellSpacing=0 cellPadding=0 width=570 border=0>
-                        <TBODY>
-                          <TR>
-                            <TD colspan="2" align=left vAlign=top>
-                              <TABLE cellSpacing=0 cellPadding=0 width=560 border=0>
-                                <TBODY>
-                                  <TR>
-                                    <TD width=16><IMG height=22 
-                                      src="/assets/bit_03.gif" width=16></TD>
-                                    <TD width=15 bgColor=#f4f4f4>&nbsp;</TD>
-                                    <TD class=nr01 
-                                      bgColor=#f4f4f4><STRONG>成员简介</STRONG></TD>
-                                  </TR>
-                                  <TR>
-                                    <TD>&nbsp;</TD>
-                                    <TD>&nbsp;</TD>
-                                    <TD>&nbsp;</TD>
-                                  </TR>
-                                </TBODY>
-                              </TABLE>
-                              <TABLE cellSpacing=0 cellPadding=0 width=340 align=center border=0>
-                                <TBODY>
-                                  <% @people.each do |p| %>
-                                    <tr>
-                                      <td width = 100><%= p.created_at.strftime("%Y-%m-%d") %></td>
-                                      <td><%= link_to p.name,organization_path(p),:style =>"color:#092D70" %></td>
-                                    </tr>
-                                  <% end %>
-                                </TBODY>
-                              </TABLE>
-                            </TD>
-                          </TR>
-                          <TR>
-                            <TD>&nbsp;</TD>
-                            <TD width="190">&nbsp;
-                            </TD>
-                          </TR>
-                          </TBODY>
-                          <TABLE cellSpacing=0 cellPadding=0 width=560 border=0>
-                                <TBODY>
-                                  <TR>
-                                    <TD width=16><IMG height=22 
-                                      src="/assets/bit_03.gif" width=16></TD>
-                                    <TD width=15 bgColor=#f4f4f4>&nbsp;</TD>
-                                    <TD class=nr01 
-                                      bgColor=#f4f4f4><STRONG>工作职责</STRONG></TD>
-                                  </TR>
-                                  <TR>
-                                    <TD>&nbsp;</TD>
-                                    <TD>&nbsp;</TD>
-                                    <TD>&nbsp;</TD>
-                                  </TR>
-                                </TBODY>
-                              </TABLE>
-                              <TABLE cellSpacing=0 cellPadding=0 width=340 align=center border=0>
-                                <TBODY>
-                                  <% @organization.each do |o| %>
-                                    <tr>
-                                      <td width=101><%= o.created_at.strftime("%Y-%m-%d") %></td>
-                                      <td><%= link_to o.name,organization_path(o),:style =>"color:#092D70" %></td>
-                                    </tr>
-                                  <% end %>
-                                </TBODY>
-                              </TABLE>
-                            </TD>
-                          </TR>
-                          <TR>
-                            <TD>&nbsp;</TD>
-                            <TD width="190">&nbsp;
-                            </TD>
-                          </TR>
-                        </TBODY>
-                      </TABLE>
-                      </TABLE>
-                    </td>
-                  </tr>
-                </table>
-                <p>&nbsp;</p>
-              </td>
-              <td width="25"><img src="/assets/spacer.gif" width="1" height="1"></td>
-            </tr>
-
-          </body>
-        </html>
+<tbody>
+  <tr>
+    <td vAlign=top align=left width=570><table width="566" border="0" cellspacing="0">
+        <tr>
+          <td>
+            <table width="568" border="0" cellspacing="0">
+              <tr>
+                <td width="48%"><img height=122 src="/assets/1.jpg" width=358 /><IMG height=1 src="/assets/spacer.gif" width=1></td>
+                <td width="52%" vAlign=bottom background=/assets/bg_02.gif>
+                  <table cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <tbody>
+                      <tr> <td><IMG height=41 hspace=25 src="/assets/jig.jpg" width=81 vspace=10></td> </tr>
+                      <tr> <td background=/assets/bg_03.gif height=20>&nbsp; </td> </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <tbody>
+              <tr>
+                <td vAlign=top align=left width=570>
+                  <table cellSpacing=0 cellPadding=0 width=570 border=0>
+                    <tbody>
+                      <tr>
+                        <td colspan="2" align=left vAlign=top>
+                          <table cellSpacing=0 cellPadding=0 width=560 border=0>
+                            <tbody>
+                              <tr>
+                                <td width=16><IMG height=22 src="/assets/bit_03.gif" width=16></td>
+                                <td width=15 bgColor=#f4f4f4>&nbsp;</td>
+                                <td class=nr01 bgColor=#f4f4f4><StrONG>成员简介</StrONG></td>
+                              </tr>
+                              <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <table cellSpacing=0 cellPadding=0 width=340 align=center border=0>
+                            <tbody>
+                              <% @people.each do |p| %>
+                                <tr>
+                                  <td width = 100><%= p.created_at.strftime("%Y-%m-%d") %></td>
+                                  <td><%= link_to p.name,organization_path(p),:style =>"color:#092D70" %></td>
+                                </tr>
+                              <% end %>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td width="190">&nbsp;
+                        </td>
+                      </tr>
+                    </tbody>
+                    <table cellSpacing=0 cellPadding=0 width=560 border=0>
+                      <tbody>
+                        <tr>
+                          <td width=16><IMG height=22 src="/assets/bit_03.gif" width=16></td>
+                          <td width=15 bgColor=#f4f4f4>&nbsp;</td>
+                          <td class=nr01 bgColor=#f4f4f4><StrONG>工作职责</StrONG></td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table cellSpacing=0 cellPadding=0 width=340 align=center border=0>
+                      <tbody>
+                        <% @organization.each do |o| %>
+                          <tr>
+                            <td width=101><%= o.created_at.strftime("%Y-%m-%d") %></td>
+                            <td><%= link_to o.name,organization_path(o),:style =>"color:#092D70" %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td width="190">&nbsp; </td>
+                </tr>
+              </tbody>
+        </td>
+      </tr>
+    </table>
+  </td>
+  <td width="25"><img src="/assets/spacer.gif" width="1" height="1"></td>
+</tr>
