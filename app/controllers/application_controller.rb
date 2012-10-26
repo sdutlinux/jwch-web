@@ -1,7 +1,7 @@
 #coding: utf-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_user, :is_admin?
+  helper_method :current_user, :is_admin?, :logined?
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

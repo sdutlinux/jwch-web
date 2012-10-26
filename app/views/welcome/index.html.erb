@@ -182,7 +182,13 @@
                 </table>
                 <table width="170">
                   <tr>
-                    <td align="center" class="box01"><a href="admin" target="_top">管理员登录</a></td>
+                    <td align="center" class="box01">
+                      <% if logined? %>
+                        <%= link_to '后台管理', admin_path %>
+                      <% else %>
+                        <%= link_to '管理员登录', login_path %>
+                    <% end %>
+                    </td>
                   </tr>
                   <tr>
                     <td>　</td>
