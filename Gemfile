@@ -6,7 +6,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'rails_kindeditor', '~> 0.3.0'
 gem 'roo'
-gem 'puma'
+#gem 'puma'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

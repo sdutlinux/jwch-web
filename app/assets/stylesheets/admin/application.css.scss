@@ -51,6 +51,11 @@ body { padding-top: 60px; }
   }
 }
 
-//.form-horizontal .controls {
-//  margin-left: 0px;
-//}
+.form-horizontal .controls {
+  margin-left: 10px;
+}
+
+.form-horizontal .control-label {
+  text-align: left;
+  width: 60px;
+}
