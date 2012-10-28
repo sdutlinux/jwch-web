@@ -175,83 +175,25 @@
           <td align="center"><table cellSpacing=0 cellPadding=0 width=170 border=0>
               <tbody>
                 <tr>
-                  <td align=middle width=40 bgColor=#990000><IMG height=14 
-                    src="/assets/bit_02.gif" width=4 vspace=3></td>
-                  <td align=left bgColor=#990000><STRONG><FONT 
-                        color=#ffffff>相关链接</FONT></STRONG></td></tr>
+                  <td align=middle width=40 bgColor=#990000>
+                    <IMG height=14 src="/assets/bit_02.gif" width=4 vspace=3>
+                  </td>
+                  <td align=left bgColor=#990000>
+                    <STRONG><FONT color=#ffffff>相关链接</FONT></STRONG>
+                </td>
+              </tr>
 
-
+                <% Link.sort_links.each do  |link|%>
                 <tr>
                   <td height=3>>></td>
                   <td align=left height=20>
-                    <%= link_to '教务管理系统', pages_path('zhengfang') %>
+                    <%= link_to link.name, link.url, :target => "_blank" , :style => "color:#{link.color};" %>
                   </td>
                 </tr>
+                <% end %>
 
                 <tr>
-                  <td height=3>>></td>
-                  <td align=left height=20><a href="http://210.44.176.116/cjcx" target="_blank">成绩查询系统</a></td>
-                </tr>
-                <tr>
-                  <td height=3>>></td>
-                  <td align=left height=20><a href="http://210.44.176.116/skqk/" target="_blank"> 课表查询系统</a></td>
-                </tr>
-
-                <tr>
-                  <td height=3>>></td>
-                  <td align=left height=20 ><a href="http://jwch.sdut.edu.cn/resource" target="_blank"> <font color="#990000">优质教学资源</font></a></td>
-                </tr>
-
-                <tr>
-                  <td height=3>>></td>
-                  <td align=left height=20><a href="http://210.44.176.171" target="_blank">网络教学平台</a></td>
-                </tr>
-                <tr>
-                  <td height=3>>></td>
-                  <td align=left height=20><a href="http://210.44.176.171/resource/" target="_blank">课程资源中心</a></td>
-                </tr>
-                <tr>
                   <tr>
-                    <td height=3>>></td>
-                    <td align=left height=20><a href="http://210.44.176.148" target="_blank">精品课程</a></td>
-                  </tr>
-                  <tr>
-                    <td height=3>>></td>
-                    <td align=left height=20><A href="http://210.44.176.182" target="_blank">品牌(特色)专业</A></td>
-                  </tr>
-                  <tr>
-                    <td height=3>>></td>
-                    <td align=left height=20><A href="http://jwch.sdut.edu.cn/zhuoyue/" target="_blank">卓越计划试点</A></td>
-                  </tr>
-                  <tr>
-                    <td height=3>>></td>
-                    <td align=left height=20><a href="http://xkzx.sdut.edu.cn/xkzx/index.php?option=com_fireboard&Itemid=40" target="_blank">教务之家</a></td>
-                  </tr>
-                  <tr>
-                    <td height=3>>></td>
-                    <td align=left height=20><a href="http://210.44.176.208:8080/resourcelib/pages/default.do" target="_blank">全国精品课程资源</a></td>
-                  </tr>
-                  <tr>
-                    <td height=3>>></td>
-                    <td align=left height=20><a href="http://210.44.176.182:82/" target="_blank"><font color="red">教材管理系统(校内)</font></a></td>
-                  </tr>
-                  <tr>
-                    <td height=3>>></td>
-                    <td align=left height=20><a href="http://202.110.209.182/" target="_blank"><font color="red">教材管理系统(校外)</font></a></td>
-                  </tr>
-                  <tr>
-                    <tr>
-                      <td height=3>>></td>
-                      <td align=left height=20><a href="http://lab.sdut.edu.cn" target="_blank">实验教学网络管理系统</a></td>
-                    </tr>
-                    <tr>
-                      <td height=3>>></td>
-                      <td align=left height=20><a href="http://210.44.176.104/sysweb/" target="_blank" >实验项目人员管理系统</a></td>
-                    </tr>    
-                    <tr>
-                      <td height=3>>></td>
-                      <td align=left height=20><a href="http://jwch.sdut.edu.cn/repair/index/index_frame.php" target="_blank">设备维修记录系统</a></td>
-                    </tr>
                     <td height=10 colspan="2" bgcolor="#CCCCCC">　</td>
                   </tr>
             </tbody>

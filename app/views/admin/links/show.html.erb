@@ -20,6 +20,11 @@
   <%= @link.url %>
 </p>
 
+<p>
+  <b>字体颜色</b><br>
+  <%= @link.color %>
+</p>
+
 <div class="form-actions">
   <%= link_to '返回', admin_links_path, :class => 'btn'  %>
   <%= link_to '编辑', edit_admin_link_path(@link), :class => 'btn' %>

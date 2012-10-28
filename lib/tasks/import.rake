@@ -12,11 +12,11 @@ namespace :import do
       link = Link.new
       
       link.name = oo.cell(line,'A')
-      link.sort = oo.cell(line,'B').to_i
+      link.sort = oo.cell(line,'B').to_i * 10
       link.url = oo.cell(line,'C')
       link.created_at = Time.now
 
-      link.save
+      link.save!
     end
     puts 'import down'
   end

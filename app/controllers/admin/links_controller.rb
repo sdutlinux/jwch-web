@@ -2,7 +2,7 @@
 class Admin::LinksController < Admin::BaseController
 
   def index
-    @links = Link.all
+    @links = Link.order("sort ASC")
 
     respond_to do |format|
       format.html
