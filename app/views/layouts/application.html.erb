@@ -64,9 +64,14 @@
                 <table cellSpacing=0 cellPadding=0 width=300 border=0>
                   <tbody>
                     <tr>
-                     
-                       <%= link_to '站内搜索', pages_path( :key => 'search' ) %>
-          </td></tr></tbody></table></td></tr>
+
+                      <%= link_to '站内搜索', pages_path( :key => 'search' ) %>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
           <tr>
             <td height=6></td>
             <td></td>
@@ -180,25 +185,25 @@
                   </td>
                   <td align=left bgColor=#990000>
                     <STRONG><FONT color=#ffffff>相关链接</FONT></STRONG>
-                </td>
-              </tr>
-
-                <% Link.sort_links.each do  |link|%>
-                <tr>
-                  <td height=3>>></td>
-                  <td align=left height=20>
-                    <%= link_to link.name, link.url, :target => "_blank" , :style => "color:#{link.color};" %>
                   </td>
                 </tr>
+
+                <% Link.sort_links.each do  |link|%>
+                  <tr>
+                    <td height=3>>></td>
+                    <td align=left height=20>
+                      <%= link_to link.name, link.url, :target => "_blank" , :style => "color:#{link.color};" %>
+                    </td>
+                  </tr>
                 <% end %>
 
                 <tr>
                   <tr>
                     <td height=10 colspan="2" bgcolor="#CCCCCC">　</td>
                   </tr>
-            </tbody>
-        </table>
-      </td>
+                </tbody>
+              </table>
+            </td>
           </tr>
         </table>
       </td>
