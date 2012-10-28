@@ -104,3 +104,8 @@ FORM {
 .white {
 	color: #FFF;
 }
+
+.longtxt{
+  height: 525px;
+  overflow: scroll;
+}
