@@ -64,175 +64,190 @@
                 <table cellSpacing=0 cellPadding=0 width=300 border=0>
                   <tbody>
                     <tr>
-
-                      <%= link_to '站内搜索', pages_path( :key => 'search' ) %>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td height=6></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td bgColor=#990000 height=5><IMG height=1 src="/assets/spacer.gif" width=1></td>
-            <td bgColor=#990000><IMG height=1 src="/assets/spacer.gif" width=1></td>
-            <td bgColor=#990000><IMG height=1 src="/assets/spacer.gif" width=1></td></tr>
-          <tr>
-            <td height=5></td>
-            <td></td>
-            <td></td></tr></tbody></table></td>
-  </tr>
-  <tr>
-    <td width="183" height="690" valign="top">
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td align="center"><table width=170 border=0 align="center" cellPadding=0 cellSpacing=6 class=box01>
-              <tbody>
-                <tr>
-                  <td class=box01 align=center height=20> <%= link_to '首 页', root_path %> </td>
-                </tr>
-                <tr>
-                  <td class=box01 align=center height=20> <%= link_to '机构设置', organizations_path %> </td>
-                </tr>
-                <tr>
-                  <td height=20 align=center class=box01 style="cursor:hand" onclick="show('la1')">政策法规 </td>
-                </tr>
-                <tr>
-                  <td height="0px">
-                    <div id="la1" type="div" style="display:none; height:auto">
-                      <table id="t1" width="100%">
-                        <tr>
-                          <td class="box03" height="20">
-                            <%= link_to "山东省教育教学文件", laws_path(:category_id => 3), :style => "color:#990000" %>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="box03" height="20">
-                            <%= link_to '国家教育教学政策法规', laws_path(:category_id=>4), :style => "color:#990000" %>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-                </td></tr>
-                <tr>
-                  <td class=box01 align=center height=20> <%= link_to '规章制度', rule_types_path %></td>
-                </tr>
-                <tr>
-                  <td class=box01 align=center height=20 style="cursor:hand" onclick="show('la2')">人才培养 </td>
-                </tr>
-                <tr><td height="0px"><div id="la2" type="div" style="display:none; height:auto">
-                      <table width="100%">
-                        <tr>
-                          <td class="box03"><a href="#" target="mainFrame"><font color="#990000">专业介绍</font></a></td>
-                        </tr>
-                        <tr>
-                          <td class="box03"> <%= link_to '课程介绍',course_types_path, :style => "color:#990000" %> </td>
-                        </tr>
-                      </table>
-                </div></td></tr>
-                <tr>
-                  <td class=box01 align=center height=20> <%= link_to '工作流程', workflow_types_path %> </td>
-                </tr>
-                <tr>
-                  <td class=box01 align=center height=20> <%= link_to '教务通知',news_index_path %></td>
-                </tr>
-                <tr>
-                  <td class=box01 align=center height=20> <%= link_to '处长信箱', mail_path %> </td>
-                </tr>
-                <tr>
-                  <td class=box01 align=center height=20> <%= link_to '下载专区', documents_path %></td>
-                </tr>
-                <tr>
-                  <td class=box01 align=center height=20 style="cursor:hand" onclick="show('la3')">教学研究 </td>
-                </tr>
-                <tr><td height="0px">
-                    <div id="la3" type="div" style="display:none; height:auto">
-                      <table width="100%">
-                        <tr>
-                          <td class="box03"> <%= link_to "教学成果" ,teaching_achievements_path, :style => "color:#990000" %> </td>
-                        </tr>
-                        <tr>
-                          <td class="box03"> <%= link_to "教改立项",education_projects_path, :style => "color:#990000" %> </td>
-                        </tr>
-                      </table>
-                </div></td></tr>
-                <tr>
-                  <td class=box01 align=center height=20 >
-                    <%= link_to '创新竞赛',competition_types_path %>
-                  </td>
-                </tr>
-                <tr>
-                  <td class=box01 align=center height=20> <%= link_to '个人空间',personal_space_path %></td>
-                </tr>
-                <tr>
-                  <td class=box01 align=center height=20> <%= link_to "《教学简讯》",message_channels_path %> </td>
-                </tr>
-          </tbody></table></td>
-        </tr>
-        <tr>
-          <td>　</td>
-        </tr>
-        <tr>
-          <td align="center"><table cellSpacing=0 cellPadding=0 width=170 border=0>
-              <tbody>
-                <tr>
-                  <td align=middle width=40 bgColor=#990000>
-                    <IMG height=14 src="/assets/bit_02.gif" width=4 vspace=3>
-                  </td>
-                  <td align=left bgColor=#990000>
-                    <STRONG><FONT color=#ffffff>相关链接</FONT></STRONG>
-                  </td>
-                </tr>
-
-                <% Link.sort_links.each do  |link|%>
-                  <tr>
-                    <td height=3>>></td>
-                    <td align=left height=20>
-                      <%= link_to link.name, link.url, :target => "_blank" , :style => "color:#{link.color};" %>
-                    </td>
-                  </tr>
-                <% end %>
-
-                <tr>
-                  <tr>
-                    <td height=10 colspan="2" bgcolor="#CCCCCC">　</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </table>
-      </td>
-      <td width="596" height="680" valign="top">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td>
-              <%= yield %>
-            </td>
-          </tr>
-          <tr> <td height="10" bgcolor="#CECFCE"></td> </tr>
+                      <td align=right>
+                        <%= link_to '站内搜索', pages_path( :key => 'search' ) %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td height=6></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td bgColor=#990000 height=5><IMG height=1 src="/assets/spacer.gif" width=1></td>
+              <td bgColor=#990000><IMG height=1 src="/assets/spacer.gif" width=1></td>
+              <td bgColor=#990000><IMG height=1 src="/assets/spacer.gif" width=1></td></tr>
+            <tr>
+              <td height=5></td>
+              <td>
+              </td>
+              <td>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </td>
     </tr>
     <tr>
-      <td height="70" colspan="2"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <td width="183" height="690" valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="461" height="1"></td>
-            <td width="318" height="1"></td>
+            <td align="center"><table width=170 border=0 align="center" cellPadding=0 cellSpacing=6 class=box01>
+                <tbody>
+                  <tr>
+                    <td class=box01 align=center height=20> <%= link_to '首 页', root_path %> </td>
+                  </tr>
+                  <tr>
+                    <td class=box01 align=center height=20> <%= link_to '机构设置', organizations_path %> </td>
+                  </tr>
+                  <tr>
+                    <td height=20 align=center class=box01 style="cursor:hand" onclick="show('la1')">政策法规 </td>
+                  </tr>
+                  <tr>
+                    <td height="0px">
+                      <div id="la1" type="div" style="display:none; height:auto">
+                        <table id="t1" width="100%">
+                          <tr>
+                            <td class="box03" height="20">
+                              <%= link_to "山东省教育教学文件", laws_path(:category_id => 3), :style => "color:#990000" %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="box03" height="20">
+                              <%= link_to '国家教育教学政策法规', laws_path(:category_id=>4), :style => "color:#990000" %>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class=box01 align=center height=20> <%= link_to '规章制度', rule_types_path %></td>
+                  </tr>
+                  <tr>
+                    <td class=box01 align=center height=20 style="cursor:hand" onclick="show('la2')">人才培养 </td>
+                  </tr>
+                  <tr>
+                    <td height="0px"><div id="la2" type="div" style="display:none; height:auto">
+                        <table width="100%">
+                          <tr>
+                            <td class="box03"><a href="#" target="mainFrame"><font color="#990000">专业介绍</font></a></td>
+                          </tr>
+                          <tr>
+                            <td class="box03"> <%= link_to '课程介绍',course_types_path, :style => "color:#990000" %> </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class=box01 align=center height=20> <%= link_to '工作流程', workflow_types_path %> </td>
+                  </tr>
+                  <tr>
+                    <td class=box01 align=center height=20> <%= link_to '教务通知',news_index_path %></td>
+                  </tr>
+                  <tr>
+                    <td class=box01 align=center height=20> <%= link_to '处长信箱', mail_path %> </td>
+                  </tr>
+                  <tr>
+                    <td class=box01 align=center height=20> <%= link_to '下载专区', documents_path %></td>
+                  </tr>
+                  <tr>
+                    <td class=box01 align=center height=20 style="cursor:hand" onclick="show('la3')">教学研究 </td>
+                  </tr>
+                  <tr>
+                    <td height="0px">
+                      <div id="la3" type="div" style="display:none; height:auto">
+                        <table width="100%">
+                          <tr>
+                            <td class="box03"> <%= link_to "教学成果" ,teaching_achievements_path, :style => "color:#990000" %> </td>
+                          </tr>
+                          <tr>
+                            <td class="box03"> <%= link_to "教改立项",education_projects_path, :style => "color:#990000" %> </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class=box01 align=center height=20 >
+                      <%= link_to '创新竞赛',competition_types_path %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class=box01 align=center height=20> <%= link_to '个人空间',personal_space_path %></td>
+                  </tr>
+                  <tr>
+                    <td class=box01 align=center height=20> <%= link_to "《教学简讯》",message_channels_path %> </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
           </tr>
           <tr>
-            <td height="4" bgcolor="#092D70"></td>
-            <td bgcolor="#092D70"></td>
+            <td>　</td>
           </tr>
           <tr>
-          </tr>
-        </table>
-        <div style="float:left; width:800px;margin-top:3px;">
-          <p style="margin-left:200px;">Copyright &copy;  2011 <a href="http://www.sdut.edu.cn" style="text-decoration:none;">山东理工大学</a>. All right reserved.  |  <a href="http://jwch.sdut.edu.cn/blog">技术支持:教育技术中心</a></p>
-        </div>
-      </body>
-    </html>
+            <td align="center"><table cellSpacing=0 cellPadding=0 width=170 border=0>
+                <tbody>
+                  <tr>
+                    <td align=middle width=40 bgColor=#990000>
+                      <IMG height=14 src="/assets/bit_02.gif" width=4 vspace=3>
+                    </td>
+                    <td align=left bgColor=#990000>
+                      <STRONG><FONT color=#ffffff>相关链接</FONT></STRONG>
+                    </td>
+                  </tr>
+
+                  <% Link.sort_links.each do  |link|%>
+                    <tr>
+                      <td height=3>>></td>
+                      <td align=left height=20>
+                        <%= link_to link.name, link.url, :target => "_blank" , :style => "color:#{link.color};" %>
+                      </td>
+                    </tr>
+                  <% end %>
+
+                  <tr>
+                    <tr>
+                      <td height=10 colspan="2" bgcolor="#CCCCCC">　</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="596" height="680" valign="top">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>
+                <%= yield %>
+              </td>
+            </tr>
+            <tr> <td height="10" bgcolor="#CECFCE"></td> </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td height="70" colspan="2"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="461" height="1"></td>
+              <td width="318" height="1"></td>
+            </tr>
+            <tr>
+              <td height="4" bgcolor="#092D70"></td>
+              <td bgcolor="#092D70"></td>
+            </tr>
+            <tr>
+            </tr>
+          </table>
+          <div style="float:left; width:800px;margin-top:3px;">
+            <p style="margin-left:200px;">Copyright &copy;  2011 <a href="http://www.sdut.edu.cn" style="text-decoration:none;">山东理工大学</a>. All right reserved.  |  <a href="http://jwch.sdut.edu.cn/blog">技术支持:教育技术中心</a></p>
+          </div>
+        </body>
+      </html>
