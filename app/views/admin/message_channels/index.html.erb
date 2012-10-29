@@ -3,7 +3,7 @@
   <%= form_for [:admin,@message_channel], :html => { :class => 'form-horizontal pull-right' } do |f| %>
     <div class="control-group">
       期号: <%= f.text_field :number, :class => 'number_field' %>
-      <%= f.submit '提交', :class => 'btn' %>
+      <%= f.submit '提交', :class => 'btn btn-primary' %>
     </div>
   <%end%>
 </div>
