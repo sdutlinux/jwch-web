@@ -13,8 +13,9 @@ end
 # Table name: message_channels
 #
 #  id         :integer          not null, primary key
-#  number     :string 
+#  number     :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  old_id     :string(255)
 #
 

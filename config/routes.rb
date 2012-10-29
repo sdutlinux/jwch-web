@@ -33,7 +33,7 @@ JwchWeb::Application.routes.draw do
     get 'workflow_types' => 'workflow_types#index'
     get 'competition_types' => 'competition_types#index'
 
-    resources :news, :users, :links, :organizations, :laws, :documents, :education_projects, :teaching_achievements
+    resources :news, :users, :links, :organizations, :laws, :documents, :education_projects, :teaching_achievements, :specialties
     resources :sections do 
       resources :categories
     end 

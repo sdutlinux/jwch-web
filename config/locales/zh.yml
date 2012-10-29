@@ -157,10 +157,18 @@ zh:
       prompt: "请选择"
 
   activerecord:
-    modules:
+    models:
       user: '用户'
       news: '新闻'
+      specialty: '专业'
     attributes:
+      specialty:
+        name: '名称'
+        code: '代码'
+        college: '学院'
+        degree: '授于学位'
+        created_at: '发表于'
+        content: '内容'
       news:
         author: '作者'
         created_at: '发表于'
@@ -247,6 +255,17 @@ zh:
       even: "必须为双数"
 
   helpers:
+    actions: '操作'
+    links:
+      edit: '编辑'
+      destroy: '删除'
+      new: '新增'
+      cancel: '取消'
+      confirm: '你确认删除？'
+      back: '返回'
+    titles:
+      new: '新增'
+      edit: '编辑'
     select:
       prompt: "请选择"
     submit:
