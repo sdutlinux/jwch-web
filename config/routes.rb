@@ -29,7 +29,7 @@ JwchWeb::Application.routes.draw do
 
     get 'editorbak/uploadfile/:file(.:format)' => 'documents#editor_file'
     get 'editor/uploadfile/:file(.:format)' => 'documents#editor_file'
-    get 'editor/sysimage/icon16/:file(.:format)' => redirect("/public/upload_old/icon16/%{file}.%{format}")
+    get 'editor/sysimage/icon16/:file(.:format)' => redirect("/upload_old/icon16/%{file}.%{format}")
 
     get 'rule_types' => 'rule_types#index'
     get 'course_types' => 'course_types#index'
