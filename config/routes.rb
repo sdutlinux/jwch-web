@@ -26,8 +26,11 @@ JwchWeb::Application.routes.draw do
 
   namespace :admin do
     get '/', :to => "dashboard#show"
+
     get 'editorbak/uploadfile/:file(.:format)' => 'documents#editor_file'
     get 'editor/uploadfile/:file(.:format)' => 'documents#editor_file'
+    get 'editor/sysimage/icon16/:file(.:format)' => redirect("/public/upload_old/icon16/%{file}.%{format}")
+
     get 'rule_types' => 'rule_types#index'
     get 'course_types' => 'course_types#index'
     get 'workflow_types' => 'workflow_types#index'
