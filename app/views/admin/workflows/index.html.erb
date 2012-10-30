@@ -9,12 +9,11 @@
   <span class="section-title">
     工作流程
   </span>
-      <%= link_to '新条目', new_admin_category_workflow_path, :class => 'btn pull-right' %>
+      <%= link_to '新条目', new_admin_category_workflow_path, :class => 'btn pull-right btn-primary' %>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>序号</th>
       <th>标题</th>
       <th>发布于</th>
       <th>动作</th>
@@ -23,7 +22,6 @@
   <tbody>
     <% @workflows.each do |workflow| %>
       <tr id="category_<%= workflow.id %>">
-        <td><%= workflow.id %></td>
         <td><%= link_to workflow.title, admin_category_workflow_path(@workflow_type,workflow) %></td>
         <td><%= workflow.created_at.strftime('%y/%m/%d')  %></td>
         <td>

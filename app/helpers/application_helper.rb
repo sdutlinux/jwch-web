@@ -46,7 +46,7 @@ module ApplicationHelper
           ['机构设置', 'jgsz', 'icon-cog', admin_organizations_path],
           ['政策法规', 'zcfg', 'icon-book', admin_laws_path],
           ['规章制度', 'gzzd', 'icon-th-list', admin_rule_types_path],
-          ['专业介绍', 'zyjs', 'icon-th-list', admin_specialties_path],
+          ['专业介绍', 'zyjs', 'icon-file', admin_specialties_path],
           ['课程介绍', 'kcjs', 'icon-th-list', admin_course_types_path],
           ['工作流程', 'gzlc', 'icon-random', admin_workflow_types_path],
           ['教务通知', 'jwtz', 'icon-file', admin_news_index_path],
