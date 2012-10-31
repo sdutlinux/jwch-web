@@ -3,7 +3,7 @@ class Link < ActiveRecord::Base
   attr_accessible :name, :sort, :url, :color, :show 
   validates :name,:url, :presence => true
 
-  scope :sort_links, lambda { order("sort ASC")}
+  scope :sort_links, lambda { where(:show => true).order("sort ASC")}
 end
 
 
