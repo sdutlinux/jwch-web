@@ -17,12 +17,17 @@
 
 <p>
   <b>地址</b><br>
-  <%= @link.url %>
+  <%= link_to  @link.url, @link.url %>
 </p>
 
 <p>
   <b>字体颜色</b><br>
   <%= @link.color %>
+</p>
+
+<p>
+  <b>是否显示</b><br>
+  <%= @link.show == true ? '显示' : '隐藏' %>
 </p>
 
 <div class="form-actions">

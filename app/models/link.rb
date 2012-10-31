@@ -1,6 +1,6 @@
 #coding: utf-8
 class Link < ActiveRecord::Base
-  attr_accessible :name, :sort, :url, :color
+  attr_accessible :name, :sort, :url, :color, :show 
   validates :name,:url, :presence => true
 
   scope :sort_links, lambda { order("sort ASC")}
