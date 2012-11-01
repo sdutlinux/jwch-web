@@ -30,7 +30,7 @@
           <td><%= specialty.code %></td>
           <td><%= specialty.college %></td>
           <td><%= specialty.degree %></td>
-          <td><%= specialty.content %></td>
+          <td><%= truncate( strip_tags(specialty.content), :length => 10) %></td>
           <td><%= specialty.created_at.strftime("%y/%m/%d") %></td>
           <td>
             <%= link_to "<i class='icon-edit'></i>".html_safe,

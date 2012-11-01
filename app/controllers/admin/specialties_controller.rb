@@ -77,7 +77,7 @@ class Admin::SpecialtiesController < Admin::BaseController
     @specialty.destroy
 
     respond_to do |format|
-      format.html { redirect_to specialties_url }
+      format.html { redirect_to admin_specialties_path }
       format.json { head :no_content }
     end
   end

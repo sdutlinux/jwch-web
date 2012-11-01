@@ -1,7 +1,9 @@
 #coding: utf-8
 JwchWeb::Application.routes.draw do
   root :to => 'welcome#index'
+  
 
+  resources :specialties, :only => [:index, :show]
   resources :organizations, :laws, :only => [:index, :show]
   resources :news, :documents, :education_projects, :teaching_achievements, :only => [:index, :show]
   resources :categories, :only => [] do
