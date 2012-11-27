@@ -2,7 +2,6 @@
 JwchWeb::Application.routes.draw do
   root :to => 'welcome#index'
   
-
   resources :specialties, :only => [:index, :show]
   resources :organizations, :laws, :only => [:index, :show]
   resources :news, :documents, :education_projects, :teaching_achievements, :only => [:index, :show]
@@ -13,14 +12,12 @@ JwchWeb::Application.routes.draw do
   resources :message_channels, :only => [:index, :show] do
     resources :messages
   end
+
   get 'pages/:key' => 'pages#index', :as => :pages
   get 'rule_types' => 'rule_types#index'
   get 'course_types' => 'course_types#index'
   get 'workflow_types' => 'workflow_types#index'
   get 'competition_types' => 'competition_types#index'
-
-  get 'mail' => 'mail#index'
-  get "personal_space" => 'personal_space#index'
 
   get "login" => "session#new", :as => :login
   post "login" => "session#create"
