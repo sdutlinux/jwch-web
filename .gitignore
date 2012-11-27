@@ -11,8 +11,7 @@ config/database.yml
 config/config.yml
 public/uploads/
 public/editor/*
-public/topics
-public/topics/**/*
+public/pages
 public/upload_old/*
 .redcar
 .DS_Store

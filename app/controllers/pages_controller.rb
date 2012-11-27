@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
+  caches_page :index
   def index
-    respond_to do |format|
-      format.html { render params[:key] }
-    end
+    render params[:key] 
   end
 end
