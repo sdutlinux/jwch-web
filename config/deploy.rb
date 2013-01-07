@@ -1,6 +1,10 @@
 require 'bundler/capistrano'                
 require "whenever/capistrano"
 
+set :whenever_environment, defer { stage }
+set :whenever_identifier, defer { "#{application}_#{stage}" }
+set :whenever_command, "bundle exec whenever"
+
 set :use_sudo, false
 set :rvm_type, :system 
 require 'rvm/capistrano'
