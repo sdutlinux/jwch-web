@@ -1,4 +1,5 @@
 require 'bundler/capistrano'                
+require "whenever/capistrano"
 
 set :use_sudo, false
 set :rvm_type, :system 
