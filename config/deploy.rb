@@ -45,10 +45,17 @@ end
 after "deploy:restart", "deploy:cleanup"
 
 namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
+  task :start do 
+    run "cd #{current_path}; bundle exec thin start -C /home/rails/#{application}.yml"
+  end
+
+  task :stop do 
+    run "cd #{current_path}; bundle exec thin stop -C /home/rails/#{application}.yml"
+  end
+
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    #run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    run "cd #{current_path}; bundle exec thin restart -C /home/rails/#{application}.yml"
   end
 
   task :config_file do
