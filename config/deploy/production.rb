@@ -4,7 +4,7 @@ set :port, 80
 set :use_sudo, false
 set :branch, "master"
 set :rails_env, "production"
-set :rvm_ruby_string, 'ruby-1.9.3-p362@jwch-web'
+set :rvm_ruby_string, 'ruby-1.9.3-p327@jwch-web'
 set :deploy_to, "/home/rails/#{application}"
 
 
