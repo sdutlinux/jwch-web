@@ -9,7 +9,7 @@ gem 'roo'
 gem 'thin'
 #gem 'puma'
 
-gem 'whenever', :require => false
+#gem 'whenever', :require => false
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

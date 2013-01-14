@@ -1,5 +1,5 @@
 require 'bundler/capistrano'                
-require "whenever/capistrano"
+#require "whenever/capistrano"
 
 set :whenever_environment, defer { stage }
 set :whenever_identifier, defer { "#{application}_#{stage}" }
