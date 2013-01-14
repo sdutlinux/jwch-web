@@ -66,5 +66,6 @@ namespace :deploy do
     run "ln -s  #{shared_path}/workflow_pic #{release_path}/public/editor/UploadFile"
     run "ln -s  #{shared_path}/upload_old #{release_path}/public/upload_old"
     run "ln -s  #{shared_path}/uploads #{release_path}/public/uploads"
+    run "ln -s  #{shared_path}/yzgc #{release_path}/public/yzgc"
   end
 end

@@ -24,7 +24,8 @@ JwchWeb::Application.routes.draw do
   delete "logout" => "session#destroy", :as => :logout
 
   get 'book' => redirect('/book/index.html')
-  get 'book' => redirect('/blog/index.html')
+  get 'blog' => redirect('/blog/index.html')
+  get 'yzgc' => redirect('/yzgc/index.html')
 
   namespace :admin do
     get '/', :to => "dashboard#show"
