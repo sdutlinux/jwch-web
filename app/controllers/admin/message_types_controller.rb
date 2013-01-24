@@ -53,7 +53,7 @@ class Admin::MessageTypesController < Admin::BaseController
     @message_type.destroy
 
     respond_to do |format|
-      format.html {redirect_to admin_message_types_path(:channel_id => @message_type.message_channel_id)}
+      format.html {redirect_to admin_message_channels_path}
       format.js
     end
   end

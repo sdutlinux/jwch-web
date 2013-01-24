@@ -11,11 +11,9 @@ class CreateUsers < ActiveRecord::Migration
 
       t.timestamps
     end
-
     User.create :name       => "admin",
                 :password   => "admin",
                 :admin      => true
-
   end
 
 end
