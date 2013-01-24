@@ -151,7 +151,7 @@
                     <td class=box01 align=center height=20> <%= link_to '教务通知',news_index_path %></td>
                   </tr>
                   <tr>
-                    <td class=box01 align=center height=20> <%= link_to '处长信箱', mail_path %> </td>
+                    <td class=box01 align=center height=20> <%= link_to '处长信箱', pages_path(:mail) %> </td>
                   </tr>
                   <tr>
                     <td class=box01 align=center height=20> <%= link_to '下载专区', documents_path %></td>
@@ -179,7 +179,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class=box01 align=center height=20> <%= link_to '个人空间',personal_space_path %></td>
+                    <td class=box01 align=center height=20> <%= link_to '个人空间', pages_path(:personal_space)%></td>
                   </tr>
                   <tr>
                     <td class=box01 align=center height=20> <%= link_to "《教学简讯》",message_channels_path %> </td>
@@ -247,7 +247,7 @@
             </tr>
           </table>
           <div style="float:left; width:800px;margin-top:3px;">
-            <p style="margin-left:200px;">Copyright &copy;  2011 <a href="http://www.sdut.edu.cn" style="text-decoration:none;">山东理工大学</a>. All right reserved.  |  <a href="http://jwch.sdut.edu.cn/blog">技术支持:教育技术中心</a></p>
+            <p style="margin-left:200px;">Copyright &copy;  <%= Time.new.year %> <a href="http://www.sdut.edu.cn" style="text-decoration:none;">山东理工大学</a>. All right reserved.  |  <a href="http://jwch.sdut.edu.cn/blog">技术支持:教育技术中心</a> | Power by <%= link_to 'Rails','http://rubyonrails.org/'%></p>
           </div>
         </body>
       </html>

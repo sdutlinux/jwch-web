@@ -2,7 +2,7 @@
 class Admin::NewsController < Admin::BaseController
 
   def index
-    @news = News.paginate :page=>params[:page], :order => 'id asc',
+    @news = News.paginate :page=>params[:page], :order => 'created_at DESC',
       :per_page => 10
 
     respond_to do |format|
