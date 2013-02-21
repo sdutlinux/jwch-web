@@ -10,6 +10,7 @@
       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion<%= @message_channel.id %>" href="#collapse-<%= "#{t.id}"%>">
         <%= t.name %>
       </a>
+      <%= link_to "删除" ,admin_message_channel_message_type_path(@message_channel,t), :method => :delete,  :class => "btn btn-mini btn-danger pull-right" %>
     </div> 
     <div id="collapse-<%= "#{t.id}"%>" class="accordion-body collapse">
       <div class="accordion-inner">
