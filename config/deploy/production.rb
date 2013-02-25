@@ -1,6 +1,6 @@
 server "210.44.176.208", :app, :web, :db, :primary => true
 
-set :port, 80
+set :port, 118
 set :use_sudo, false
 set :branch, "master"
 set :rails_env, "production"
