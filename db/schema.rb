@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121031130750) do
+ActiveRecord::Schema.define(:version => 20130324194413) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -69,6 +69,18 @@ ActiveRecord::Schema.define(:version => 20121031130750) do
     t.string   "rank"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "heros", :force => true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "sex"
+    t.string   "college"
+    t.text     "desc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "user_agent"
   end
 
   create_table "kindeditor_assets", :force => true do |t|
