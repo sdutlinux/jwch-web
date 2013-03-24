@@ -1,6 +1,6 @@
-source 'http://ruby.taobao.org'
+source 'http://ruby.sdutlinux.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
 gem 'mysql2'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
