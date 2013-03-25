@@ -27,6 +27,10 @@ class HerosController < ApplicationController
   	end
   end
 
+  def show 
+    @hero = Hero.find(params[:id])
+  end
+
   def success 
   end
 end

@@ -1,0 +1,26 @@
+
+<table class="table table-striped" id="channel">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>college</th>
+      <th>sex</th>
+      <th>desc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @heros.each do |hero| %>
+      <tr>
+          <td> <%= link_to hero.name, hero_path(hero.id)%>  </td>
+          <td> <%= hero.email %>  </td>
+          <td> <%= hero.phone %>  </td>
+          <td> <%= hero.college %>  </td>
+          <td> <%= hero.sex %>  </td>
+          <td> <%= hero.desc %>  </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
