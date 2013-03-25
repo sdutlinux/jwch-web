@@ -1,68 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-  <head>
-    <title>HERO</title>
-    <%= stylesheet_link_tag "hero", :media => "all" %>
-  </head> 
-  <body>
-	<div class="container">
-		<div class="row">
-			<div class="span6 offset3">
-				<div class="form">
-					<%= form_for @hero, :html => { :class => 'form-horizontal' } do |f| %>
-					<div class="control-group">
-						<%= f.label "姓名:", :class => "control-label" %>
-						<div class="controls">
-							<%= f.text_field :name, :class => 'text_field' %>
-						</div>
-					</div>
+<div class="form">
+    <%= form_for @hero, :html => { :class => 'form-horizontal' } do |f| %>
+        <div class="control-group">
+            <%= f.label "姓名:", :class => "control-label" %>
+            <div class="controls">
+                <%= f.text_field :name, :class => 'text_field' %>
+            </div>
+        </div>
 
-					<div class="control-group">
-						<%= f.label "邮箱:", :class => "control-label" %>
-						<div class="controls">
-							<%= f.text_field :email, :class => 'text_field' %>
-						</div>
-					</div>
+        <div class="control-group">
+            <%= f.label "邮箱:", :class => "control-label" %>
+            <div class="controls">
+                <%= f.text_field :email, :class => 'text_field' %>
+            </div>
+        </div>
 
-					<div class="control-group">
-						<%= f.label "手机:", :class => "control-label" %>
-						<div class="controls">
-							<%= f.text_field :phone, :class => 'text_field' %>
-						</div>
-					</div>
+        <div class="control-group">
+            <%= f.label "手机:", :class => "control-label" %>
+            <div class="controls">
+                <%= f.text_field :phone, :class => 'text_field' %>
+            </div>
+        </div>
 
-					<div class="control-group">
-						<%= f.label "学院:", :class => "control-label" %>
-						<div class="controls">
-							<%= f.text_field :college, :class => 'text_field' %>
-						</div>
-					</div>
+        <div class="control-group">
+            <%= f.label "学院:", :class => "control-label" %>
+            <div class="controls">
+                <%= f.text_field :college, :class => 'text_field' %>
+            </div>
+        </div>
 
-					<div class="control-group">
-						<%= f.label "性别:", :class => "control-label" %>
-						<div class="controls">
-							<%= f.select :sex, ['男', '女'], :class => 'select_field' %>
-						</div>
-					</div>
+        <div class="control-group">
+            <%= f.label "性别:", :class => "control-label" %>
+            <div class="controls">
+                <%= f.select :sex, ['男', '女'], :class => 'select_field' %>
+            </div>
+        </div>
 
-					<div class="control-group">
-						<%= f.label "自我介绍:", :class => "control-label" %>
-						<div class="controls">
-							<%= f.text_area :desc, :class => 'text_field', :placeholder => "希望你能够详细的介绍下你自己" %>
-						</div>
-					</div>
+        <div class="control-group">
+            <%= f.label "自我介绍:", :class => "control-label" %>
+            <div class="controls">
+                <%= f.text_area :desc, :class => 'text_field', :placeholder => "希望你能够详细的介绍下你自己" %>
+            </div>
+        </div>
 
-					<div class="control-group">
-						<div class="controls">
-							<%= f.submit '提交', :class => 'btn btn-primary' %>
-						</div>
-					</div>
-					<% end %>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+        <div class="control-group">
+            <div class="controls">
+                <%= f.submit '提交', :class => 'btn btn-primary' %>
+            </div>
+        </div>
+    <% end %>
+</div>
 
+<div class="alert alert-success" >
+    <h4>
+        加分项:
+    </h4>
+    <ul>
+        <li>
+        </li>
+    </ul>
+</div>

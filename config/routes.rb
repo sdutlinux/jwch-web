@@ -31,7 +31,7 @@ JwchWeb::Application.routes.draw do
   get 'blog' => redirect('/blog/index.html')
   get 'yzgc' => redirect('/yzgc/index.html')
 
-  resources :heros, :only => [:new, :create]
+  resources :heros, :only => [:index, :new, :create]
   get 'hero' => "heros#new", :as => :iamhero
   get 'success' => "heros#success", :as => :success
 

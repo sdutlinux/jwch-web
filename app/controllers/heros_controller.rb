@@ -1,5 +1,10 @@
 class HerosController < ApplicationController
-	layout false 
+	layout "hero"
+  before_filter :require_logined, :only => [:index]
+
+  def index
+    @heros = Hero.all
+  end
 	
   def new
   	@hero = Hero.new
@@ -23,6 +28,5 @@ class HerosController < ApplicationController
   end
 
   def success 
-  	render :text => "success"
   end
 end
