@@ -19,8 +19,8 @@ set :application, "jwch-web"
 # ssh to the deploy server
 default_run_options[:pty] = true  # Must be set for the password prompt
 
-set :repository,  "git://github.com/lidashuang/jwch-web.git"
-#set :repository,  "git@210.44.176.247:~/jwch-web.git"
+# set :repository,  "git://github.com/lidashuang/jwch-web.git"
+set :repository,  "git@210.44.176.247:~/jwch-web.git"
 set :deploy_via, :remote_cache
 set :scm_username, 'lidashuang'
 set :scm, :git
