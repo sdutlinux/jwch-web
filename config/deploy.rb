@@ -68,5 +68,6 @@ namespace :deploy do
     run "ln -s  #{shared_path}/uploads #{release_path}/public/uploads"
     run "ln -s  #{shared_path}/yzgc #{release_path}/public/yzgc"
     run "ln -s  #{shared_path}/book #{release_path}/public/book"
+    run "ln -s  #{shared_path}/blog #{release_path}/public/blog"
   end
 end
