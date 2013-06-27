@@ -7,6 +7,7 @@ gem 'will_paginate-bootstrap'
 gem 'rails_kindeditor', '~> 0.3.0'
 gem 'roo'
 gem 'thin'
+gem 'newrelic_rpm'
 #gem 'puma'
 
 #gem 'whenever', :require => false
