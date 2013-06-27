@@ -1,0 +1,62 @@
+<div class="form">
+    <%= form_for @hero, :html => { :class => 'form-horizontal' } do |f| %>
+        <div class="control-group">
+            <%= f.label "姓名:", :class => "control-label" %>
+            <div class="controls">
+                <%= f.text_field :name, :class => 'text_field' %>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <%= f.label "邮箱:", :class => "control-label" %>
+            <div class="controls">
+                <%= f.text_field :email, :class => 'text_field' %>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <%= f.label "手机:", :class => "control-label" %>
+            <div class="controls">
+                <%= f.text_field :phone, :class => 'text_field' %>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <%= f.label "学院:", :class => "control-label" %>
+            <div class="controls">
+                <%= f.text_field :college, :class => 'text_field' %>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <%= f.label "性别:", :class => "control-label" %>
+            <div class="controls">
+                <%= f.select :sex, ['男', '女'], :class => 'select_field' %>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <%= f.label "自我介绍:", :class => "control-label" %>
+            <div class="controls">
+                <%= f.text_area :desc, :class => 'text_field', :placeholder => "希望你能够详细的介绍下你自己" %>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <%= f.submit '提交', :class => 'btn btn-primary' %>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+<div class="alert alert-success" >
+    <% url = "http://jwch.sdut.edu.cn/blog"%>
+    <ul>
+        <li> 喜欢计算机，专业是计算机相关专业 </li>
+        <li> 知道linux, 并有所实践，大加分</li>
+        <li> 喜欢研究技术，大加分</li>
+        <li> 喜欢自学，不满足老师教授的内容，大加分</li>
+    </ul>
+    <h5> 详情 <%= link_to url,url%> </h5>
+</div>

@@ -27,6 +27,10 @@ JwchWeb::Application.routes.draw do
   get 'blog' => redirect('/blog/index.html')
   get 'yzgc' => redirect('/yzgc/index.html')
 
+  resources :heros, :only => [:index, :new, :create, :show]
+  get 'hero' => "heros#new", :as => :iamhero
+  get 'success' => "heros#success", :as => :success
+
   namespace :admin do
     get '/', :to => "dashboard#show"
 
