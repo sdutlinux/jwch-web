@@ -20,3 +20,4 @@ public/upload_old/*
 bin/
 config/database.yml
 .rvmrc
+.idea/*
