@@ -13,6 +13,9 @@ public/uploads/
 public/editor/*
 public/pages
 public/upload_old/*
+public/book/
+public/oldblog.tar.gz
+public/yzgc/
 .redcar
 .DS_Store
 *.swp
